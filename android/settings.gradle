@@ -1,0 +1,3 @@
+rootProject.name = 'EncryptoApp'
+
+include ':app'
