@@ -8,9 +8,12 @@ import React, { Component } from 'react';
 import {
   Platform,
   StyleSheet,
-  Text,
   View
 } from 'react-native';
+
+import { Container, Header, Left, Body, Right, Button, Icon, Title, Text, StyleProvider } from 'native-base';
+import getTheme from './native-base-theme/components';
+import material from './native-base-theme/variables/material';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -22,17 +25,25 @@ const instructions = Platform.select({
 export default class App extends Component<{}> {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-      </View>
+      <StyleProvider style={getTheme(material)}>
+      <Container>
+              <Header>
+                <Left>
+                  <Button transparent>
+                    <Icon name='arrow-back' />
+                  </Button>
+                </Left>
+                <Body>
+                  <Title>Header</Title>
+                </Body>
+                <Right>
+                  <Button transparent>
+                    <Text>Cancel</Text>
+                  </Button>
+                </Right>
+              </Header>
+            </Container>
+      </StyleProvider>
     );
   }
 }
