@@ -59,10 +59,14 @@ export default class Intro extends Component {
   _onDone = () => {
 	this.props.navigation.navigate('Home');
   };
+  _onSkip = () => {
+	this.props.navigation.navigate('Home');
+  };
   render() {
 	return <AppIntroSlider
 		slides={slides}
 		onDone={this._onDone}
+    onSkip={this._onSkip}
 		showSkipButton={true}
 		/>;
   }
