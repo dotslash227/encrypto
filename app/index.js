@@ -17,6 +17,10 @@ import material from '../native-base-theme/variables/material';
 
 import Router from "./config/router";
 
+// Drawer
+import { Drawer } from "native-base";
+import DrawerContent from "./components/DrawerContent";
+
 export default class App extends Component {
   render() {
     return <Router />;

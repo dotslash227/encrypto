@@ -6,7 +6,7 @@ export default class Home extends Component {
   render() {
     return (
       <View>
-        <Header headerText={"Incrypto App"} />
+        <Header {...this.props} />
         <Text>Home Screen</Text>
       </View>
     );

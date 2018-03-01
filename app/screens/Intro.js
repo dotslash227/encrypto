@@ -56,6 +56,10 @@ const slides = [
 ];
 
 export default class Intro extends Component {
+  componentWillMount() {
+    // Skip to Home for now
+    this.props.navigation.navigate("Home");
+  }
   _onDone = () => {
 	this.props.navigation.navigate('Home');
   };
