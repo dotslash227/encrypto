@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { View } from "react-native";
-import { Container, Content, List, ListItem, Thumbnail, Text, Body, Spinner } from 'native-base';
+import { View, Linking } from "react-native";
+import { Container, Content, List, ListItem, Thumbnail, Text, Body, Spinner, Button } from 'native-base';
 import Header from "../components/Header";
 import moment from "moment";
 
@@ -8,16 +8,19 @@ const samplePosts = [
   {
     title: "Hello, World!",
     source: "TechCrunch",
+    url: "https://wirdd.in",
     time: "2018-03-01T19:39:37.567Z"
   },
   {
     title: "Hello, World!",
     source: "TechCrunch",
+    url: "https://wirdd.in",
     time: "2018-03-01T19:39:37.567Z"
   },
   {
     title: "Hello, World!",
     source: "TechCrunch",
+    url: "https://wirdd.in",
     time: "2018-03-01T19:39:37.567Z"
   }
 ];
@@ -25,7 +28,7 @@ const samplePosts = [
 class SinglePost extends Component {
   render() {
     return (
-      <ListItem>
+      <ListItem button onPress={() => Linking.openURL(this.props.url) }>
       <Thumbnail
         square
         size={80}
