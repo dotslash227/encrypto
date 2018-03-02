@@ -12,6 +12,8 @@ import {
 } from 'react-native';
 
 import { Container, Header, Left, Body, Right, Button, Icon, Title, Text, StyleProvider } from 'native-base';
+
+// Themes
 import getTheme from '../native-base-theme/components';
 import material from '../native-base-theme/variables/material';
 
@@ -27,7 +29,11 @@ import { AsyncStorage } from 'react-native';
 
 export default class App extends Component {
   render() {
-    return <Router />;
+    return (
+      <StyleProvider style={getTheme(material)}>
+        <Router />
+      </StyleProvider>
+    );
   }
 }
 
