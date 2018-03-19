@@ -1,0 +1,31 @@
+import React, { Component } from "react";
+import { View, Text } from "react-native";
+import { Container, Content } from "native-base";
+
+// Components:
+import Header from "../../components/Header";
+import Value from "../../components/Portfolio/Value";
+import Holdings from "../../components/Portfolio/Holdings";
+
+export default class Portfolio extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			value: "0 INR",
+			change: "0%",
+			portfolio: []
+		};
+	}
+
+	render() {
+		return (
+			<Container>
+				<Header {...this.props} title="Portfolio" />
+				<Content>
+					<Value value={this.state.value} change={this.state.change} />
+					<Holdings portfolio={this.state.portfolio} />
+				</Content>
+			</Container>
+		);
+	}
+}
