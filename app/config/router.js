@@ -26,7 +26,7 @@ export default DrawerNavigator(
 		Portfolio: { screen: PortfolioScreen }
 	},
 	{
-		initialRouteName: "Portfolio",
+		initialRouteName: "Home",
 		navigationOptions: {
 			header: null
 		},
