@@ -18,6 +18,7 @@ export default class Home extends Component {
 				exchange: "ZEB"
 			}
 		};
+		this.changeSelection = this.changeSelection.bind(this);
 	}
 
 	componentDidMount() {
@@ -51,7 +52,10 @@ export default class Home extends Component {
 				<Header {...this.props} />
 				<Content>
 					<Grid>
-						<PickerHeader {...this.state} />
+						<PickerHeader
+							{...this.state}
+							changeSelection={this.changeSelection}
+						/>
 					</Grid>
 				</Content>
 			</Container>
