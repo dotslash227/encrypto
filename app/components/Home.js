@@ -11,24 +11,38 @@ export class PickerHeader extends Component {
 		this.state = {
 			currencyPickerVisible: false,
 			exchangePickerVisible: false,
-			PickerOptionsCurrencies: []
+			PickerOptionsCurrencies: [],
+			PickerOptionsExchanges: []
 		};
 		this.currencyPickerCancel = this.currencyPickerCancel.bind(this);
 		this.currencyPickerSelect = this.currencyPickerSelect.bind(this);
+		this.exchangePickerCancel = this.exchangePickerCancel.bind(this);
+		this.exchangePickerSelect = this.exchangePickerSelect.bind(this);
 	}
 
-	componentWillReceiveProps() {
+	componentWillReceiveProps(nextProps) {
+		console.log({ EXCHANGES: nextProps.exchanges });
 		// Pre-fill pickerOne / picker
 		// Currencies
 		const PickerOptionsCurrencies = [];
-		this.props.availableCurrencies.forEach(currency => {
+		nextProps.availableCurrencies.forEach(currency => {
 			PickerOptionsCurrencies.push({
 				key: currency,
-				label: this.props.currencies[currency.toString()]
+				label: nextProps.currencies[currency.toString()]
 			});
 		});
 		this.setState({ PickerOptionsCurrencies });
-		console.log({ PickerOptionsCurrencies });
+
+		// Exchanges
+		const PickerOptionsExchanges = [];
+		nextProps.exchanges.forEach(exchange => {
+			PickerOptionsExchanges.push({
+				key: exchange.code,
+				label: exchange.displayName
+			});
+		});
+		console.log({ PickerOptionsExchanges: nextProps.exchanges });
+		this.setState({ PickerOptionsExchanges });
 	}
 
 	getExchange() {
@@ -55,8 +69,27 @@ export class PickerHeader extends Component {
 		this.setState({ currencyPickerVisible: false });
 	}
 
+	// Exchange Picker One
+	exchangePickerToggle(toggle) {
+		this.setState({ exchangePickerVisible: toggle });
+	}
+	exchangePickerSelect(selected) {
+		let selectedProps = JSON.parse(JSON.stringify(this.props.selected));
+		selectedProps.exchange = selected;
+		this.props.changeSelection({ selected: selectedProps });
+		this.setState({ exchangePickerVisible: false });
+	}
+	exchangePickerCancel(selected) {
+		this.setState({ exchangePickerVisible: false });
+	}
+
 	render() {
-		const { currencyPickerVisible, PickerOptionsCurrencies } = this.state;
+		const {
+			currencyPickerVisible,
+			PickerOptionsCurrencies,
+			PickerOptionsExchanges,
+			exchangePickerVisible
+		} = this.state;
 		return (
 			<Row style={styles.pickerOne}>
 				<Grid>
@@ -78,9 +111,20 @@ export class PickerHeader extends Component {
 						</Button>
 					</Col>
 					<Col>
-						<Button transparent dark iconRight>
+						<Button
+							transparent
+							dark
+							iconRight
+							onPress={() => this.exchangePickerToggle(true)}
+						>
 							{this.getExchange()}
 							<Icon name="ios-arrow-down" />
+							<ModalFilterPicker
+								visible={exchangePickerVisible}
+								onSelect={this.exchangePickerSelect}
+								onCancel={this.exchangePickerCancel}
+								options={PickerOptionsExchanges}
+							/>
 						</Button>
 					</Col>
 				</Grid>
