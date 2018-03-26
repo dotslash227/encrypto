@@ -2,8 +2,18 @@ import React, { Component } from "react";
 import { View } from "react-native";
 import Header from "../components/Header";
 import { PickerHeader } from "../components/Home";
+import HomeCharts from "../components/HomeCharts";
 
-import { List, ListItem, Text, Content, Container } from "native-base";
+import {
+	List,
+	ListItem,
+	Text,
+	Content,
+	Container,
+	Footer,
+	FooterTab,
+	Button
+} from "native-base";
 import { Col, Row, Grid } from "react-native-easy-grid";
 
 export default class Home extends Component {
@@ -51,13 +61,25 @@ export default class Home extends Component {
 			<Container>
 				<Header {...this.props} />
 				<Content>
-					<Grid>
-						<PickerHeader
-							{...this.state}
-							changeSelection={this.changeSelection}
-						/>
-					</Grid>
+					<PickerHeader
+						{...this.state}
+						changeSelection={this.changeSelection}
+					/>
+					<HomeCharts {...this.state} />
 				</Content>
+				<Footer>
+					<FooterTab>
+						<Button>
+							<Text>1D</Text>
+						</Button>
+						<Button>
+							<Text>1W</Text>
+						</Button>
+						<Button active>
+							<Text>30D</Text>
+						</Button>
+					</FooterTab>
+				</Footer>
 			</Container>
 		);
 	}

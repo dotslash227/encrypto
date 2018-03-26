@@ -91,44 +91,42 @@ export class PickerHeader extends Component {
 			exchangePickerVisible
 		} = this.state;
 		return (
-			<Row style={styles.pickerOne}>
-				<Grid>
-					<Col>
-						<Button
-							transparent
-							dark
-							iconRight
-							onPress={() => this.currencyPickerToggle(true)}
-						>
-							<Text>{this.props.selected.currency}</Text>
-							<Icon name="ios-arrow-down" />
-							<ModalFilterPicker
-								visible={currencyPickerVisible}
-								onSelect={this.currencyPickerSelect}
-								onCancel={this.currencyPickerCancel}
-								options={PickerOptionsCurrencies}
-							/>
-						</Button>
-					</Col>
-					<Col>
-						<Button
-							transparent
-							dark
-							iconRight
-							onPress={() => this.exchangePickerToggle(true)}
-						>
-							{this.getExchange()}
-							<Icon name="ios-arrow-down" />
-							<ModalFilterPicker
-								visible={exchangePickerVisible}
-								onSelect={this.exchangePickerSelect}
-								onCancel={this.exchangePickerCancel}
-								options={PickerOptionsExchanges}
-							/>
-						</Button>
-					</Col>
-				</Grid>
-			</Row>
+			<Grid style={styles.pickerOne}>
+				<Col>
+					<Button
+						transparent
+						dark
+						iconRight
+						onPress={() => this.currencyPickerToggle(true)}
+					>
+						<Text>{this.props.selected.currency}</Text>
+						<Icon name="ios-arrow-down" />
+						<ModalFilterPicker
+							visible={currencyPickerVisible}
+							onSelect={this.currencyPickerSelect}
+							onCancel={this.currencyPickerCancel}
+							options={PickerOptionsCurrencies}
+						/>
+					</Button>
+				</Col>
+				<Col>
+					<Button
+						transparent
+						dark
+						iconRight
+						onPress={() => this.exchangePickerToggle(true)}
+					>
+						{this.getExchange()}
+						<Icon name="ios-arrow-down" />
+						<ModalFilterPicker
+							visible={exchangePickerVisible}
+							onSelect={this.exchangePickerSelect}
+							onCancel={this.exchangePickerCancel}
+							options={PickerOptionsExchanges}
+						/>
+					</Button>
+				</Col>
+			</Grid>
 		);
 	}
 }
