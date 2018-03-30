@@ -28,7 +28,7 @@ export default class HomeCharts extends Component {
 class Info extends Component {
 	render() {
 		return (
-			<Grid>
+			<Grid style={styles.infoContainer}>
 				<Col>
 					<Text style={styles.bigText}>50</Text>
 					<Text style={styles.smallText}>XRP/INR Price</Text>
@@ -43,6 +43,9 @@ class Info extends Component {
 }
 
 const styles = StyleSheet.create({
+	infoContainer: {
+		padding: 10
+	},
 	bigText: {
 		fontSize: 20
 	},

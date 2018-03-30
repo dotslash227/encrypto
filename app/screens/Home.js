@@ -25,7 +25,8 @@ export default class Home extends Component {
 			currencies: {},
 			selected: {
 				currency: "BTC",
-				exchange: "ZEB"
+				exchange: "ZEB",
+				exchangeTwo: "COINDELTA"
 			}
 		};
 		this.changeSelection = this.changeSelection.bind(this);
