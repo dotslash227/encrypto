@@ -26,7 +26,8 @@ export default class Home extends Component {
 			selected: {
 				currency: "BTC",
 				exchange: "ZEB",
-				exchangeTwo: "COINDELTA"
+				exchangeTwo: "COINDELTA",
+				isComparing: false
 			},
 			graph: {
 				range: 30 //Days

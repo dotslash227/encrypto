@@ -55,8 +55,12 @@ export class PickerHeader extends Component {
 			exchange => exchange.code === this.props.selected.exchange
 		);
 		//console.log(exchange);
-		if (exchange.length > 0) return <Text>{exchange[0].displayName}</Text>;
-		else return <Text>{this.props.selected.exchange}</Text>;
+		if (exchange.length > 0)
+			return <Text style={styles.pickerButton}>{exchange[0].displayName}</Text>;
+		else
+			return (
+				<Text style={styles.pickerButton}>{this.props.selected.exchange}</Text>
+			);
 	}
 
 	// Currency Picker One
@@ -118,8 +122,10 @@ export class PickerHeader extends Component {
 							iconRight
 							onPress={() => this.currencyPickerToggle(true)}
 						>
-							<Text>{this.props.selected.currency}</Text>
-							<Icon name="ios-arrow-down" />
+							<Text style={styles.pickerButton}>
+								{this.props.selected.currency}
+							</Text>
+							<Icon name="ios-arrow-down" style={styles.pickerButton} />
 							<ModalFilterPicker
 								visible={currencyPickerVisible}
 								onSelect={this.currencyPickerSelect}
@@ -137,7 +143,7 @@ export class PickerHeader extends Component {
 							onPress={() => this.exchangePickerToggle(true)}
 						>
 							{this.getExchange()}
-							<Icon name="ios-arrow-down" />
+							<Icon name="ios-arrow-down" style={styles.pickerButton} />
 							<ModalFilterPicker
 								visible={exchangePickerVisible}
 								onSelect={this.exchangePickerSelect}
@@ -172,6 +178,9 @@ export class PickerTwoContainer extends Component {
 		let currentState = this.state.compareOn;
 		console.log({ currentState, opp: !currentState });
 		this.setState({ compareOn: !currentState });
+		let selectedProps = JSON.parse(JSON.stringify(this.props.selected));
+		selectedProps.isComparing = true;
+		this.props.changeSelection({ selected: selectedProps });
 	}
 
 	getExchange() {
@@ -180,8 +189,12 @@ export class PickerTwoContainer extends Component {
 			exchange => exchange.code === this.props.selected.exchangeTwo
 		);
 		//console.log(exchange);
-		if (exchange.length > 0) return <Text>{exchange[0].displayName}</Text>;
-		else return <Text>{this.props.selected.exchange}</Text>;
+		if (exchange.length > 0)
+			return <Text style={styles.pickerButton}>{exchange[0].displayName}</Text>;
+		else
+			return (
+				<Text style={styles.pickerButton}>{this.props.selected.exchange}</Text>
+			);
 	}
 
 	render() {
@@ -192,8 +205,10 @@ export class PickerTwoContainer extends Component {
 				<Grid style={styles.pickerTwoGrid}>
 					<Col>
 						<Button transparent dark iconRight>
-							<Text>{this.props.selected.currency}</Text>
-							<Icon name="ios-arrow-down" />
+							<Text style={styles.pickerButton}>
+								{this.props.selected.currency}
+							</Text>
+							<Icon name="ios-arrow-down" style={styles.pickerButton} />
 						</Button>
 					</Col>
 					<Col>
@@ -204,7 +219,7 @@ export class PickerTwoContainer extends Component {
 							onPress={() => this.props.exchangePickerTwoToggle(true)}
 						>
 							{this.getExchange()}
-							<Icon name="ios-arrow-down" />
+							<Icon name="ios-arrow-down" style={styles.pickerButton} />
 							<ModalFilterPicker
 								visible={this.props.exchangePickerTwoVisible}
 								onSelect={this.props.exchangePickerTwoSelect}
@@ -218,7 +233,7 @@ export class PickerTwoContainer extends Component {
 		} else {
 			viewContainer = (
 				<Button transparent dark onPress={() => this.toggleCompare()}>
-					<Text>Add To Compare</Text>
+					<Text style={styles.pickerButton}>Add To Compare</Text>
 				</Button>
 			);
 		}
@@ -228,12 +243,15 @@ export class PickerTwoContainer extends Component {
 
 const styles = StyleSheet.create({
 	pickerOne: {
-		backgroundColor: "#ddd",
+		backgroundColor: "#255965",
 		height: 50
 	},
 	pickerTwoContainer: {
-		backgroundColor: "#ddd",
+		backgroundColor: "#255965",
 		alignItems: "center",
 		justifyContent: "center"
+	},
+	pickerButton: {
+		color: "#fff"
 	}
 });
