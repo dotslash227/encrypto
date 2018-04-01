@@ -9,7 +9,9 @@ import {
 	Text,
 	Body,
 	Spinner,
-	Button
+	Button,
+	Tabs,
+	Tab
 } from "native-base";
 import Header from "../components/Header";
 import moment from "moment";
@@ -129,7 +131,14 @@ export default class News extends Component {
 		return (
 			<Container>
 				<Header {...this.props} title="News" hasTabs={true} />
-				<Content>{content}</Content>
+				<Tabs initialPage={0}>
+					<Tab heading="News">
+						<Content>{content}</Content>
+					</Tab>
+					<Tab heading="Events">
+						<Content>{content}</Content>
+					</Tab>
+				</Tabs>
 			</Container>
 		);
 	}
