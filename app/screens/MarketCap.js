@@ -27,7 +27,7 @@ export default class MarketCap extends Component {
 	}
 
 	componentDidMount() {
-		fetch("https://api.coinmarketcap.com/v1/ticker/?convert=INR&limit=20", {
+		fetch("https://api.coinmarketcap.com/v1/ticker/?convert=INR&limit=40", {
 			method: "GET",
 			headers: {
 				Accept: "application/json",
@@ -36,7 +36,11 @@ export default class MarketCap extends Component {
 		})
 			.then(response => response.json())
 			.then(response => {
-				this.setState({ loading: false, ticker: response });
+				if (ticker && ticker.length > 0) {
+					this.setState({ loading: false, ticker: response });
+				} else {
+					this.setState({ loading: false, error: "Something went wrong." });
+				}
 			})
 			.catch(e => {
 				console.log(e);
@@ -49,6 +53,8 @@ export default class MarketCap extends Component {
 		let content;
 		if (loading) {
 			content = <Spinner />;
+		} else if (error) {
+			content = <Text>{error}</Text>;
 		} else {
 			content = <ListOfCoins ticker={ticker} />;
 		}
