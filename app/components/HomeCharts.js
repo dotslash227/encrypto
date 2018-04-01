@@ -7,18 +7,23 @@ import {
 	VictoryChart,
 	VictoryArea,
 	VictoryAxis,
-	VictoryTheme
+	VictoryTheme,
+	VictoryStack
 } from "victory-native";
 
 export default class HomeCharts extends Component {
 	render() {
-		const sampleData = [{ x: 0, y: 2 }, { x: 2, y: 5 }];
+		const sampleData = [{ x: 0, y: 2 }, { x: 1, y: 5 }];
+		const sampleData2 = [{ x: 0, y: 3 }, { x: 1, y: 10 }];
 		return (
 			<View>
 				<Info />
-				<VictoryChart theme={VictoryTheme.material}>
-					<VictoryArea data={sampleData} />
-					<VictoryAxis />
+				<VictoryChart>
+					<VictoryStack theme={VictoryTheme.material}>
+						<VictoryArea name="area-1" data={sampleData} />
+						<VictoryArea name="area-2" data={sampleData2} />
+					</VictoryStack>
+					<VictoryAxis crossAxis={true} />
 				</VictoryChart>
 			</View>
 		);

@@ -27,6 +27,9 @@ export default class Home extends Component {
 				currency: "BTC",
 				exchange: "ZEB",
 				exchangeTwo: "COINDELTA"
+			},
+			graph: {
+				range: 30 //Days
 			}
 		};
 		this.changeSelection = this.changeSelection.bind(this);
@@ -52,6 +55,13 @@ export default class Home extends Component {
 		});
 	}
 
+	setGraphRange(range) {
+		range = parseInt(range);
+		let graph = this.state.graph;
+		graph.range = range;
+		this.setState({ graph });
+	}
+
 	// Change Selection
 	changeSelection(changes) {
 		this.setState(changes);
@@ -70,7 +80,7 @@ export default class Home extends Component {
 				</Content>
 				<Footer>
 					<FooterTab>
-						<Button>
+						<Button onPress={() => this.setGraphRange(1)}>
 							<Text>1D</Text>
 						</Button>
 						<Button>

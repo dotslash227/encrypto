@@ -6,6 +6,7 @@ import HomeScreen from "../screens/Home";
 import IntroScreen from "../screens/Intro";
 import NewsScreen from "../screens/News";
 import SettingsScreen from "../screens/Settings";
+import MarketCapScreen from "../screens/MarketCap";
 import PortfolioScreen from "../screens/Portfolio/Index";
 
 // Components
@@ -23,7 +24,8 @@ export default DrawerNavigator(
 			screen: NewsScreen
 		},
 		Settings: { screen: SettingsScreen },
-		Portfolio: { screen: PortfolioScreen }
+		Portfolio: { screen: PortfolioScreen },
+		MarketCap: { screen: MarketCapScreen }
 	},
 	{
 		initialRouteName: "Home",

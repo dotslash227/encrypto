@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Image } from "react-native";
+import { View, Image, StyleSheet } from "react-native";
 import { List, ListItem, Text } from "native-base";
 
 export default class DrawerContent extends Component {
@@ -8,7 +8,7 @@ export default class DrawerContent extends Component {
 	}
 	render() {
 		return (
-			<View>
+			<View style={styles.mainDrawer}>
 				<Image
 					source={{
 						uri:
@@ -22,20 +22,57 @@ export default class DrawerContent extends Component {
 					}}
 				/>
 				<List>
-					<ListItem button onPress={() => this.goToScreen("Home")}>
-						<Text>Home</Text>
+					<ListItem
+						style={styles.listItem}
+						button
+						onPress={() => this.goToScreen("Home")}
+					>
+						<Text style={styles.drawerText}>Home</Text>
 					</ListItem>
-					<ListItem button onPress={() => this.goToScreen("Portfolio")}>
-						<Text>Portfolio</Text>
+					<ListItem
+						style={styles.listItem}
+						button
+						onPress={() => this.goToScreen("Portfolio")}
+					>
+						<Text style={styles.drawerText}>Portfolio</Text>
 					</ListItem>
-					<ListItem button onPress={() => this.goToScreen("News")}>
-						<Text>News</Text>
+					<ListItem
+						style={styles.listItem}
+						button
+						onPress={() => this.goToScreen("News")}
+					>
+						<Text style={styles.drawerText}>News</Text>
 					</ListItem>
-					<ListItem button onPress={() => this.goToScreen("Settings")}>
-						<Text>Settings</Text>
+					<ListItem
+						style={styles.listItem}
+						button
+						onPress={() => this.goToScreen("MarketCap")}
+					>
+						<Text style={styles.drawerText}>Market Cap</Text>
+					</ListItem>
+					<ListItem
+						style={styles.listItem}
+						button
+						onPress={() => this.goToScreen("Settings")}
+					>
+						<Text style={styles.drawerText}>Settings</Text>
 					</ListItem>
 				</List>
 			</View>
 		);
 	}
 }
+
+const styles = StyleSheet.create({
+	mainDrawer: {
+		backgroundColor: "#393E46",
+		flex: 1
+	},
+	drawerText: {
+		color: "#f5f5f5",
+		textAlign: "right"
+	},
+	listItem: {
+		borderBottomWidth: 0
+	}
+});
