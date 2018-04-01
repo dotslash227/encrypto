@@ -114,12 +114,15 @@ class Info extends Component {
 		);
 		const curOneExName = curOneFilter[0].displayName;
 		// curTwo
-		if (curTwoData && curTwoData.length > 0) {
-			const curTwoRate = curTwoData[0];
-			const curTwoFilter = this.props.exchanges.filter(
+		let curTwoRate;
+		let curTwoExName;
+		if (selected.isComparing && curTwoData && curTwoData.length > 0) {
+			console.log({ curTwoRate: curTwoData[0] });
+			curTwoRate = curTwoData[0];
+			let curTwoFilter = this.props.exchanges.filter(
 				e => e.code === selected.exchangeTwo.toUpperCase()
 			);
-			const curTwoExName = curTwoFilter[0].displayName;
+			curTwoExName = curTwoFilter[0].displayName;
 		}
 		return (
 			<Grid style={styles.infoContainer}>
