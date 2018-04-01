@@ -128,7 +128,7 @@ export default class News extends Component {
 		}
 		return (
 			<Container>
-				<Header {...this.props} title="News" />
+				<Header {...this.props} title="News" hasTabs={true} />
 				<Content>{content}</Content>
 			</Container>
 		);
