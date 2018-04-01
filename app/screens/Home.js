@@ -69,6 +69,7 @@ export default class Home extends Component {
 	}
 
 	render() {
+		const graphRange = this.state.graph.range;
 		return (
 			<Container>
 				<Header {...this.props} />
@@ -81,13 +82,22 @@ export default class Home extends Component {
 				</Content>
 				<Footer>
 					<FooterTab>
-						<Button onPress={() => this.setGraphRange(1)}>
+						<Button
+							onPress={() => this.setGraphRange(1)}
+							active={graphRange === 1}
+						>
 							<Text>1D</Text>
 						</Button>
-						<Button>
+						<Button
+							onPress={() => this.setGraphRange(7)}
+							active={graphRange === 7}
+						>
 							<Text>1W</Text>
 						</Button>
-						<Button active>
+						<Button
+							onPress={() => this.setGraphRange(30)}
+							active={graphRange === 30}
+						>
 							<Text>30D</Text>
 						</Button>
 					</FooterTab>
