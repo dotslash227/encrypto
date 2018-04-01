@@ -36,7 +36,7 @@ export default class MarketCap extends Component {
 		})
 			.then(response => response.json())
 			.then(response => {
-				if (ticker && ticker.length > 0) {
+				if (response && response.length > 0) {
 					this.setState({ loading: false, ticker: response });
 				} else {
 					this.setState({ loading: false, error: "Something went wrong." });
