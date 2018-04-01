@@ -115,7 +115,7 @@ export class PickerHeader extends Component {
 		return (
 			<View>
 				<Grid style={styles.pickerOne}>
-					<Col>
+					<Col style={styles.pickerCol}>
 						<Button
 							transparent
 							dark
@@ -135,7 +135,7 @@ export class PickerHeader extends Component {
 							/>
 						</Button>
 					</Col>
-					<Col>
+					<Col style={styles.pickerCol}>
 						<Button
 							transparent
 							dark
@@ -203,7 +203,7 @@ export class PickerTwoContainer extends Component {
 		if (compareOn) {
 			viewContainer = (
 				<Grid style={styles.pickerTwoGrid}>
-					<Col>
+					<Col style={styles.pickerCol}>
 						<Button transparent dark iconRight>
 							<Text style={styles.pickerButton}>
 								{this.props.selected.currency}
@@ -211,7 +211,7 @@ export class PickerTwoContainer extends Component {
 							<Icon name="ios-arrow-down" style={styles.pickerButton} />
 						</Button>
 					</Col>
-					<Col>
+					<Col style={styles.pickerCol}>
 						<Button
 							transparent
 							dark
@@ -253,5 +253,9 @@ const styles = StyleSheet.create({
 	},
 	pickerButton: {
 		color: "#fff"
+	},
+	pickerCol: {
+		alignItems: "center",
+		justifyContent: "center"
 	}
 });

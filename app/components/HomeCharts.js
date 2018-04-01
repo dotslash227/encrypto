@@ -20,6 +20,7 @@ import {
 } from "victory-native";
 
 import config from "../config.json";
+import { formatRate } from "../utils/common";
 
 export default class HomeCharts extends Component {
 	constructor(props) {
@@ -58,7 +59,7 @@ export default class HomeCharts extends Component {
 
 	componentDidMount() {
 		const { selected } = this.props;
-		const { curOneData } = this.state;
+		const { curOneData, curTwoData } = this.state;
 		// Get For First Currency / Exchange
 		this.fetchCurData(selected.currency, selected.exchange, (err, data) => {
 			console.log({ err, data });
@@ -67,8 +68,8 @@ export default class HomeCharts extends Component {
 		});
 	}
 
-	componentWillReceiveProps(prevProps, nextProps) {
-		const { selected } = this.props;
+	componentWillReceiveProps(nextProps) {
+		const { selected } = nextProps;
 		const { curOneData, curTwoData } = this.state;
 		this.setState({ loading: true });
 		this.fetchCurData(selected.currency, selected.exchange, (err, data) => {
@@ -107,28 +108,37 @@ class Info extends Component {
 	render() {
 		const { selected, curOneData, curTwoData } = this.props;
 		const curOneRate = curOneData[0];
-		const curOneRateYesterday = curOneData[curOneData.length - 1];
-		let curOneFilter = this.props.exchanges.filter(
+		//const curOneRateYesterday = curOneData[curOneData.length - 1];
+		const curOneFilter = this.props.exchanges.filter(
 			e => e.code === selected.exchange.toUpperCase()
 		);
-		if (this.props.selected.isComparing) {
+		const curOneExName = curOneFilter[0].displayName;
+		// curTwo
+		if (curTwoData && curTwoData.length > 0) {
+			const curTwoRate = curTwoData[0];
+			const curTwoFilter = this.props.exchanges.filter(
+				e => e.code === selected.exchangeTwo.toUpperCase()
+			);
+			const curTwoExName = curTwoFilter[0].displayName;
 		}
 		return (
 			<Grid style={styles.infoContainer}>
 				<Col>
-					<Text style={styles.bigText}>{curOneRate.rate}</Text>
+					<Text style={styles.bigText}>
+						&#8377; {formatRate(curOneRate.rate)}
+					</Text>
 					<Text style={styles.smallText}>
 						{curOneRate.currencyCode}/INR Price
 					</Text>
-					<Text style={styles.smallText}>{curOneFilter[0].displayName}</Text>
+					<Text style={styles.smallText}>{curOneExName}</Text>
 				</Col>
-				{selected.isComparing ? (
+				{selected.isComparing && curTwoRate ? (
 					<Col>
-						<Text style={styles.bigText}>{curOneRate.rate}</Text>
+						<Text style={styles.bigText}>{formatRate(curTwoRate.rate)}</Text>
 						<Text style={styles.smallText}>
-							{curOneRate.currencyCode}/INR Price
+							{curTwoRate.currencyCode}/INR Price
 						</Text>
-						<Text style={styles.smallText}>{curOneFilter[0].displayName}</Text>
+						<Text style={styles.smallText}>{curTwoExName}</Text>
 					</Col>
 				) : (
 					<View />
