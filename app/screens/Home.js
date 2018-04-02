@@ -37,7 +37,7 @@ export default class Home extends Component {
 	}
 
 	componentDidMount() {
-		let containers = ["currencies", "availableCurrencies", "exchanges"];
+		let containers = ["availableCurrencies", "exchanges", "currencies"];
 		containers.forEach(container => {
 			storage
 				.load({
