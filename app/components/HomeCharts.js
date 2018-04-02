@@ -21,6 +21,7 @@ import {
 
 import config from "../config.json";
 import { formatRate } from "../utils/common";
+import moment from "moment";
 
 export default class HomeCharts extends Component {
 	constructor(props) {
@@ -89,13 +90,45 @@ export default class HomeCharts extends Component {
 		}
 		const sampleData = [{ x: 0, y: 2 }, { x: 1, y: 5 }];
 		const sampleData2 = [{ x: 0, y: 3 }, { x: 1, y: 10 }];
+		const chartData = curOneData.map(data => {
+			return {
+				x: parseInt(moment(data.created).format("hh")),
+				y: data.rate
+			};
+		});
+		let chartTwoData;
+		if (curTwoData && curTwoData.length > 0) {
+			chartTwoData = curTwoData.map(data => {
+				return {
+					x: parseInt(moment(data.created).format("hh")),
+					y: data.rate
+				};
+			});
+		}
+		console.log({ chartData });
 		return (
 			<View>
 				<Info {...this.props} {...this.state} />
 				<VictoryChart>
 					<VictoryStack theme={VictoryTheme.material}>
-						<VictoryArea name="area-1" data={sampleData} />
-						<VictoryArea name="area-2" data={sampleData2} />
+						<VictoryArea
+							name="area-1"
+							data={chartData}
+							style={{ data: { fill: "#375A7F" } }}
+						/>
+						{chartTwoData ? (
+							<VictoryArea
+								name="area-2"
+								data={chartTwoData}
+								style={{ data: { fill: "#FCFA70" } }}
+							/>
+						) : (
+							<VictoryArea
+								name="area-2"
+								data={chartData}
+								style={{ data: { fill: "#FCFA70" } }}
+							/>
+						)}
 					</VictoryStack>
 					<VictoryAxis crossAxis={true} />
 				</VictoryChart>
