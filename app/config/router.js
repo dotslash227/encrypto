@@ -28,7 +28,7 @@ export default DrawerNavigator(
 		MarketCap: { screen: MarketCapScreen }
 	},
 	{
-		initialRouteName: "Home",
+		initialRouteName: "Intro",
 		navigationOptions: {
 			header: null
 		},
