@@ -10,7 +10,7 @@ export default class PortfolioValue extends Component {
 				<Grid>
 					<Col>
 						<Text style={styles.smallText}>Total Portfolio Value</Text>
-						<Text style={styles.largeText}>{this.props.value}</Text>
+						<Text style={styles.largeText}>&#8377; {this.props.value}</Text>
 					</Col>
 					<Col>
 						<Text style={[styles.rightAligned, styles.smallText]}>
@@ -28,14 +28,18 @@ export default class PortfolioValue extends Component {
 
 const styles = StyleSheet.create({
 	container: {
-		padding: 10
+		padding: 20,
+		backgroundColor: "#032A33"
 	},
 	smallText: {
 		//lineHeight: 1
-		fontSize: 14
+		fontSize: 14,
+		color: "#fff"
 	},
 	largeText: {
-		fontSize: 20
+		fontSize: 20,
+		color: "#fff",
+		paddingTop: 10
 	},
 	rightAligned: {
 		textAlign: "right"

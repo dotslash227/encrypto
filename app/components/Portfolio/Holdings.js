@@ -11,17 +11,16 @@ class SingleHolding extends Component {
 					<Col style={styles.currencyIconContainer}>
 						<Image
 							source={{
-								uri:
-									"https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/32/color/btc.png"
+								uri: `https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/32/color/${this.props.coin.toLowerCase()}.png`
 							}}
 							style={styles.currencyIcon}
 						/>
 					</Col>
 					<Col style={styles.center}>
-						<Text>123</Text>
+						<Text>Zebpay</Text>
 					</Col>
 					<Col style={styles.center}>
-						<Text>INR 20</Text>
+						<Text>&#8377; 200</Text>
 					</Col>
 				</Grid>
 			</View>
@@ -33,9 +32,9 @@ export default class Holdings extends Component {
 	render() {
 		return (
 			<View style={styles.container}>
-				<SingleHolding />
-				<SingleHolding />
-				<SingleHolding />
+				<SingleHolding coin="BTC" />
+				<SingleHolding coin="LTC" />
+				<SingleHolding coin="XRP" />
 			</View>
 		);
 	}

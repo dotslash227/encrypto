@@ -1,6 +1,13 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
-import { Container, Content } from "native-base";
+import { View } from "react-native";
+import {
+	Container,
+	Content,
+	Footer,
+	FooterTab,
+	Button,
+	Text
+} from "native-base";
 
 // Components:
 import Header from "../../components/Header";
@@ -11,7 +18,7 @@ export default class Portfolio extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			value: "0 INR",
+			value: 600,
 			change: "0%",
 			portfolio: []
 		};
@@ -25,6 +32,13 @@ export default class Portfolio extends Component {
 					<Value value={this.state.value} change={this.state.change} />
 					<Holdings portfolio={this.state.portfolio} />
 				</Content>
+				<Footer>
+					<FooterTab>
+						<Button full>
+							<Text>Add</Text>
+						</Button>
+					</FooterTab>
+				</Footer>
 			</Container>
 		);
 	}
