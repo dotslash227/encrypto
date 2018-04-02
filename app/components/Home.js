@@ -149,6 +149,7 @@ export class PickerHeader extends Component {
 								onSelect={this.exchangePickerSelect}
 								onCancel={this.exchangePickerCancel}
 								options={PickerOptionsExchanges}
+								onRequestClose={this.exchangePickerCancel}
 							/>
 						</Button>
 					</Col>
@@ -225,6 +226,7 @@ export class PickerTwoContainer extends Component {
 								onSelect={this.props.exchangePickerTwoSelect}
 								onCancel={this.props.exchangePickerTwoCancel}
 								options={this.props.PickerOptionsExchanges}
+								onRequestClose={this.exchangePickerTwoCancel}
 							/>
 						</Button>
 					</Col>

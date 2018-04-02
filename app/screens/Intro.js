@@ -72,7 +72,14 @@ export default class Intro extends Component {
 					this.props.navigation.navigate("Home");
 				}
 			})
-			.catch(e => console.log(e));
+			.catch(e => {
+				// Not found
+				this.setState({ loading: false });
+				console.log({ e });
+			});
+		/* .catch(e => {
+				console.log({ e });
+			}); */
 	}
 
 	markAsSeen = () => {
