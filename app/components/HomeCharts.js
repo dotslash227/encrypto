@@ -170,7 +170,9 @@ class Info extends Component {
 				</Col>
 				{selected.isComparing && curTwoRate ? (
 					<Col>
-						<Text style={styles.bigText}>{formatRate(curTwoRate.rate)}</Text>
+						<Text style={styles.bigText}>
+							&#8377; {formatRate(curTwoRate.rate)}
+						</Text>
 						<Text style={styles.smallText}>
 							{curTwoRate.currencyCode}/INR Price
 						</Text>

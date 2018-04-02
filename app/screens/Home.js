@@ -30,7 +30,7 @@ export default class Home extends Component {
 				isComparing: false
 			},
 			graph: {
-				range: 30 //Days
+				range: 1 //Days
 			}
 		};
 		this.changeSelection = this.changeSelection.bind(this);
