@@ -39,7 +39,9 @@ export default class HomeCharts extends Component {
 		fetch(
 			`${
 				config.api.base
-			}/api/rates/exchange/currency?exchangeCode=${exCode.toUpperCase()}&currencyCode=${curCode.toUpperCase()}`,
+			}/api/rates/exchange/currency?exchangeCode=${exCode.toUpperCase()}&currencyCode=${curCode.toUpperCase()}&range=${
+				this.props.graph.range
+			}`,
 			{
 				method: "GET",
 				headers: {
@@ -95,15 +97,15 @@ export default class HomeCharts extends Component {
 		const chartData = curOneData.map(data => {
 			return {
 				x: parseInt(moment(data.created).format("H")),
-				y: data.rate
+				y: data.buy
 			};
 		});
 		let chartTwoData;
 		if (curTwoData && curTwoData.length > 0) {
 			chartTwoData = curTwoData.map(data => {
 				return {
-					x: parseInt(moment(data.created).format("hh")),
-					y: data.rate
+					x: parseInt(moment(data.created).format("H")),
+					y: data.buy
 				};
 			});
 		}
