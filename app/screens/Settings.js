@@ -15,9 +15,41 @@ import {
 } from "native-base";
 
 import config from "../config.json";
+import { logoutUser } from "../utils/common";
+import { NavigationActions } from "react-navigation";
 
 export default class Settings extends Component {
+	logout() {
+		logoutUser(() => {
+			//alert("Logged Out");
+			const resetAction = NavigationActions.reset({
+				index: 0,
+				actions: [NavigationActions.navigate({ routeName: "Home" })]
+			});
+			this.props.navigation.dispatch(resetAction);
+			this.props.navigation.navigate("Home");
+		});
+	}
+
 	render() {
+		const { params } = this.props.navigation.state;
+
+		let logoutButton = <View />;
+		if (params.loggedIn) {
+			logoutButton = (
+				<List style={styles.singleList}>
+					<ListItem icon onPress={() => this.logout()}>
+						<Body>
+							<Text>Logout</Text>
+						</Body>
+						<Right>
+							<Icon name="arrow-forward" />
+						</Right>
+					</ListItem>
+				</List>
+			);
+		}
+
 		return (
 			<Container>
 				<Header {...this.props} title="Settings" />
@@ -56,6 +88,8 @@ export default class Settings extends Component {
 							</Body>
 						</ListItem>
 					</List>
+
+					{logoutButton}
 				</Content>
 			</Container>
 		);

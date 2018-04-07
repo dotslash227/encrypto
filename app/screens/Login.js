@@ -17,6 +17,12 @@ import {
 } from "native-base";
 
 import config from "../config.json";
+import { loginUser } from "../utils/common";
+
+import { NavigationActions } from "react-navigation";
+
+// Facebook
+import { LoginManager, AccessToken } from "react-native-fbsdk";
 
 class LoginHeader extends Component {
 	render() {
@@ -42,7 +48,66 @@ class LoginHeader extends Component {
 export default class Login extends Component {
 	login(source) {
 		console.log({ source });
+		if (source === "facebook") this.loginFacebook();
 	}
+
+	sendToHome() {
+		const resetAction = NavigationActions.reset({
+			index: 0,
+			actions: [NavigationActions.navigate({ routeName: "Home" })]
+		});
+		this.props.navigation.dispatch(resetAction);
+		this.props.navigation.navigate("Home");
+	}
+
+	loginFacebook() {
+		var main = this;
+		LoginManager.logInWithReadPermissions(["public_profile", "email"]).then(
+			function(result) {
+				if (result.isCancelled) {
+					console.log("Modal cancelled");
+				} else {
+					AccessToken.getCurrentAccessToken().then(data => {
+						const accessToken = data.accessToken.toString();
+						fetch(
+							`${
+								config.api.base
+							}/api/auth/facebook?accesstoken=${accessToken}`,
+							{
+								method: "GET",
+								headers: {
+									Accept: "application/json",
+									"Content-Type": "application/json"
+								}
+							}
+						)
+							.then(response => response.json())
+							.then(response => {
+								if (response.success) {
+									loginUser(
+										{
+											userId: response.user.id,
+											name: response.user.name
+										},
+										() => {
+											main.sendToHome();
+										}
+									);
+								} else {
+									console.log("Not success true", response);
+									alert("Something went wrong");
+								}
+							});
+					});
+				}
+			},
+			function(error) {
+				console.log("Login fail with error: " + error);
+				alert("Something went wrong");
+			}
+		);
+	}
+
 	render() {
 		return (
 			<Container>

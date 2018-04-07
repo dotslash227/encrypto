@@ -33,3 +33,27 @@ export function getLocalUser(callback) {
 			return callback(e, null);
 		});
 }
+
+export function loginUser({ userId, name }, callback) {
+	storage
+		.save({
+			key: "user",
+			data: {
+				userId,
+				name
+			}
+		})
+		.then(r => {
+			return callback();
+		});
+}
+
+export function logoutUser(callback) {
+	storage
+		.remove({
+			key: "user"
+		})
+		.then(r => {
+			return callback();
+		});
+}

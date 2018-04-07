@@ -43,6 +43,7 @@ export default class DrawerContent extends Component {
 				this.setState({ loggedIn: true, user });
 			} else {
 				console.log("User is not logged in");
+				this.setState({ loggedIn: false, user: null });
 			}
 		});
 	}
