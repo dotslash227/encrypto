@@ -39,12 +39,15 @@ export class PickerHeader extends Component {
 		// Exchanges
 		const PickerOptionsExchanges = [];
 		nextProps.exchanges.forEach(exchange => {
-			PickerOptionsExchanges.push({
-				key: exchange.code,
-				label: exchange.displayName
-			});
+			if (exchange.currencies.indexOf(nextProps.selected.currency) > -1) {
+				PickerOptionsExchanges.push({
+					key: exchange.code,
+					label: exchange.displayName
+				});
+			}
 		});
-		console.log({ PickerOptionsExchanges: nextProps.exchanges });
+		//this.exchangePickerSelect(PickerOptionsExchanges[0].key);
+		console.log({ PickerOptionsExchanges: PickerOptionsExchanges });
 		this.setState({ PickerOptionsExchanges });
 	}
 
@@ -73,9 +76,19 @@ export class PickerHeader extends Component {
 		this.setState({ currencyPickerVisible: toggle });
 	}
 	currencyPickerSelect(selected) {
+		// Set selected currency
 		let selectedProps = JSON.parse(JSON.stringify(this.props.selected));
 		selectedProps.currency = selected;
 		selectedProps.isComparing = false;
+
+		// Set Exchange(s) to be a valid currency
+		const filt = this.props.exchanges.filter(e => {
+			if (e.currencies.indexOf(selected) > -1) return e;
+		});
+		if (filt.length > 0) selectedProps.exchange = filt[0].code;
+		if (filt.length > 1) selectedProps.exchangeTwo = filt[1].code;
+		else if (filt.length > 0) selectedProps.exchangeTwo = filt[0].code;
+
 		this.props.changeSelection({ selected: selectedProps });
 		this.setState({ currencyPickerVisible: false });
 	}

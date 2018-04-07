@@ -94,7 +94,7 @@ export default class HomeCharts extends Component {
 	render() {
 		const { loading, error, curOneData, curTwoData } = this.state;
 		const { selected } = this.props;
-		if (loading) {
+		if (loading || !curOneData) {
 			return <Spinner />;
 		}
 		const sampleData = [{ x: 0, y: 2 }, { x: 1, y: 5 }];
