@@ -16,7 +16,8 @@ import {
 	VictoryArea,
 	VictoryAxis,
 	VictoryTheme,
-	VictoryStack
+	VictoryStack,
+	VictoryLine
 } from "victory-native";
 
 import config from "../config.json";
@@ -85,6 +86,7 @@ export default class HomeCharts extends Component {
 
 	render() {
 		const { loading, error, curOneData, curTwoData } = this.state;
+		const { selected } = this.props;
 		if (loading) {
 			return <Spinner />;
 		}
@@ -92,7 +94,7 @@ export default class HomeCharts extends Component {
 		const sampleData2 = [{ x: 0, y: 3 }, { x: 1, y: 10 }];
 		const chartData = curOneData.map(data => {
 			return {
-				x: parseInt(moment(data.created).format("hh")),
+				x: parseInt(moment(data.created).format("H")),
 				y: data.rate
 			};
 		});
@@ -105,33 +107,39 @@ export default class HomeCharts extends Component {
 				};
 			});
 		}
-		console.log({ chartData });
+		console.log({ chartData, chartTwoData });
 		return (
 			<View>
 				<Info {...this.props} {...this.state} />
-				<VictoryChart>
-					<VictoryStack theme={VictoryTheme.material}>
-						<VictoryArea
-							name="area-1"
-							data={chartData}
-							style={{ data: { fill: "#375A7F" } }}
-						/>
-						{chartTwoData ? (
-							<VictoryArea
-								name="area-2"
-								data={chartTwoData}
-								style={{ data: { fill: "#FCFA70" } }}
-							/>
-						) : (
-							<VictoryArea
-								name="area-2"
+				<View style={styles.chartContainer}>
+					{selected.isComparing ? (
+						<VictoryChart>
+							<VictoryLine
 								data={chartData}
-								style={{ data: { fill: "#FCFA70" } }}
+								style={{
+									data: { stroke: "#375A7F", fillOpacity: 0, strokeWidth: 5 }
+								}}
 							/>
-						)}
-					</VictoryStack>
-					<VictoryAxis crossAxis={true} />
-				</VictoryChart>
+							<VictoryLine
+								data={chartTwoData}
+								style={{
+									data: { stroke: "#FCFA70", fillOpacity: 0, strokeWidth: 5 }
+								}}
+							/>
+						</VictoryChart>
+					) : (
+						<VictoryChart>
+							<VictoryLine
+								data={chartData}
+								style={{
+									data: { stroke: "#375A7F", fillOpacity: 0, strokeWidth: 5 }
+								}}
+								scale={{ x: "linear", y: "linear" }}
+							/>
+						</VictoryChart>
+					)}
+				</View>
+				{/* <VictoryAxis crossAxis={false} /> */}
 			</View>
 		);
 	}
@@ -197,5 +205,8 @@ const styles = StyleSheet.create({
 	smallText: {
 		fontSize: 14,
 		textAlign: "center"
+	},
+	chartContainer: {
+		padding: 20
 	}
 });

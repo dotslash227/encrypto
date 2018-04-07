@@ -70,6 +70,7 @@ export class PickerHeader extends Component {
 	currencyPickerSelect(selected) {
 		let selectedProps = JSON.parse(JSON.stringify(this.props.selected));
 		selectedProps.currency = selected;
+		selectedProps.isComparing = false;
 		this.props.changeSelection({ selected: selectedProps });
 		this.setState({ currencyPickerVisible: false });
 	}
@@ -199,9 +200,9 @@ export class PickerTwoContainer extends Component {
 	}
 
 	render() {
-		const { compareOn } = this.state;
+		const { selected } = this.props;
 		let viewContainer;
-		if (compareOn) {
+		if (selected.isComparing) {
 			viewContainer = (
 				<Grid style={styles.pickerTwoGrid}>
 					<Col style={styles.pickerCol}>

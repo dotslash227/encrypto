@@ -12,7 +12,8 @@ import {
 	Container,
 	Footer,
 	FooterTab,
-	Button
+	Button,
+	Spinner
 } from "native-base";
 import { Col, Row, Grid } from "react-native-easy-grid";
 
@@ -20,6 +21,7 @@ export default class Home extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			homeLoading: true,
 			availableCurrencies: [],
 			exchanges: [],
 			currencies: {},
@@ -50,6 +52,7 @@ export default class Home extends Component {
 					stateChange[container] = ret;
 					console.log(stateChange);
 					this.setState(stateChange);
+					this.setState({ homeLoading: false });
 					console.log(this.state);
 				})
 				.catch(e => console.log(e));
@@ -69,7 +72,9 @@ export default class Home extends Component {
 	}
 
 	render() {
+		const { homeLoading } = this.state;
 		const graphRange = this.state.graph.range;
+		if (homeLoading) return <Spinner />;
 		return (
 			<Container>
 				<Header {...this.props} />
