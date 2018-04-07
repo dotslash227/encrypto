@@ -23,7 +23,11 @@ class LoginHeader extends Component {
 		return (
 			<Header style={styles.loginHeader} hasTabs>
 				<Right>
-					<Button transparent large>
+					<Button
+						transparent
+						large
+						onPress={() => this.props.navigation.goBack()}
+					>
 						<Icon
 							style={{ color: "#333", fontSize: 40 }}
 							name="md-close"
@@ -42,7 +46,7 @@ export default class Login extends Component {
 	render() {
 		return (
 			<Container>
-				<LoginHeader />
+				<LoginHeader {...this.props} />
 				<Content style={styles.content}>
 					<H1 style={[styles.h1, styles.textCenter]}>Login</H1>
 					<H3 style={[styles.h3, styles.textCenter]}>

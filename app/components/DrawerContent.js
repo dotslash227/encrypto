@@ -4,10 +4,49 @@ import { List, ListItem, Text, Body, Right, Icon } from "native-base";
 
 import config from "../config.json";
 
+import { getLocalUser } from "../utils/common";
+
 export default class DrawerContent extends Component {
-	goToScreen(screenName) {
-		this.props.navigation.navigate(screenName);
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			loggedIn: false,
+			user: null
+		};
 	}
+
+	goToScreen(screenName) {
+		const { loggedIn, user } = this.state;
+		const nonAuthScreens = [
+			"Home",
+			"Settings",
+			"MarketCap",
+			"News",
+			"Events"
+		];
+		if (nonAuthScreens.indexOf(screenName) > -1) {
+			this.props.navigation.navigate(screenName, { loggedIn, user });
+		} else if (loggedIn) {
+			// User is logged in, let them pass
+			this.props.navigation.navigate(screenName, { loggedIn, user });
+		} else {
+			// User is not logged in, send them to Login
+			this.props.navigation.navigate("Login", { loggedIn, user });
+		}
+	}
+
+	componentDidMount() {
+		getLocalUser((err, user) => {
+			if (user) {
+				console.log("User is logged in");
+				this.setState({ loggedIn: true, user });
+			} else {
+				console.log("User is not logged in");
+			}
+		});
+	}
+
 	render() {
 		return (
 			<View style={styles.mainDrawer}>

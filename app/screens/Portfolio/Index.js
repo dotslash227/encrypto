@@ -24,12 +24,17 @@ export default class Portfolio extends Component {
 		};
 	}
 
+	componentWillMount() {}
+
 	render() {
 		return (
 			<Container>
 				<Header {...this.props} title="Portfolio" />
 				<Content>
-					<Value value={this.state.value} change={this.state.change} />
+					<Value
+						value={this.state.value}
+						change={this.state.change}
+					/>
 					<Holdings portfolio={this.state.portfolio} />
 				</Content>
 				<Footer>
