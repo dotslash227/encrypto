@@ -14,6 +14,8 @@ import {
 	Switch
 } from "native-base";
 
+import config from "../config.json";
+
 export default class Settings extends Component {
 	render() {
 		return (
@@ -50,7 +52,7 @@ export default class Settings extends Component {
 						</ListItem>
 						<ListItem icon>
 							<Body>
-								<Text>v1.0</Text>
+								<Text>{config.displayVersion}</Text>
 							</Body>
 						</ListItem>
 					</List>

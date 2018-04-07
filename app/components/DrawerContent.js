@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { View, Image, StyleSheet } from "react-native";
 import { List, ListItem, Text, Body, Right, Icon } from "native-base";
 
+import config from "../config.json";
+
 export default class DrawerContent extends Component {
 	goToScreen(screenName) {
 		this.props.navigation.navigate(screenName);
@@ -70,7 +72,9 @@ export default class DrawerContent extends Component {
 						icon
 					>
 						<Body style={styles.removeBorder}>
-							<Text style={styles.drawerText}>Market Capital</Text>
+							<Text style={styles.drawerText}>
+								Market Capital
+							</Text>
 						</Body>
 						<Right style={styles.removeBorder}>
 							<Icon name="arrow-forward" />
@@ -96,7 +100,9 @@ export default class DrawerContent extends Component {
 						icon
 					>
 						<Body style={styles.removeBorder}>
-							<Text style={styles.drawerText}>Blockchain Events</Text>
+							<Text style={styles.drawerText}>
+								Blockchain Events
+							</Text>
 						</Body>
 						<Right style={styles.removeBorder}>
 							<Icon name="arrow-forward" />
@@ -118,6 +124,12 @@ export default class DrawerContent extends Component {
 						</Right>
 					</ListItem>
 				</List>
+
+				<View style={styles.drawerFooter}>
+					<Text style={styles.drawerFooterText}>
+						{config.displayVersion}
+					</Text>
+				</View>
 			</View>
 		);
 	}
@@ -142,5 +154,10 @@ const styles = StyleSheet.create({
 	},
 	removeBorder: {
 		borderBottomWidth: 0
+	},
+	drawerFooter: {},
+	drawerFooterText: {
+		textAlign: "center",
+		color: "#fff"
 	}
 });
