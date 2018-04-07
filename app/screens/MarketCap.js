@@ -16,6 +16,8 @@ import {
 	Thumbnail
 } from "native-base";
 
+import config from "../config.json";
+
 export default class MarketCap extends Component {
 	constructor(props) {
 		super(props);
@@ -27,7 +29,7 @@ export default class MarketCap extends Component {
 	}
 
 	componentDidMount() {
-		fetch("https://api.coinmarketcap.com/v1/ticker/?convert=INR&limit=40", {
+		fetch(`${config.api.base}/api/data/marketcap`, {
 			method: "GET",
 			headers: {
 				Accept: "application/json",
@@ -39,12 +41,18 @@ export default class MarketCap extends Component {
 				if (response && response.length > 0) {
 					this.setState({ loading: false, ticker: response });
 				} else {
-					this.setState({ loading: false, error: "Something went wrong." });
+					this.setState({
+						loading: false,
+						error: "Something went wrong."
+					});
 				}
 			})
 			.catch(e => {
 				console.log(e);
-				this.setState({ loading: false, error: "Something went wrong." });
+				this.setState({
+					loading: false,
+					error: "Something went wrong."
+				});
 			});
 	}
 
