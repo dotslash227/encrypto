@@ -44,8 +44,8 @@ export default class Home extends Component {
 			storage
 				.load({
 					key: container,
-					autoSync: true,
-					syncInBackground: true
+					autoSync: true
+					//syncInBackground: true
 				})
 				.then(ret => {
 					var stateChange = {};

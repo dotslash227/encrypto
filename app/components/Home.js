@@ -25,7 +25,6 @@ export class PickerHeader extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		console.log({ EXCHANGES: nextProps.exchanges });
 		// Pre-fill pickerOne / picker
 		// Currencies
 		const PickerOptionsCurrencies = [];
@@ -56,10 +55,16 @@ export class PickerHeader extends Component {
 		);
 		//console.log(exchange);
 		if (exchange.length > 0)
-			return <Text style={styles.pickerButton}>{exchange[0].displayName}</Text>;
+			return (
+				<Text style={styles.pickerButton}>
+					{exchange[0].displayName}
+				</Text>
+			);
 		else
 			return (
-				<Text style={styles.pickerButton}>{this.props.selected.exchange}</Text>
+				<Text style={styles.pickerButton}>
+					{this.props.selected.exchange}
+				</Text>
 			);
 	}
 
@@ -126,7 +131,10 @@ export class PickerHeader extends Component {
 							<Text style={styles.pickerButton}>
 								{this.props.selected.currency}
 							</Text>
-							<Icon name="ios-arrow-down" style={styles.pickerButton} />
+							<Icon
+								name="ios-arrow-down"
+								style={styles.pickerButton}
+							/>
 							<ModalFilterPicker
 								visible={currencyPickerVisible}
 								onSelect={this.currencyPickerSelect}
@@ -144,7 +152,10 @@ export class PickerHeader extends Component {
 							onPress={() => this.exchangePickerToggle(true)}
 						>
 							{this.getExchange()}
-							<Icon name="ios-arrow-down" style={styles.pickerButton} />
+							<Icon
+								name="ios-arrow-down"
+								style={styles.pickerButton}
+							/>
 							<ModalFilterPicker
 								visible={exchangePickerVisible}
 								onSelect={this.exchangePickerSelect}
@@ -192,10 +203,16 @@ export class PickerTwoContainer extends Component {
 		);
 		//console.log(exchange);
 		if (exchange.length > 0)
-			return <Text style={styles.pickerButton}>{exchange[0].displayName}</Text>;
+			return (
+				<Text style={styles.pickerButton}>
+					{exchange[0].displayName}
+				</Text>
+			);
 		else
 			return (
-				<Text style={styles.pickerButton}>{this.props.selected.exchange}</Text>
+				<Text style={styles.pickerButton}>
+					{this.props.selected.exchange}
+				</Text>
 			);
 	}
 
@@ -210,7 +227,10 @@ export class PickerTwoContainer extends Component {
 							<Text style={styles.pickerButton}>
 								{this.props.selected.currency}
 							</Text>
-							<Icon name="ios-arrow-down" style={styles.pickerButton} />
+							<Icon
+								name="ios-arrow-down"
+								style={styles.pickerButton}
+							/>
 						</Button>
 					</Col>
 					<Col style={styles.pickerCol}>
@@ -218,10 +238,15 @@ export class PickerTwoContainer extends Component {
 							transparent
 							dark
 							iconRight
-							onPress={() => this.props.exchangePickerTwoToggle(true)}
+							onPress={() =>
+								this.props.exchangePickerTwoToggle(true)
+							}
 						>
 							{this.getExchange()}
-							<Icon name="ios-arrow-down" style={styles.pickerButton} />
+							<Icon
+								name="ios-arrow-down"
+								style={styles.pickerButton}
+							/>
 							<ModalFilterPicker
 								visible={this.props.exchangePickerTwoVisible}
 								onSelect={this.props.exchangePickerTwoSelect}

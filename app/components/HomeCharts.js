@@ -39,7 +39,7 @@ export default class HomeCharts extends Component {
 		fetch(
 			`${
 				config.api.base
-			}/api/rates/exchange/currency?exchangeCode=${exCode.toUpperCase()}&currencyCode=${curCode.toUpperCase()}&range=${
+			}/api/rates/graph?exchangeCode=${exCode.toUpperCase()}&currencyCode=${curCode.toUpperCase()}&type=${
 				this.props.graph.range
 			}`,
 			{
@@ -52,7 +52,8 @@ export default class HomeCharts extends Component {
 		)
 			.then(response => response.json())
 			.then(response => {
-				if (response && response.success) return callback(null, response);
+				if (response && response.success)
+					return callback(null, response);
 				else return callback("Something Went Wrong", null);
 			})
 			.catch(e => {
@@ -80,10 +81,14 @@ export default class HomeCharts extends Component {
 			if (err) this.setState({ loading: false, error: err });
 			else this.setState({ loading: false, curOneData: data.rates });
 		});
-		this.fetchCurData(selected.currency, selected.exchangeTwo, (err, data) => {
-			if (err) this.setState({ loading: false, error: err });
-			else this.setState({ loading: false, curTwoData: data.rates });
-		});
+		this.fetchCurData(
+			selected.currency,
+			selected.exchangeTwo,
+			(err, data) => {
+				if (err) this.setState({ loading: false, error: err });
+				else this.setState({ loading: false, curTwoData: data.rates });
+			}
+		);
 	}
 
 	render() {
@@ -101,7 +106,7 @@ export default class HomeCharts extends Component {
 			};
 		});
 		let chartTwoData;
-		if (curTwoData && curTwoData.length > 0) {
+		if (selected.isComparing && curTwoData && curTwoData.length > 0) {
 			chartTwoData = curTwoData.map(data => {
 				return {
 					x: parseInt(moment(data.created).format("H")),
@@ -119,13 +124,21 @@ export default class HomeCharts extends Component {
 							<VictoryLine
 								data={chartData}
 								style={{
-									data: { stroke: "#375A7F", fillOpacity: 0, strokeWidth: 5 }
+									data: {
+										stroke: "#375A7F",
+										fillOpacity: 0,
+										strokeWidth: 5
+									}
 								}}
 							/>
 							<VictoryLine
 								data={chartTwoData}
 								style={{
-									data: { stroke: "#FCFA70", fillOpacity: 0, strokeWidth: 5 }
+									data: {
+										stroke: "#FCFA70",
+										fillOpacity: 0,
+										strokeWidth: 5
+									}
 								}}
 							/>
 						</VictoryChart>
@@ -134,7 +147,11 @@ export default class HomeCharts extends Component {
 							<VictoryLine
 								data={chartData}
 								style={{
-									data: { stroke: "#375A7F", fillOpacity: 0, strokeWidth: 5 }
+									data: {
+										stroke: "#375A7F",
+										fillOpacity: 0,
+										strokeWidth: 5
+									}
 								}}
 								scale={{ x: "linear", y: "linear" }}
 							/>
