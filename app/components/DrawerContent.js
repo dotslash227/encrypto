@@ -50,13 +50,13 @@ export default class DrawerContent extends Component {
 					>
 						<Text style={styles.drawerText}>Market Cap</Text>
 					</ListItem>
-					{/* <ListItem
+					<ListItem
 						style={styles.listItem}
 						button
 						onPress={() => this.goToScreen("Settings")}
 					>
 						<Text style={styles.drawerText}>Settings</Text>
-				</ListItem> */}
+					</ListItem>
 				</List>
 			</View>
 		);
