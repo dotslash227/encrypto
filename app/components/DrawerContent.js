@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View, Image, StyleSheet } from "react-native";
-import { List, ListItem, Text } from "native-base";
+import { List, ListItem, Text, Body, Right, Icon } from "native-base";
 
 export default class DrawerContent extends Component {
 	goToScreen(screenName) {
@@ -21,41 +21,101 @@ export default class DrawerContent extends Component {
 						alignItems: "center"
 					}}
 				/>
-				<List>
+				<List style={styles.menuGroup}>
 					<ListItem
 						style={styles.listItem}
 						button
 						onPress={() => this.goToScreen("Home")}
+						icon
 					>
-						<Text style={styles.drawerText}>Home</Text>
+						<Body style={styles.removeBorder}>
+							<Text style={styles.drawerText}>Home</Text>
+						</Body>
+						<Right style={styles.removeBorder}>
+							<Icon name="arrow-forward" />
+						</Right>
+					</ListItem>
+				</List>
+				<List style={styles.menuGroup}>
+					<ListItem
+						style={styles.listItem}
+						button
+						onPress={() => this.goToScreen("Portfolio")}
+						icon
+					>
+						<Body style={styles.removeBorder}>
+							<Text style={styles.drawerText}>Portfolio</Text>
+						</Body>
+						<Right style={styles.removeBorder}>
+							<Icon name="arrow-forward" />
+						</Right>
 					</ListItem>
 					<ListItem
 						style={styles.listItem}
 						button
 						onPress={() => this.goToScreen("Portfolio")}
+						icon
 					>
-						<Text style={styles.drawerText}>Portfolio</Text>
-					</ListItem>
-					<ListItem
-						style={styles.listItem}
-						button
-						onPress={() => this.goToScreen("News")}
-					>
-						<Text style={styles.drawerText}>News</Text>
+						<Body style={styles.removeBorder}>
+							<Text style={styles.drawerText}>Watchlist</Text>
+						</Body>
+						<Right style={styles.removeBorder}>
+							<Icon name="arrow-forward" />
+						</Right>
 					</ListItem>
 					<ListItem
 						style={styles.listItem}
 						button
 						onPress={() => this.goToScreen("MarketCap")}
+						icon
 					>
-						<Text style={styles.drawerText}>Market Cap</Text>
+						<Body style={styles.removeBorder}>
+							<Text style={styles.drawerText}>Market Capital</Text>
+						</Body>
+						<Right style={styles.removeBorder}>
+							<Icon name="arrow-forward" />
+						</Right>
 					</ListItem>
 					<ListItem
 						style={styles.listItem}
 						button
-						onPress={() => this.goToScreen("Settings")}
+						onPress={() => this.goToScreen("News")}
+						icon
 					>
-						<Text style={styles.drawerText}>Settings</Text>
+						<Body style={styles.removeBorder}>
+							<Text style={styles.drawerText}>News</Text>
+						</Body>
+						<Right style={styles.removeBorder}>
+							<Icon name="arrow-forward" />
+						</Right>
+					</ListItem>
+					<ListItem
+						style={styles.listItem}
+						button
+						onPress={() => this.goToScreen("News")}
+						icon
+					>
+						<Body style={styles.removeBorder}>
+							<Text style={styles.drawerText}>Blockchain Events</Text>
+						</Body>
+						<Right style={styles.removeBorder}>
+							<Icon name="arrow-forward" />
+						</Right>
+					</ListItem>
+				</List>
+				<List style={styles.menuGroup}>
+					<ListItem
+						style={styles.listItem}
+						button
+						onPress={() => this.goToScreen("Settings")}
+						icon
+					>
+						<Body style={styles.removeBorder}>
+							<Text style={styles.drawerText}>Settings</Text>
+						</Body>
+						<Right style={styles.removeBorder}>
+							<Icon name="arrow-forward" />
+						</Right>
 					</ListItem>
 				</List>
 			</View>
@@ -70,9 +130,17 @@ const styles = StyleSheet.create({
 	},
 	drawerText: {
 		color: "#f5f5f5",
-		textAlign: "right"
+		textAlign: "left"
 	},
 	listItem: {
+		borderBottomWidth: 0
+	},
+	menuGroup: {
+		backgroundColor: "#222831",
+		marginBottom: 10,
+		borderBottomWidth: 0
+	},
+	removeBorder: {
 		borderBottomWidth: 0
 	}
 });
