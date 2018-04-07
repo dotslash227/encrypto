@@ -16,27 +16,6 @@ import {
 import Header from "../components/Header";
 import moment from "moment";
 
-const samplePosts = [
-	{
-		title: "Hello, World!",
-		source: "TechCrunch",
-		url: "https://wirdd.in",
-		time: "2018-03-01T19:39:37.567Z"
-	},
-	{
-		title: "Hello, World!",
-		source: "TechCrunch",
-		url: "https://wirdd.in",
-		time: "2018-03-01T19:39:37.567Z"
-	},
-	{
-		title: "Hello, World!",
-		source: "TechCrunch",
-		url: "https://wirdd.in",
-		time: "2018-03-01T19:39:37.567Z"
-	}
-];
-
 class SinglePost extends Component {
 	render() {
 		return (
@@ -130,15 +109,8 @@ export default class News extends Component {
 		}
 		return (
 			<Container>
-				<Header {...this.props} title="News" hasTabs={true} />
-				<Tabs initialPage={0}>
-					<Tab heading="News">
-						<Content>{content}</Content>
-					</Tab>
-					<Tab heading="Events">
-						<Content>{content}</Content>
-					</Tab>
-				</Tabs>
+				<Header {...this.props} title="News" />
+				<Content>{content}</Content>
 			</Container>
 		);
 	}
