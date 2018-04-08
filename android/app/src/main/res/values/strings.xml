@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">EncryptoApp</string>
     <string name="facebook_app_id">401089636983102</string>
+    <string name="ak_client_token">02a4d48efe0f558c0cd1489dd2fb210d</string>
 </resources>
