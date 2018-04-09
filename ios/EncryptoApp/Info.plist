@@ -26,6 +26,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>fb401089636983102</string>
+        <string>ak401089636983102</string>
 			</array>
 		</dict>
 	</array>
@@ -35,6 +36,8 @@
 	<string>401089636983102</string>
 	<key>FacebookDisplayName</key>
 	<string>Encrypto</string>
+  <key>AccountKitClientToken</key>
+  <string>02a4d48efe0f558c0cd1489dd2fb210d</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
