@@ -24,6 +24,9 @@ import { NavigationActions } from "react-navigation";
 // Facebook
 import { LoginManager, AccessToken } from "react-native-fbsdk";
 
+// Account Kit
+import RNAccountKit from "react-native-facebook-account-kit";
+
 class LoginHeader extends Component {
 	render() {
 		return (
@@ -34,10 +37,7 @@ class LoginHeader extends Component {
 						large
 						onPress={() => this.props.navigation.goBack()}
 					>
-						<Icon
-							style={{ color: "#333", fontSize: 40 }}
-							name="md-close"
-						/>
+						<Icon style={{ color: "#333", fontSize: 40 }} name="md-close" />
 					</Button>
 				</Right>
 			</Header>
@@ -49,6 +49,7 @@ export default class Login extends Component {
 	login(source) {
 		console.log({ source });
 		if (source === "facebook") this.loginFacebook();
+		else if (source === "accountkit") this.loginAccountKit();
 	}
 
 	sendToHome() {
@@ -70,9 +71,7 @@ export default class Login extends Component {
 					AccessToken.getCurrentAccessToken().then(data => {
 						const accessToken = data.accessToken.toString();
 						fetch(
-							`${
-								config.api.base
-							}/api/auth/facebook?accesstoken=${accessToken}`,
+							`${config.api.base}/api/auth/facebook?accesstoken=${accessToken}`,
 							{
 								method: "GET",
 								headers: {
@@ -108,6 +107,17 @@ export default class Login extends Component {
 		);
 	}
 
+	loginAccountKit() {
+		RNAccountKit.loginWithEmail().then(token => {
+			if (!token) {
+				console.log("Login cancelled");
+			} else {
+				console.log(`Logged with email. Token: ${token}`);
+				console.log({ akToken: token });
+			}
+		});
+	}
+
 	render() {
 		return (
 			<Container>
@@ -137,7 +147,7 @@ export default class Login extends Component {
 							onPress={() => this.login("google")}
 						>
 							<Icon name="logo-google" />
-							<Text>Facebook</Text>
+							<Text>Google</Text>
 						</Button>
 						<Button
 							block
@@ -146,7 +156,7 @@ export default class Login extends Component {
 							onPress={() => this.login("accountkit")}
 							light
 						>
-							<Text>Email / Phone</Text>
+							<Text>Email</Text>
 						</Button>
 					</View>
 				</Content>
