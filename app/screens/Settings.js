@@ -15,27 +15,43 @@ import {
 } from "native-base";
 
 import config from "../config.json";
-import { logoutUser } from "../utils/common";
+import { logoutUser, getLocalUser } from "../utils/common";
 import { NavigationActions } from "react-navigation";
 
 export default class Settings extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			loggedIn: false,
+			user: null
+		};
+	}
+
 	logout() {
 		logoutUser(() => {
 			//alert("Logged Out");
 			const resetAction = NavigationActions.reset({
 				index: 0,
-				actions: [NavigationActions.navigate({ routeName: "Home" })]
+				actions: [NavigationActions.navigate({ routeName: "Intro" })]
 			});
 			this.props.navigation.dispatch(resetAction);
-			this.props.navigation.navigate("Home");
+			this.props.navigation.navigate("Intro");
+		});
+	}
+
+	componentWillMount() {
+		getLocalUser((err, user) => {
+			if (user) {
+				console.log("User is logged in", user);
+				this.setState({ loggedIn: true, user });
+			}
 		});
 	}
 
 	render() {
-		const { params } = this.props.navigation.state;
-
+		const { loggedIn } = this.state;
 		let logoutButton = <View />;
-		if (params.loggedIn) {
+		if (loggedIn) {
 			logoutButton = (
 				<List style={styles.singleList}>
 					<ListItem icon onPress={() => this.logout()}>

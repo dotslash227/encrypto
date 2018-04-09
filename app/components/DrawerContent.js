@@ -9,44 +9,13 @@ import { getLocalUser } from "../utils/common";
 export default class DrawerContent extends Component {
 	constructor(props) {
 		super(props);
-
-		this.state = {
-			loggedIn: false,
-			user: null
-		};
 	}
 
 	goToScreen(screenName) {
-		const { loggedIn, user } = this.state;
-		const nonAuthScreens = [
-			"Home",
-			"Settings",
-			"MarketCap",
-			"News",
-			"Events"
-		];
-		if (nonAuthScreens.indexOf(screenName) > -1) {
-			this.props.navigation.navigate(screenName, { loggedIn, user });
-		} else if (loggedIn) {
-			// User is logged in, let them pass
-			this.props.navigation.navigate(screenName, { loggedIn, user });
-		} else {
-			// User is not logged in, send them to Login
-			this.props.navigation.navigate("Login", { loggedIn, user });
-		}
+		this.props.navigation.navigate(screenName);
 	}
 
-	componentDidMount() {
-		getLocalUser((err, user) => {
-			if (user) {
-				console.log("User is logged in");
-				this.setState({ loggedIn: true, user });
-			} else {
-				console.log("User is not logged in");
-				this.setState({ loggedIn: false, user: null });
-			}
-		});
-	}
+	componentDidMount() {}
 
 	render() {
 		return (
@@ -112,9 +81,7 @@ export default class DrawerContent extends Component {
 						icon
 					>
 						<Body style={styles.removeBorder}>
-							<Text style={styles.drawerText}>
-								Market Capital
-							</Text>
+							<Text style={styles.drawerText}>Market Capital</Text>
 						</Body>
 						<Right style={styles.removeBorder}>
 							<Icon name="arrow-forward" />
@@ -140,9 +107,7 @@ export default class DrawerContent extends Component {
 						icon
 					>
 						<Body style={styles.removeBorder}>
-							<Text style={styles.drawerText}>
-								Blockchain Events
-							</Text>
+							<Text style={styles.drawerText}>Blockchain Events</Text>
 						</Body>
 						<Right style={styles.removeBorder}>
 							<Icon name="arrow-forward" />
@@ -166,9 +131,7 @@ export default class DrawerContent extends Component {
 				</List>
 
 				<View style={styles.drawerFooter}>
-					<Text style={styles.drawerFooterText}>
-						{config.displayVersion}
-					</Text>
+					<Text style={styles.drawerFooterText}>{config.displayVersion}</Text>
 				</View>
 			</View>
 		);

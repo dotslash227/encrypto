@@ -108,12 +108,40 @@ export default class Login extends Component {
 	}
 
 	loginAccountKit() {
+		var main = this;
 		RNAccountKit.loginWithEmail().then(token => {
 			if (!token) {
 				console.log("Login cancelled");
 			} else {
-				console.log(`Logged with email. Token: ${token}`);
-				console.log({ akToken: token });
+				var accessToken = token.token;
+				console.log({ akToken: accessToken });
+				fetch(
+					`${config.api.base}/api/auth/accountkit?accesstoken=${accessToken}`,
+					{
+						method: "GET",
+						headers: {
+							Accept: "application/json",
+							"Content-Type": "application/json"
+						}
+					}
+				)
+					.then(response => response.json())
+					.then(response => {
+						if (response.success) {
+							loginUser(
+								{
+									userId: response.user.id,
+									name: response.user.name
+								},
+								() => {
+									main.sendToHome();
+								}
+							);
+						} else {
+							console.log("Not success true", response);
+							alert("Something went wrong");
+						}
+					});
 			}
 		});
 	}

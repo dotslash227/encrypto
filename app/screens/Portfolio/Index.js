@@ -14,27 +14,40 @@ import Header from "../../components/Header";
 import Value from "../../components/Portfolio/Value";
 import Holdings from "../../components/Portfolio/Holdings";
 
+import { getLocalUser } from "../../utils/common";
+
 export default class Portfolio extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			value: 600,
 			change: "0%",
-			portfolio: []
+			portfolio: [],
+			user: null,
+			loggedIn: false
 		};
 	}
 
-	componentWillMount() {}
+	componentWillMount() {
+		getLocalUser((err, user) => {
+			if (user) {
+				console.log("User is logged in", user);
+				this.setState({ loggedIn: true, user });
+			} else {
+				console.log("User is not logged in");
+				this.props.navigation.navigate("Login");
+			}
+		});
+	}
+
+	componentDidMount() {}
 
 	render() {
 		return (
 			<Container>
 				<Header {...this.props} title="Portfolio" />
 				<Content>
-					<Value
-						value={this.state.value}
-						change={this.state.change}
-					/>
+					<Value value={this.state.value} change={this.state.change} />
 					<Holdings portfolio={this.state.portfolio} />
 				</Content>
 				<Footer>
