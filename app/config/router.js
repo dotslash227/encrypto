@@ -13,21 +13,26 @@ import PortfolioScreen from "../screens/Portfolio/Index";
 // Components
 import DrawerContent from "../components/DrawerContent";
 
+// Internet Conn
+import RequiresConnection from "react-native-offline-mode";
+const NoInternetText =
+	"Sorry, We couldn't connect to the network. Please check your Mobile Network or WiFi.";
+
 export default DrawerNavigator(
 	{
 		Home: {
-			screen: HomeScreen
+			screen: RequiresConnection(HomeScreen, NoInternetText)
 		},
 		Intro: {
 			screen: IntroScreen
 		},
 		News: {
-			screen: NewsScreen
+			screen: RequiresConnection(NewsScreen, NoInternetText)
 		},
 		Settings: { screen: SettingsScreen },
-		Portfolio: { screen: PortfolioScreen },
-		MarketCap: { screen: MarketCapScreen },
-		Login: { screen: LoginScreen }
+		Portfolio: { screen: RequiresConnection(PortfolioScreen, NoInternetText) },
+		MarketCap: { screen: RequiresConnection(MarketCapScreen, NoInternetText) },
+		Login: { screen: RequiresConnection(LoginScreen, NoInternetText) }
 	},
 	{
 		initialRouteName: "Home",

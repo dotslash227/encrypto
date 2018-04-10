@@ -1,33 +1,34 @@
 {
-  "name": "EncryptoApp",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
-  },
-  "dependencies": {
-    "babel-preset-react-native": "^2.1.0",
-    "moment": "^2.20.1",
-    "native-base": "^2.3.7",
-    "react": "16.2.0",
-    "react-native": "0.52.2",
-    "react-native-app-intro-slider": "^0.2.4",
-    "react-native-facebook-account-kit": "^0.9.0",
-    "react-native-fbsdk": "^0.7.0",
-    "react-native-modal-filter-picker": "^1.3.2",
-    "react-native-storage": "^0.2.2",
-    "react-native-svg": "^6.3.1",
-    "react-navigation": "^1.0.0-beta.28",
-    "victory-native": "^0.17.2",
-    "watchman": "^1.0.0"
-  },
-  "devDependencies": {
-    "babel-jest": "22.1.0",
-    "jest": "22.1.4",
-    "react-test-renderer": "16.2.0"
-  },
-  "jest": {
-    "preset": "react-native"
-  }
+	"name": "EncryptoApp",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"start": "node node_modules/react-native/local-cli/cli.js start",
+		"test": "jest"
+	},
+	"dependencies": {
+		"babel-preset-react-native": "^2.1.0",
+		"moment": "^2.20.1",
+		"native-base": "^2.3.7",
+		"react": "16.2.0",
+		"react-native": "0.52.2",
+		"react-native-app-intro-slider": "^0.2.4",
+		"react-native-facebook-account-kit": "^0.9.0",
+		"react-native-fbsdk": "^0.7.0",
+		"react-native-modal-filter-picker": "^1.3.2",
+		"react-native-offline-mode": "git+ssh://git@github.com/AbhishekBiswal/react-native-offline-mode.git",
+		"react-native-storage": "^0.2.2",
+		"react-native-svg": "^6.3.1",
+		"react-navigation": "^1.0.0-beta.28",
+		"victory-native": "^0.17.2",
+		"watchman": "^1.0.0"
+	},
+	"devDependencies": {
+		"babel-jest": "22.1.0",
+		"jest": "22.1.4",
+		"react-test-renderer": "16.2.0"
+	},
+	"jest": {
+		"preset": "react-native"
+	}
 }
