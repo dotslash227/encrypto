@@ -35,7 +35,7 @@ export default DrawerNavigator(
 		Login: { screen: RequiresConnection(LoginScreen, NoInternetText) }
 	},
 	{
-		initialRouteName: "Home",
+		initialRouteName: "Intro",
 		navigationOptions: {
 			header: null
 		},
