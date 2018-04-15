@@ -103,11 +103,24 @@ export default class DrawerContent extends Component {
 					<ListItem
 						style={styles.listItem}
 						button
-						onPress={() => this.goToScreen("News")}
+						onPress={() => this.goToScreen("Events")}
 						icon
 					>
 						<Body style={styles.removeBorder}>
 							<Text style={styles.drawerText}>Blockchain Events</Text>
+						</Body>
+						<Right style={styles.removeBorder}>
+							<Icon name="arrow-forward" />
+						</Right>
+					</ListItem>
+					<ListItem
+						style={styles.listItem}
+						button
+						onPress={() => this.goToScreen("ICO")}
+						icon
+					>
+						<Body style={styles.removeBorder}>
+							<Text style={styles.drawerText}>ICO</Text>
 						</Body>
 						<Right style={styles.removeBorder}>
 							<Icon name="arrow-forward" />

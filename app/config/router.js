@@ -5,6 +5,8 @@ import { DrawerNavigator } from "react-navigation";
 import HomeScreen from "../screens/Home";
 import IntroScreen from "../screens/Intro";
 import NewsScreen from "../screens/News";
+import EventsScreen from "../screens/Events";
+import ICOScreen from "../screens/ICO";
 import SettingsScreen from "../screens/Settings";
 import MarketCapScreen from "../screens/MarketCap";
 import LoginScreen from "../screens/Login";
@@ -27,14 +29,14 @@ export default DrawerNavigator(
 		Intro: {
 			screen: IntroScreen
 		},
-		News: {
-			screen: RequiresConnection(NewsScreen, NoInternetText)
-		},
+		News: { screen: RequiresConnection(NewsScreen, NoInternetText) },
+		Events: { screen: RequiresConnection(EventsScreen, NoInternetText) },
 		Settings: { screen: SettingsScreen },
 		Portfolio: { screen: RequiresConnection(PortfolioScreen, NoInternetText) },
 		AddToPortfolio: { screen: AddToPortfolioScreen },
 		MarketCap: { screen: RequiresConnection(MarketCapScreen, NoInternetText) },
-		Login: { screen: RequiresConnection(LoginScreen, NoInternetText) }
+		Login: { screen: RequiresConnection(LoginScreen, NoInternetText) },
+		ICO: { screen: RequiresConnection(ICOScreen, NoInternetText) }
 	},
 	{
 		//initialRouteName: "Intro",
