@@ -9,6 +9,7 @@ import SettingsScreen from "../screens/Settings";
 import MarketCapScreen from "../screens/MarketCap";
 import LoginScreen from "../screens/Login";
 import PortfolioScreen from "../screens/Portfolio/Index";
+import AddToPortfolioScreen from "../screens/Portfolio/Add";
 
 // Components
 import DrawerContent from "../components/DrawerContent";
@@ -31,10 +32,12 @@ export default DrawerNavigator(
 		},
 		Settings: { screen: SettingsScreen },
 		Portfolio: { screen: RequiresConnection(PortfolioScreen, NoInternetText) },
+		AddToPortfolio: { screen: AddToPortfolioScreen },
 		MarketCap: { screen: RequiresConnection(MarketCapScreen, NoInternetText) },
 		Login: { screen: RequiresConnection(LoginScreen, NoInternetText) }
 	},
 	{
+		//initialRouteName: "Intro",
 		initialRouteName: "Intro",
 		navigationOptions: {
 			header: null

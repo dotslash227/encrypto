@@ -52,7 +52,10 @@ export default class Portfolio extends Component {
 				</Content>
 				<Footer>
 					<FooterTab>
-						<Button full>
+						<Button
+							full
+							onPress={() => this.props.navigation.navigate("AddToPortfolio")}
+						>
 							<Text>Add</Text>
 						</Button>
 					</FooterTab>

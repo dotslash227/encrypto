@@ -16,16 +16,26 @@ export default class MainHeader extends Component {
 	render() {
 		let hasTabs = false;
 		if (this.props.hasTabs) hasTabs = true;
+		let hasBackButton = this.props.hasBackButton ? true : false;
+		let leftSection = (
+			<Button
+				transparent
+				onPress={() => this.props.navigation.navigate("DrawerOpen")}
+			>
+				<Icon name="md-menu" />
+			</Button>
+		);
+		if (hasBackButton) {
+			leftSection = (
+				<Button transparent onPress={() => this.props.navigation.goBack()}>
+					<Icon name="md-arrow-back" />
+				</Button>
+			);
+		}
+
 		return (
 			<Header hasTabs={hasTabs}>
-				<Left>
-					<Button
-						transparent
-						onPress={() => this.props.navigation.navigate("DrawerOpen")}
-					>
-						<Icon name="md-menu" />
-					</Button>
-				</Left>
+				<Left>{leftSection}</Left>
 				<Body>
 					<Title>{this.props.title || "Encrypto"}</Title>
 				</Body>
