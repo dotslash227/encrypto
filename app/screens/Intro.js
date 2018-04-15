@@ -64,6 +64,21 @@ export default class Intro extends Component {
 		};
 	}
 	componentWillMount() {
+		// Exp: Load Currencies, etc
+		let containers = ["availableCurrencies", "exchanges", "currencies"];
+		containers.forEach(container => {
+			storage
+				.load({
+					key: container,
+					autoSync: true,
+					syncInBackground: true
+				})
+				.then(ret => {
+					console.log("Saved All Cache");
+				})
+				.catch(e => console.log(e));
+		});
+
 		storage
 			.load({ key: "introScreen" })
 			.then(data => {

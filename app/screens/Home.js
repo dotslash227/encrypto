@@ -40,20 +40,24 @@ export default class Home extends Component {
 
 	componentDidMount() {
 		let containers = ["availableCurrencies", "exchanges", "currencies"];
+		let i = 1;
 		containers.forEach(container => {
+			i++;
 			storage
 				.load({
 					key: container,
-					autoSync: true
-					//syncInBackground: true
+					autoSync: true,
+					syncInBackground: true
 				})
 				.then(ret => {
 					var stateChange = {};
 					stateChange[container] = ret;
 					console.log(stateChange);
 					this.setState(stateChange);
-					this.setState({ homeLoading: false });
 					console.log(this.state);
+					if (i >= containers.length) {
+						this.setState({ homeLoading: false });
+					}
 				})
 				.catch(e => console.log(e));
 		});

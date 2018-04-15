@@ -52,8 +52,7 @@ export default class HomeCharts extends Component {
 		)
 			.then(response => response.json())
 			.then(response => {
-				if (response && response.success)
-					return callback(null, response);
+				if (response && response.success) return callback(null, response);
 				else return callback("Something Went Wrong", null);
 			})
 			.catch(e => {
@@ -67,7 +66,7 @@ export default class HomeCharts extends Component {
 		const { curOneData, curTwoData } = this.state;
 		// Get For First Currency / Exchange
 		this.fetchCurData(selected.currency, selected.exchange, (err, data) => {
-			console.log({ err, data });
+			if (err) console.log({ err, data });
 			if (err) this.setState({ loading: false, error: err });
 			else this.setState({ loading: false, curOneData: data.rates });
 		});
@@ -81,14 +80,10 @@ export default class HomeCharts extends Component {
 			if (err) this.setState({ loading: false, error: err });
 			else this.setState({ loading: false, curOneData: data.rates });
 		});
-		this.fetchCurData(
-			selected.currency,
-			selected.exchangeTwo,
-			(err, data) => {
-				if (err) this.setState({ loading: false, error: err });
-				else this.setState({ loading: false, curTwoData: data.rates });
-			}
-		);
+		this.fetchCurData(selected.currency, selected.exchangeTwo, (err, data) => {
+			if (err) this.setState({ loading: false, error: err });
+			else this.setState({ loading: false, curTwoData: data.rates });
+		});
 	}
 
 	render() {
@@ -114,7 +109,6 @@ export default class HomeCharts extends Component {
 				};
 			});
 		}
-		console.log({ chartData, chartTwoData });
 		return (
 			<View>
 				<Info {...this.props} {...this.state} />
@@ -177,7 +171,6 @@ class Info extends Component {
 		let curTwoRate;
 		let curTwoExName;
 		if (selected.isComparing && curTwoData && curTwoData.length > 0) {
-			console.log({ curTwoRate: curTwoData[0] });
 			curTwoRate = curTwoData[0];
 			let curTwoFilter = this.props.exchanges.filter(
 				e => e.code === selected.exchangeTwo.toUpperCase()

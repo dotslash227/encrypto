@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
 
 // Global Storage
 var storage = new Storage({
-	size: 1000, // maximum capacity, default 1000
+	size: 10000, // maximum capacity, default 1000
 	storageBackend: AsyncStorage,
 
 	// expire time, default 1 day(1000 * 3600 * 24 milliseconds).

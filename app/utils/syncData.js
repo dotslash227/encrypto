@@ -16,8 +16,8 @@ export function syncAvailableCurrencies(params) {
 				storage.save({
 					key: "availableCurrencies", // Note: Do not use underscore("_") in key!
 					//id: '1001',	  // Note: Do not use underscore("_") in id!
-					data: currencies,
-					expires: 1000 * 60 * 24
+					data: currencies
+					//expires: 1000 * 60 * 24
 				});
 				console.log("Saved");
 			} else {
@@ -42,8 +42,8 @@ export function syncCurrencies(params) {
 				storage.save({
 					key: "currencies", // Note: Do not use underscore("_") in key!
 					//id: '1001',	  // Note: Do not use underscore("_") in id!
-					data: currencies,
-					expires: 1000 * 60 * 24
+					data: currencies
+					//expires: 1000 * 60 * 24
 				});
 				console.log("Saved");
 			} else {
@@ -68,8 +68,8 @@ export function syncExchanges(params) {
 				storage.save({
 					key: "exchanges", // Note: Do not use underscore("_") in key!
 					//id: '1001',	  // Note: Do not use underscore("_") in id!
-					data: exchanges,
-					expires: 1000 * 60 * 24
+					data: exchanges
+					//expires: 1000 * 60 * 24
 				});
 				console.log("Saved");
 			} else {
