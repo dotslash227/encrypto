@@ -7,18 +7,7 @@
 import React, { Component } from "react";
 import { Platform, StyleSheet, View } from "react-native";
 
-import {
-	Container,
-	Header,
-	Left,
-	Body,
-	Right,
-	Button,
-	Icon,
-	Title,
-	Text,
-	StyleProvider
-} from "native-base";
+import { StyleProvider, Root } from "native-base";
 
 // Themes
 import getTheme from "../native-base-theme/components";
@@ -43,9 +32,11 @@ import {
 export default class App extends Component {
 	render() {
 		return (
-			<StyleProvider style={getTheme(material)}>
-				<Router />
-			</StyleProvider>
+			<Root>
+				<StyleProvider style={getTheme(material)}>
+					<Router />
+				</StyleProvider>
+			</Root>
 		);
 	}
 }

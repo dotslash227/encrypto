@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Modal } from "react-native";
 import {
 	Container,
 	Content,
@@ -14,8 +14,10 @@ import {
 	Picker,
 	Icon,
 	Item,
-	Input
+	Input,
+	Toast
 } from "native-base";
+import { NavigationActions } from "react-navigation";
 
 // Components:
 import Header from "../../components/Header";
@@ -38,7 +40,8 @@ export default class AddPortfolio extends Component {
 				selectedCurrency: null,
 				inputCoins: null,
 				inputBuyValue: null
-			}
+			},
+			successModal: true
 		};
 		this.updateSelection = this.updateSelection.bind(this);
 		this.submitButton = this.submitButton.bind(this);
@@ -59,11 +62,25 @@ export default class AddPortfolio extends Component {
 	}
 
 	submitButton() {
-		console.log("HELLO< WORLD");
-		alert("Hey");
 		const { selected } = this.state;
-		if (!selected) alert("Damn");
-		else console.log({ selected });
+		if (
+			!selected ||
+			!selected.selectedCurrency ||
+			!selected.selectedExchange ||
+			!selected.inputCoins ||
+			!selected.inputBuyValue
+		) {
+			Toast.show({
+				text: "Please fill all the fields",
+				buttonText: "Okay",
+				type: "danger",
+				duration: 2000
+			});
+			return false;
+		}
+		console.log({ selected });
+		// ToDo: Send Request
+		this.setState({ successModal: true });
 	}
 
 	render() {
@@ -87,6 +104,16 @@ export default class AddPortfolio extends Component {
 						</Button>
 					</FooterTab>
 				</Footer>
+				<Modal
+					animationType="slide"
+					transparent={false}
+					visible={this.state.successModal}
+					onRequestClose={() => {
+						alert("Modal has been closed.");
+					}}
+				>
+					<SuccessModal {...this.props} />
+				</Modal>
 			</Container>
 		);
 	}
@@ -224,6 +251,29 @@ class MainSelector extends Component {
 	}
 }
 
+class SuccessModal extends Component {
+	componentDidMount() {
+		setTimeout(() => {
+			const resetAction = NavigationActions.reset({
+				index: 0,
+				actions: [NavigationActions.navigate({ routeName: "Home" })]
+			});
+			this.props.navigation.dispatch(resetAction);
+			this.props.navigation.navigate("Portfolio");
+		}, 1500);
+	}
+	render() {
+		return (
+			<View style={styles.successModal}>
+				<Icon
+					name="md-checkbox-outline"
+					style={{ color: "green", fontSize: 50 }}
+				/>
+			</View>
+		);
+	}
+}
+
 const styles = StyleSheet.create({
 	pickerView: {
 		justifyContent: "center",
@@ -239,5 +289,10 @@ const styles = StyleSheet.create({
 	},
 	inputView: {
 		padding: 20
+	},
+	successModal: {
+		flex: 1,
+		justifyContent: "center",
+		alignItems: "center"
 	}
 });
