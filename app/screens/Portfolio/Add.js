@@ -41,6 +41,7 @@ export default class AddPortfolio extends Component {
 			}
 		};
 		this.updateSelection = this.updateSelection.bind(this);
+		this.submitButton = this.submitButton.bind(this);
 	}
 
 	componentWillMount() {
@@ -58,8 +59,11 @@ export default class AddPortfolio extends Component {
 	}
 
 	submitButton() {
+		console.log("HELLO< WORLD");
+		alert("Hey");
 		const { selected } = this.state;
-		console.log({ selected });
+		if (!selected) alert("Damn");
+		else console.log({ selected });
 	}
 
 	render() {
@@ -78,7 +82,7 @@ export default class AddPortfolio extends Component {
 				</Content>
 				<Footer>
 					<FooterTab>
-						<Button full onPress={() => this.submitButton}>
+						<Button full onPress={this.submitButton}>
 							<Text>Add</Text>
 						</Button>
 					</FooterTab>
@@ -123,11 +127,29 @@ class MainSelector extends Component {
 			selectedCurrency: undefined,
 			showCurrencySelector: true
 		});
+		var selected = this.props.selected;
+		selected.selectedExchange = value;
+		this.props.updateSelection(selected);
 	}
 	onChangeCurrency(value: string) {
 		this.setState({
 			selectedCurrency: value
 		});
+		var selected = this.props.selected;
+		selected.selectedCurrency = value;
+		this.props.updateSelection(selected);
+	}
+	inputCoins(value) {
+		this.setState({ inputCoins: value });
+		var selected = this.props.selected;
+		selected.inputCoins = value;
+		this.props.updateSelection(selected);
+	}
+	inputBuyValue(value) {
+		this.setState({ inputBuyValue: value });
+		var selected = this.props.selected;
+		selected.inputBuyValue = value;
+		this.props.updateSelection(selected);
 	}
 	render() {
 		const { exchanges } = this.props;
@@ -137,10 +159,10 @@ class MainSelector extends Component {
 			selectedCurrency
 		} = this.state;
 		const pickerItemsExchanges = exchanges.map(e => (
-			<Picker.Item label={e.displayName} value={e.code} />
+			<Picker.Item label={e.displayName} value={e.code} key={e.code} />
 		));
 		const pickerItemsCurrencies = toSelectCurrencies.map(c => (
-			<Picker.Item label={c} value={c} />
+			<Picker.Item label={c} value={c} key={c} />
 		));
 		return (
 			<Form>
@@ -152,7 +174,7 @@ class MainSelector extends Component {
 						placeholder="Exchange"
 						placeholderStyle={{ color: "#bfc6ea" }}
 						placeholderIconColor="#007aff"
-						style={{ width: undefined }}
+						style={{ width: 150 }}
 						selectedValue={this.state.selectedExchange}
 						onValueChange={this.onChangeExchange.bind(this)}
 					>
@@ -168,7 +190,7 @@ class MainSelector extends Component {
 							placeholder="Currency"
 							placeholderStyle={{ color: "#bfc6ea" }}
 							placeholderIconColor="#007aff"
-							style={{ width: undefined }}
+							style={{ width: 150 }}
 							selectedValue={this.state.selectedCurrency}
 							onValueChange={this.onChangeCurrency.bind(this)}
 						>
@@ -183,7 +205,7 @@ class MainSelector extends Component {
 								<Input
 									placeholder="Coins"
 									keyboardType="numeric"
-									onChangeText={inputCoins => this.setState({ inputCoins })}
+									onChangeText={value => this.inputCoins(value)}
 								/>
 							</Item>
 							<Item regular>
@@ -191,7 +213,7 @@ class MainSelector extends Component {
 									placeholder="Buy Value in INR"
 									keyboardType="numeric"
 									onChangeText={inputBuyValue =>
-										this.setState({ inputBuyValue })
+										this.inputBuyValue(inputBuyValue)
 									}
 								/>
 							</Item>
