@@ -153,7 +153,7 @@ export default class DrawerContent extends Component {
 
 const styles = StyleSheet.create({
 	mainDrawer: {
-		backgroundColor: "#393E46",
+		backgroundColor: "#00B2FB",
 		flex: 1
 	},
 	drawerText: {
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
 		borderBottomWidth: 0
 	},
 	menuGroup: {
-		backgroundColor: "#222831",
+		backgroundColor: "#00a2e2",
 		marginBottom: 10,
 		borderBottomWidth: 0
 	},

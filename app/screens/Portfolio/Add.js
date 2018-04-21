@@ -41,7 +41,7 @@ export default class AddPortfolio extends Component {
 				inputCoins: null,
 				inputBuyValue: null
 			},
-			successModal: true
+			successModal: false
 		};
 		this.updateSelection = this.updateSelection.bind(this);
 		this.submitButton = this.submitButton.bind(this);
@@ -145,7 +145,7 @@ class MainSelector extends Component {
 			inputBuyValue
 		});
 	} */
-	onChangeExchange(value: string) {
+	onChangeExchange(value) {
 		const filter = this.props.exchanges.filter(e => e.code === value);
 		const exchange = filter[0];
 		this.setState({
@@ -158,7 +158,7 @@ class MainSelector extends Component {
 		selected.selectedExchange = value;
 		this.props.updateSelection(selected);
 	}
-	onChangeCurrency(value: string) {
+	onChangeCurrency(value) {
 		this.setState({
 			selectedCurrency: value
 		});

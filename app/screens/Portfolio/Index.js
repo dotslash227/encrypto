@@ -45,7 +45,7 @@ export default class Portfolio extends Component {
 	render() {
 		return (
 			<Container>
-				<Header {...this.props} title="Portfolio" />
+				<Header {...this.props} title="Portfolio" hasTabs={true} />
 				<Content>
 					<Value value={this.state.value} change={this.state.change} />
 					<Holdings portfolio={this.state.portfolio} />

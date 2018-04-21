@@ -29,7 +29,7 @@ export default class PortfolioValue extends Component {
 const styles = StyleSheet.create({
 	container: {
 		padding: 20,
-		backgroundColor: "#032A33"
+		backgroundColor: "#324152"
 	},
 	smallText: {
 		//lineHeight: 1

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { View, StyleSheet } from "react-native";
 import Header from "../components/Header";
+import axios from "axios";
 import {
 	Container,
 	Content,
@@ -28,20 +29,20 @@ export default class MarketCap extends Component {
 		};
 	}
 
-	componentDidMount() {
-		fetch(`${config.api.base}/api/data/marketcap`, {
-			method: "GET",
-			headers: {
-				Accept: "application/json",
-				"Content-Type": "application/json"
-			}
-		})
-			.then(response => response.json())
+	componentDidMount = () => {
+		var t = this;
+		const fetchUrl = config.api.base + "/api/data/marketcap";
+		axios(fetchUrl)
+			.then(res => res.data)
 			.then(response => {
-				if (response && response.length > 0) {
-					this.setState({ loading: false, ticker: response });
+				console.log({ response });
+				alert("Res", response);
+				alert("Res str", response.toString());
+				alert("T", t);
+				if (response) {
+					t.setState({ loading: false, ticker: response });
 				} else {
-					this.setState({
+					t.setState({
 						loading: false,
 						error: "Something went wrong."
 					});
@@ -49,22 +50,21 @@ export default class MarketCap extends Component {
 			})
 			.catch(e => {
 				console.log(e);
-				this.setState({
+				t.setState({
 					loading: false,
-					error: "Something went wrong."
+					error: "Something went wrong." + e
 				});
 			});
-	}
+	};
 
 	render() {
 		const { ticker, loading, error } = this.state;
-		let content;
 		if (loading) {
-			content = <Spinner />;
+			var content = <Spinner />;
 		} else if (error) {
-			content = <Text>{error}</Text>;
+			var content = <Text>{error}</Text>;
 		} else {
-			content = <ListOfCoins ticker={ticker} />;
+			var content = <ListOfCoins ticker={ticker} />;
 		}
 		return (
 			<Container>

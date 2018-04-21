@@ -81,7 +81,7 @@ export default class Home extends Component {
 		if (homeLoading) return <Spinner />;
 		return (
 			<Container>
-				<Header {...this.props} />
+				<Header {...this.props} hasTabs={true} />
 				<Content>
 					<PickerHeader
 						{...this.state}

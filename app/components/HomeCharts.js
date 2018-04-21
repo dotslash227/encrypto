@@ -212,11 +212,14 @@ const styles = StyleSheet.create({
 	},
 	bigText: {
 		fontSize: 20,
-		textAlign: "center"
+		textAlign: "center",
+		color: "#324152",
+		fontWeight: "bold"
 	},
 	smallText: {
 		fontSize: 14,
-		textAlign: "center"
+		textAlign: "center",
+		color: "#324152"
 	},
 	chartContainer: {
 		padding: 20

@@ -27,10 +27,14 @@ class SinglePost extends Component {
 					style={{ width: 40, height: 40 }}
 				/>
 				<Body>
-					<Text ellipsizeMode="tail" numberOfLines={2}>
+					<Text
+						ellipsizeMode="tail"
+						numberOfLines={2}
+						style={{ color: "#324152" }}
+					>
 						{this.props.title}
 					</Text>
-					<Text note>
+					<Text note style={{ color: "#404E5E" }}>
 						{this.props.source} | {moment(this.props.time).fromNow()}
 					</Text>
 				</Body>
