@@ -100,7 +100,7 @@ export default class News extends Component {
 	render() {
 		let content = null;
 		if (this.state.loading) {
-			content = <Spinner color="blue" />;
+			content = <Spinner />;
 		} else if (this.state.error) {
 			content = <Text>{this.state.error}</Text>;
 		} else {

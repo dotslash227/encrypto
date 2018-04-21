@@ -208,7 +208,8 @@ class Info extends Component {
 
 const styles = StyleSheet.create({
 	infoContainer: {
-		padding: 10
+		padding: 10,
+		backgroundColor: "#E5E9EE"
 	},
 	bigText: {
 		fontSize: 20,

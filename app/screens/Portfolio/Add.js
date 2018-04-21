@@ -198,10 +198,12 @@ class MainSelector extends Component {
 					<Picker
 						mode="dropdown"
 						iosIcon={<Icon name="ios-arrow-down-outline" />}
+						androidIcon={<Icon name="ios-arrow-down-outline" />}
 						placeholder="Exchange"
 						placeholderStyle={{ color: "#bfc6ea" }}
 						placeholderIconColor="#007aff"
 						style={{ width: 150 }}
+						headerBackButtonText="X"
 						selectedValue={this.state.selectedExchange}
 						onValueChange={this.onChangeExchange.bind(this)}
 					>
