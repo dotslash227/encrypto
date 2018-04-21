@@ -145,6 +145,8 @@ export class PickerHeader extends Component {
 								onCancel={this.currencyPickerCancel}
 								options={PickerOptionsCurrencies}
 								onRequestClose={this.currencyPickerCancel}
+								placeholderText="Search..."
+								title="Select Currency"
 							/>
 						</Button>
 					</Col>
@@ -163,6 +165,8 @@ export class PickerHeader extends Component {
 								onCancel={this.exchangePickerCancel}
 								options={PickerOptionsExchanges}
 								onRequestClose={this.exchangePickerCancel}
+								placeholderText="Search..."
+								title="Select Exchange"
 							/>
 						</Button>
 					</Col>
@@ -240,6 +244,8 @@ export class PickerTwoContainer extends Component {
 								onCancel={this.props.exchangePickerTwoCancel}
 								options={this.props.PickerOptionsExchanges}
 								onRequestClose={this.exchangePickerTwoCancel}
+								placeholderText="Search..."
+								title="Select Exchange"
 							/>
 						</Button>
 					</Col>
@@ -283,5 +289,9 @@ const styles = StyleSheet.create({
 	},
 	compareButton: {
 		backgroundColor: "#00B2FB"
+	},
+	//Picker:
+	pickerOverlay: {
+		//backgroundColor: "rgba(52, 52, 52, 0.8)"
 	}
 });
