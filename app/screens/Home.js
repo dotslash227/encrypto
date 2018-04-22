@@ -27,6 +27,7 @@ export default class Home extends Component {
 			currencies: {},
 			selected: {
 				currency: "BTC",
+				currencyTwo: "INR",
 				exchange: "ZEB",
 				exchangeTwo: "COINDELTA",
 				isComparing: false

@@ -10,13 +10,17 @@ export class PickerHeader extends Component {
 		super(props);
 		this.state = {
 			currencyPickerVisible: false,
+			currencyTwoPickerVisible: false,
 			exchangePickerVisible: false,
 			exchangePickerTwoVisible: false,
 			PickerOptionsCurrencies: [],
-			PickerOptionsExchanges: []
+			PickerOptionsExchanges: [],
+			PickerOptionsCurrenciesTwo: [{ key: "INR", label: "INR" }]
 		};
 		this.currencyPickerCancel = this.currencyPickerCancel.bind(this);
 		this.currencyPickerSelect = this.currencyPickerSelect.bind(this);
+		this.currencyTwoPickerCancel = this.currencyTwoPickerCancel.bind(this);
+		this.currencyTwoPickerSelect = this.currencyTwoPickerSelect.bind(this);
 		this.exchangePickerCancel = this.exchangePickerCancel.bind(this);
 		this.exchangePickerSelect = this.exchangePickerSelect.bind(this);
 		this.exchangePickerTwoCancel = this.exchangePickerTwoCancel.bind(this);
@@ -69,6 +73,9 @@ export class PickerHeader extends Component {
 	currencyPickerToggle(toggle) {
 		this.setState({ currencyPickerVisible: toggle });
 	}
+	currencyPickerToggle(toggle) {
+		this.setState({ currencyPickerVisible: toggle });
+	}
 	currencyPickerSelect(selected) {
 		// Set selected currency
 		let selectedProps = JSON.parse(JSON.stringify(this.props.selected));
@@ -88,6 +95,34 @@ export class PickerHeader extends Component {
 	}
 	currencyPickerCancel(selected) {
 		this.setState({ currencyPickerVisible: false });
+	}
+
+	// Currency Picker Two
+	currencyTwoPickerToggle(toggle) {
+		this.setState({ currencyTwoPickerVisible: toggle });
+	}
+	currencyTwoPickerToggle(toggle) {
+		this.setState({ currencyTwoPickerVisible: toggle });
+	}
+	currencyTwoPickerSelect(selected) {
+		// Set selected currency
+		let selectedProps = JSON.parse(JSON.stringify(this.props.selected));
+		selectedProps.currencyTwo = selected;
+		selectedProps.isComparing = false;
+
+		// Set Exchange(s) to be a valid currency
+		/* const filt = this.props.exchanges.filter(e => {
+			if (e.currencies.indexOf(selected) > -1) return e;
+		});
+		if (filt.length > 0) selectedProps.exchange = filt[0].code;
+		if (filt.length > 1) selectedProps.exchangeTwo = filt[1].code;
+		else if (filt.length > 0) selectedProps.exchangeTwo = filt[0].code; */
+
+		this.props.changeSelection({ selected: selectedProps });
+		this.setState({ currencyTwoPickerVisible: false });
+	}
+	currencyTwoPickerCancel(selected) {
+		this.setState({ currencyTwoPickerVisible: false });
 	}
 
 	// Exchange Picker One
@@ -121,7 +156,9 @@ export class PickerHeader extends Component {
 	render() {
 		const {
 			currencyPickerVisible,
+			currencyTwoPickerVisible,
 			PickerOptionsCurrencies,
+			PickerOptionsCurrenciesTwo,
 			PickerOptionsExchanges,
 			exchangePickerVisible
 		} = this.state;
@@ -155,6 +192,28 @@ export class PickerHeader extends Component {
 							transparent
 							dark
 							iconRight
+							onPress={() => this.currencyTwoPickerToggle(true)}
+						>
+							<Text style={styles.pickerButton}>
+								{this.props.selected.currencyTwo}
+							</Text>
+							<Icon name="ios-arrow-down" style={styles.pickerButton} />
+							<ModalFilterPicker
+								visible={currencyTwoPickerVisible}
+								onSelect={this.currencyTwoPickerSelect}
+								onCancel={this.currencyTwoPickerCancel}
+								options={PickerOptionsCurrenciesTwo}
+								onRequestClose={this.currencyTwoPickerCancel}
+								placeholderText="Search..."
+								title="Select Currency"
+							/>
+						</Button>
+					</Col>
+					<Col style={styles.pickerCol}>
+						<Button
+							transparent
+							dark
+							iconRight
 							onPress={() => this.exchangePickerToggle(true)}
 						>
 							{this.getExchange()}
@@ -170,6 +229,7 @@ export class PickerHeader extends Component {
 							/>
 						</Button>
 					</Col>
+					<Col />
 				</Grid>
 				<PickerTwoContainer
 					{...this.state}
@@ -238,7 +298,7 @@ export class PickerTwoContainer extends Component {
 					<Col style={styles.pickerCol}>
 						<Button transparent dark iconRight>
 							<Text style={styles.pickerButton}>
-								{this.props.selected.currency}
+								{this.props.selected.currencyTwo}
 							</Text>
 							<Icon name="ios-arrow-down" style={styles.pickerButton} />
 						</Button>
