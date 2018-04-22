@@ -191,6 +191,12 @@ export class PickerTwoContainer extends Component {
 		};
 	}
 
+	removeCompare() {
+		let selectedProps = JSON.parse(JSON.stringify(this.props.selected));
+		selectedProps.isComparing = false;
+		this.props.changeSelection({ selected: selectedProps });
+	}
+
 	// Function to toggle comparison button
 	toggleCompare() {
 		let currentState = this.state.compareOn;
@@ -230,6 +236,14 @@ export class PickerTwoContainer extends Component {
 						</Button>
 					</Col>
 					<Col style={styles.pickerCol}>
+						<Button transparent dark iconRight>
+							<Text style={styles.pickerButton}>
+								{this.props.selected.currency}
+							</Text>
+							<Icon name="ios-arrow-down" style={styles.pickerButton} />
+						</Button>
+					</Col>
+					<Col style={styles.pickerCol}>
 						<Button
 							transparent
 							dark
@@ -247,6 +261,11 @@ export class PickerTwoContainer extends Component {
 								placeholderText="Search..."
 								title="Select Exchange"
 							/>
+						</Button>
+					</Col>
+					<Col style={{ justifyContent: "center", alignItems: "center" }}>
+						<Button transparent dark onPress={() => this.removeCompare()}>
+							<Icon name="md-remove-circle" style={{ color: "#fff" }} />
 						</Button>
 					</Col>
 				</Grid>
@@ -276,12 +295,13 @@ const styles = StyleSheet.create({
 		height: 50
 	},
 	pickerTwoContainer: {
-		backgroundColor: "#324152",
-		alignItems: "center",
-		justifyContent: "center"
+		backgroundColor: "#324152"
+		/* alignItems: "center",
+		justifyContent: "center" */
 	},
 	pickerButton: {
-		color: "#fff"
+		color: "#fff",
+		fontSize: 14
 	},
 	pickerCol: {
 		alignItems: "center",
