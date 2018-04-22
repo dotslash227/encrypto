@@ -11,6 +11,7 @@ import {
 	Title,
 	Text
 } from "native-base";
+import ModalFilterPicker from "react-native-modal-filter-picker";
 
 export default class MainHeader extends Component {
 	render() {
@@ -46,6 +47,31 @@ export default class MainHeader extends Component {
 }
 
 export class HomeHeader extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			countryModalVisible: false,
+			countryModalOptions: []
+		};
+		this.onSelect = this.onSelect.bind(this);
+	}
+	componentDidMount() {
+		console.log({ props: this.props, state: this.state });
+		const countries = [
+			{
+				key: "IN",
+				label: "India"
+			}
+		];
+		this.setState({ countryModalOptions: countries });
+	}
+	onSelect(value) {
+		let selectedProps = JSON.parse(JSON.stringify(this.props.selected));
+		selectedProps.country = value;
+		this.props.changeSelection({ selected: selectedProps });
+		this.setState({ countryModalVisible: false });
+		console.log({ state: this.props.selected });
+	}
 	render() {
 		let hasTabs = false;
 		if (this.props.hasTabs) hasTabs = true;
@@ -73,10 +99,22 @@ export class HomeHeader extends Component {
 					<Title>{this.props.title || "Encrypto"}</Title>
 				</Body>
 				<Right>
+					<Button
+						transparent
+						onPress={() => this.setState({ countryModalVisible: true })}
+					>
+						<Icon name="md-flag" />
+					</Button>
 					<Button transparent onPress={() => this.props.refreshScreen()}>
 						<Icon name="md-refresh" />
 					</Button>
 				</Right>
+				<ModalFilterPicker
+					visible={this.state.countryModalVisible}
+					onSelect={this.onSelect}
+					onCancel={() => this.setState({ countryModalVisible: false })}
+					options={this.state.countryModalOptions}
+				/>
 			</Header>
 		);
 	}

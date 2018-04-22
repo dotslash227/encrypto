@@ -30,7 +30,8 @@ export default class Home extends Component {
 				currencyTwo: "INR",
 				exchange: "ZEB",
 				exchangeTwo: "COINDELTA",
-				isComparing: false
+				isComparing: false,
+				country: "IN"
 			},
 			graph: {
 				range: 1 //Days
@@ -90,6 +91,8 @@ export default class Home extends Component {
 			<Container>
 				<HomeHeader
 					{...this.props}
+					{...this.state}
+					changeSelection={this.changeSelection}
 					hasTabs={true}
 					refreshScreen={this.refreshScreen}
 				/>
