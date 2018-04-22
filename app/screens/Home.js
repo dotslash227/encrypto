@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View } from "react-native";
-import Header from "../components/Header";
+import { HomeHeader } from "../components/Header";
 import { PickerHeader } from "../components/Home";
 import HomeCharts from "../components/HomeCharts";
 
@@ -36,6 +36,12 @@ export default class Home extends Component {
 			}
 		};
 		this.changeSelection = this.changeSelection.bind(this);
+		this.refreshScreen = this.refreshScreen.bind(this);
+	}
+
+	refreshScreen() {
+		this.setState({ homeLoading: true });
+		this.setState({ homeLoading: false });
 	}
 
 	componentDidMount() {
@@ -81,7 +87,11 @@ export default class Home extends Component {
 		if (homeLoading) return <Spinner />;
 		return (
 			<Container>
-				<Header {...this.props} hasTabs={true} />
+				<HomeHeader
+					{...this.props}
+					hasTabs={true}
+					refreshScreen={this.refreshScreen}
+				/>
 				<Content>
 					<PickerHeader
 						{...this.state}
