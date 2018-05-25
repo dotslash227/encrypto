@@ -17,7 +17,8 @@ import {
 	VictoryAxis,
 	VictoryTheme,
 	VictoryStack,
-	VictoryLine
+	VictoryLine,
+	VictoryLabel
 } from "victory-native";
 
 import config from "../config.json";
@@ -137,7 +138,7 @@ export default class HomeCharts extends Component {
 							/>
 						</VictoryChart>
 					) : (
-						<VictoryChart>
+						<VictoryChart padding={50}>
 							<VictoryLine
 								data={chartData}
 								style={{
@@ -147,7 +148,7 @@ export default class HomeCharts extends Component {
 										strokeWidth: 5
 									}
 								}}
-								scale={{ x: "linear", y: "linear" }}
+								scale="time"
 							/>
 						</VictoryChart>
 					)}
@@ -223,6 +224,6 @@ const styles = StyleSheet.create({
 		color: "#324152"
 	},
 	chartContainer: {
-		padding: 20
+		padding: 5
 	}
 });

@@ -11,6 +11,7 @@ import SettingsScreen from "../screens/Settings";
 import MarketCapScreen from "../screens/MarketCap";
 import LoginScreen from "../screens/Login";
 import PortfolioScreen from "../screens/Portfolio/Index";
+import WatchlistScreen from "../screens/Watchlist/Index";
 import AddToPortfolioScreen from "../screens/Portfolio/Add";
 
 // Components
@@ -32,9 +33,16 @@ export default DrawerNavigator(
 		News: { screen: RequiresConnection(NewsScreen, NoInternetText) },
 		Events: { screen: RequiresConnection(EventsScreen, NoInternetText) },
 		Settings: { screen: SettingsScreen },
-		Portfolio: { screen: RequiresConnection(PortfolioScreen, NoInternetText) },
+		Portfolio: {
+			screen: RequiresConnection(PortfolioScreen, NoInternetText)
+		},
+		Watchlist: {
+			screen: RequiresConnection(WatchlistScreen, NoInternetText)
+		},
 		AddToPortfolio: { screen: AddToPortfolioScreen },
-		MarketCap: { screen: RequiresConnection(MarketCapScreen, NoInternetText) },
+		MarketCap: {
+			screen: RequiresConnection(MarketCapScreen, NoInternetText)
+		},
 		Login: { screen: RequiresConnection(LoginScreen, NoInternetText) },
 		ICO: { screen: RequiresConnection(ICOScreen, NoInternetText) }
 	},

@@ -64,7 +64,7 @@ export default class DrawerContent extends Component {
 					<ListItem
 						style={styles.listItem}
 						button
-						onPress={() => this.goToScreen("Portfolio")}
+						onPress={() => this.goToScreen("Watchlist")}
 						icon
 					>
 						<Body style={styles.removeBorder}>
@@ -81,7 +81,9 @@ export default class DrawerContent extends Component {
 						icon
 					>
 						<Body style={styles.removeBorder}>
-							<Text style={styles.drawerText}>Market Capital</Text>
+							<Text style={styles.drawerText}>
+								Market Capital
+							</Text>
 						</Body>
 						<Right style={styles.removeBorder}>
 							<Icon name="arrow-forward" />
@@ -107,7 +109,9 @@ export default class DrawerContent extends Component {
 						icon
 					>
 						<Body style={styles.removeBorder}>
-							<Text style={styles.drawerText}>Blockchain Events</Text>
+							<Text style={styles.drawerText}>
+								Blockchain Events
+							</Text>
 						</Body>
 						<Right style={styles.removeBorder}>
 							<Icon name="arrow-forward" />
@@ -144,7 +148,9 @@ export default class DrawerContent extends Component {
 				</List>
 
 				<View style={styles.drawerFooter}>
-					<Text style={styles.drawerFooterText}>{config.displayVersion}</Text>
+					<Text style={styles.drawerFooterText}>
+						{config.displayVersion}
+					</Text>
 				</View>
 			</View>
 		);

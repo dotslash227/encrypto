@@ -27,11 +27,22 @@ export default class MainHeader extends Component {
 			</Button>
 		);
 		if (hasBackButton) {
-			leftSection = (
-				<Button transparent onPress={() => this.props.navigation.goBack()}>
-					<Icon name="md-arrow-back" />
-				</Button>
-			);
+			if (this.props.closeModal) {
+				leftSection = (
+					<Button transparent onPress={() => this.props.closeModal()}>
+						<Icon name="md-arrow-back" />
+					</Button>
+				);
+			} else {
+				leftSection = (
+					<Button
+						transparent
+						onPress={() => this.props.navigation.goBack()}
+					>
+						<Icon name="md-arrow-back" />
+					</Button>
+				);
+			}
 		}
 
 		return (
@@ -86,7 +97,10 @@ export class HomeHeader extends Component {
 		);
 		if (hasBackButton) {
 			leftSection = (
-				<Button transparent onPress={() => this.props.navigation.goBack()}>
+				<Button
+					transparent
+					onPress={() => this.props.navigation.goBack()}
+				>
 					<Icon name="md-arrow-back" />
 				</Button>
 			);
@@ -101,18 +115,25 @@ export class HomeHeader extends Component {
 				<Right>
 					<Button
 						transparent
-						onPress={() => this.setState({ countryModalVisible: true })}
+						onPress={() =>
+							this.setState({ countryModalVisible: true })
+						}
 					>
 						<Icon name="md-flag" />
 					</Button>
-					<Button transparent onPress={() => this.props.refreshScreen()}>
+					<Button
+						transparent
+						onPress={() => this.props.refreshScreen()}
+					>
 						<Icon name="md-refresh" />
 					</Button>
 				</Right>
 				<ModalFilterPicker
 					visible={this.state.countryModalVisible}
 					onSelect={this.onSelect}
-					onCancel={() => this.setState({ countryModalVisible: false })}
+					onCancel={() =>
+						this.setState({ countryModalVisible: false })
+					}
 					options={this.state.countryModalOptions}
 				/>
 			</Header>
