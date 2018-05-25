@@ -14,7 +14,7 @@ import Header from "../../components/Header";
 import List from "../../components/Watchlist/List";
 import AddModal from "../../components/Watchlist/Add";
 
-import { getLocalUser } from "../../utils/common";
+import { getLocalUser, cache } from "../../utils/common";
 
 export default class Watchlist extends Component {
 	constructor(props) {
@@ -25,7 +25,10 @@ export default class Watchlist extends Component {
 			portfolio: [],
 			user: null,
 			loggedIn: false,
-			addModalVisible: false
+			addModalVisible: false,
+			exchanges: null,
+			currencies: null,
+			availableCurrencies: null
 		};
 		this.closeModal = this.closeModal.bind(this);
 	}
@@ -35,6 +38,15 @@ export default class Watchlist extends Component {
 			if (user) {
 				console.log("User is logged in", user);
 				this.setState({ loggedIn: true, user });
+				cache.availableCurrencies((err, availableCurrencies) =>
+					this.setState({ availableCurrencies })
+				);
+				cache.currencies((err, currencies) =>
+					this.setState({ currencies })
+				);
+				cache.exchanges((err, exchanges) =>
+					this.setState({ exchanges })
+				);
 			} else {
 				console.log("User is not logged in");
 				this.props.navigation.navigate("Login");
