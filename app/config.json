@@ -2,5 +2,8 @@
 	"api": {
 		"base": "https://satoshi.encrypto.tech"
 	},
+	"onesignal": {
+		"appId": "557621d9-a553-4db0-be7c-49096cbda27e"
+	},
 	"displayVersion": "v1.0"
 }

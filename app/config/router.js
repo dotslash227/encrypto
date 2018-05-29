@@ -48,7 +48,7 @@ export default DrawerNavigator(
 	},
 	{
 		//initialRouteName: "Intro",
-		initialRouteName: "Intro",
+		initialRouteName: "Watchlist",
 		navigationOptions: {
 			header: null
 		},
