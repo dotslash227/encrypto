@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.android.support/transition/27.0.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="a5fa2e3704f51b30b7b47e12a3a2909728799583">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.android.support-transition-27.0.2_5290fb99f03d2a4a5d50b312ca9215b5cd3796d5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/27.0.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="618f75fe11febf263e3234c7da7dc892232a5608">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.android.support-support-fragment-27.0.2_178cbeae8275b0ae5722f4394c8549441991b5c5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/12.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="16f423bae182fd81553d109269f7a5e13fd1cb52">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-location-12.0.1_df949b9e283383be4c01b4add4abdf05d98893ee.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.6.0/69edde9fc4b01c9fd51d25b83428837478c27254/okhttp-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/okhttp-3.6.0_4e9fb7784e8d177139779ccc543f7093fa962608.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.facebook.soloader-soloader-0.1.0_3a1e3dbd47545dc45c521d68e0666d9010b060e7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-imagepipeline-1.3.0_4882435ba39447165c32ccd86ad7fb9ac94abed0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-core/4.28.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="ab6e491b5d7bda2f47991a30f6bfe9a8b134ff8b">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.facebook.android-facebook-core-4.28.0_dffd15dbb8c4f029a5f5abeb6280f8d97b279012.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/27.0.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="25c8cb628374f9a2d59ff9e1172753751e9a9f84">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.android.support-support-media-compat-27.0.2_e33ddf65d8837d1901189cb5d1a575816ef703cf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/EncryptoApp/react-native-svg/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="9947e190f36c69878e6b4d07e47e1df2f5e197b0">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/EncryptoApp-react-native-svg-unspecified_2aaee2788e713bdd7b2f9a6feab7da4aa4d85d55.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-imagepipeline-okhttp3-1.3.0_afc20aad9bfc0140a8196e511024cb5b022074cc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/EncryptoApp/react-native-fbsdk/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="57e161466d6efd7d08eb96759b13494fae57f5b4">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/EncryptoApp-react-native-fbsdk-unspecified_c31082833fec40d58597cd9e819a9861ccd6a639.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/12.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="b739661c7142579d33f42801cfb71882cd217727">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.google.firebase-firebase-iid-12.0.1_a977ed1f3523cfe4a5f29625f9c522dfe96e36c8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/27.0.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="fe3916317a699975bcce0cba2d13fd2d8cf88922">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.android.support-animated-vector-drawable-27.0.2_062b05f67b46ece4db19a30048f2cf02073ad6e0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.52.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="3b7bd52e7b84674c67e424dde64f7b7990d7bc54">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.facebook.react-react-native-0.52.2_50d4222a5e28f62254f751c40ca7aa4186c0ae8c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="fe85b87215e405f5917d40ae4960488ac9224b74">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-fresco-1.3.0_74a28276ec5e7b6bac5da9b10440aeb039034dc9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.6.0/3f9b16b774f2c36cfd86dd2053d0b3059531dacc/okhttp-urlconnection-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/okhttp-urlconnection-3.6.0_6e1b17414ce44e92e3d2ba233b935672fa3f9c86.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/EncryptoApp/react-native-onesignal/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="72268929b1bfdbff07fff426c55344f5b870a62d">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/EncryptoApp-react-native-onesignal-unspecified_c3a9300855d786599af81f54a55ac6d4b524eb82.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-drawee-1.3.0_f6590a05abe607134a95b43f0d64e6177e48c389.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-imagepipeline-base-1.3.0_043d1442ab7fb11fca164d573b93cd0c713b23c0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/staticlayout-proxy-1.0_c9bcf9de03c9ffb1a410a8d5e132d983a12e6ba9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/12.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="22569eca3029ab00583c332a2be220cdbf091b35">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-basement-12.0.1_89cadaa99b1725f21a0ea50702576b8df16121e3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/27.0.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="b432e82447a3af781e927b9ba0bbb9fe2a496d4a">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.android.support-support-compat-27.0.2_f372f81fc466512cd0e49f17a80868986993c349.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/12.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="d8ec04dc91c0c90a0ceeca77c94c8b15cb7f3892">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.google.firebase-firebase-common-12.0.1_cb82ff8d74c779ba6107cce368a13dd4b88840c0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/bolts-tasks-1.4.0_2486374e6d7873864dbf76c6b2b45d0f5bd23d62.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.28.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="53e8932b1ac8c7dfc35cfeda1f9efbc9822ceaf3">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.facebook.android-facebook-android-sdk-4.28.0_7d841d764c2db91e43b4b884448456d46003e9d6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-applinks/1.4.0/8ad21bf21784dacce5f2043afb97218cc377e835/bolts-applinks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/bolts-applinks-1.4.0_ec0c5336d83c7b0080fba8a3029e9af801f843cf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-messenger/4.28.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="2482bfd874e8b3927f4141105674ad392ff83698">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.facebook.android-facebook-messenger-4.28.0_cbc18fd4994b9ed029fba463b54bd44e24c0319b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.android.support/customtabs/27.0.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="cdebcd9e0580b35115f655f8dc8ed7a66a8ef0fc">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.android.support-customtabs-27.0.2_b1a4dca9fc66ca762ab4a6df509e4b3fc05a9543.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-applinks/4.28.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="82ea5a937ab84229fbd2f3fc8cf2a72cbdf0ee0f">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.facebook.android-facebook-applinks-4.28.0_8c8dc1fabb421f76434e21a39c9f2841fa833b99.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/27.0.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="bcd0bcdef85b31a656af76e39c0c95ce70800772">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.android.support-support-v4-27.0.2_dbda44bce71b8f412ef753378b4355305dd0c11c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/27.0.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="04cd0cacbedcb338f64665b88bad64d145325fbd">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.android.support-appcompat-v7-27.0.2_39d4a8ad6f586816e230e5b1997773248b0cdbbd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/27.0.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="caa03787689212c10939f308a55a8dc8a3333ed2">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.android.support-support-vector-drawable-27.0.2_206d0c5aa838b96158a877236752ff48f70a6604.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/EncryptoApp/react-native-facebook-account-kit/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="3d3662d330bc69325f1b128fd0749c794a84c581">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/EncryptoApp-react-native-facebook-account-kit-unspecified_1497e815c9595d3fcc35a90b33e1df0153aa2619.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/27.0.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="9296d6f092fcdba4fafb6ac26546a39babdab46a">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.android.support-recyclerview-v7-27.0.2_96a7fefd20300d989c967c930d539a1ee75a1b46.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.facebook.android/account-kit-sdk/4.23.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="f0d3a0c84eb73fd55228e9dc5471140d6295f7a3">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.facebook.android-account-kit-sdk-4.23.0_b8ba27b2f42823ece30a3f93bb36221cd240c513.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/.gradle/caches/modules-2/files-2.1/android.arch.core/common/1.0.0/a2d487452376193fc8c103dd2b9bd5f2b1b44563/common-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="a2d487452376193fc8c103dd2b9bd5f2b1b44563">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/common-1.0.0_14e09d055e171a7cd2bf037d2ebe0e5fcc9f4672.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.13.0/a9283170b7305c8d92d25aff02a6ab7e45d06cbe/okio-1.13.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/okio-1.13.0_86e2010d25761e2a1951bc798b46e713af98e49c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.onesignal/OneSignal/3.9.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="2fb525a8d3d560d210a440a58bd04ae8f14ee328">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.onesignal-OneSignal-3.9.1_ac8da3c38df722ed91c556ff9cdbba34c039e7f3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-messaging/12.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="e1086213a85bf2bfc3f6448d66581198ba380f69">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.google.firebase-firebase-messaging-12.0.1_ec62326ed3b6754a942a44872a004e6b306f34f2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/android.arch.lifecycle/runtime/1.0.3/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="d7cc5473b9cf4ea159a263cd477fb3ecb2987b96">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/android.arch.lifecycle-runtime-1.0.3_d3db4ddf95709f43ac6ed782bc31f4c72d8079e0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-login/4.28.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="b8b26b28aae0ba8e2db55ad9fe0ebc770530c5ef">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.facebook.android-facebook-login-4.28.0_cd1d432606da6d0b9cb0e5e2ad0b7bdc9324e8c8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-fbcore-1.3.0_53f103cc08f216012fd07861de07a0d7f76abdb0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-common/4.28.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="287f4dec8dc2d40a238b12562b437438499cd2fb">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.facebook.android-facebook-common-4.28.0_81c298033d42a0eed8b4569a9826fd59988c0c84.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/12.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="ed8395f343c428cd55c60499f04323083f4ef0db">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-base-12.0.1_a9023ea9bdbb75af02b38d02bd6960835930a000.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.android.support/design/27.0.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="031cc16b7b6e77b3c050134ecab9fa5c2640a069">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.android.support-design-27.0.2_751f3703e393fd6c4cfb3044ebf41377ea78c5ea.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/jsr305-3.0.0_f8ae057b017607926f81c165d480f67334955beb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/.gradle/caches/modules-2/files-2.1/com.google.zxing/core/3.3.0/73c49077166faa4c3c0059c5f583d1d7bd1475fe/core-3.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="73c49077166faa4c3c0059c5f583d1d7bd1475fe">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/core-3.3.0_fb6f3655199f01eb867e000372460e3d092fc864.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/27.0.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="ac2ce6027755bcf49442e70597bec0feb9064f68">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.android.support-support-core-utils-27.0.2_fa9cd7969a3dfd049429250915ee6ff140612135.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/12.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="a38a8974c8d066800237d22a86df2e88cb9e065c">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-tasks-12.0.1_41481c730eefa7a437f15cd502cc02748e3f20db.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/javax.inject-1_a3dcb83e0014871eccafa6724b9f3cc9279a8124.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-places/4.28.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="0d394688dd7030b83dea8eed3fa483410c24afe0">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.facebook.android-facebook-places-4.28.0_206e7bc5d5385e6be4f89851146be74bccb40519.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/27.0.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="14bfdbf5594d4d7c320de20831849050788ab1e3">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.android.support-cardview-v7-27.0.2_5877a6e7ec89ef73e1197aff7118932de7b7c086.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_e17b07efeb78038ef3fdadb47129190acd05523d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-share/4.28.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="dc83ab7a5ce1e0296cf18a52a6edbcfef815e6cf">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.facebook.android-facebook-share-4.28.0_0504d7bc1862ad3067cfca3eac0b34a2a8948a57.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/27.0.2/b9ef4342c934a1a8b107506273dc8061662a322/support-annotations-27.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="0b9ef4342c934a1a8b107506273dc8061662a322">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/support-annotations-27.0.2_9b8de0297fa187e855d0f7fd3e5e092fad829437.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/.gradle/caches/modules-2/files-2.1/android.arch.lifecycle/common/1.0.3/7d7f60c4783872861222166f6164215f8951c7b1/common-1.0.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="7d7f60c4783872861222166f6164215f8951c7b1">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/common-1.0.3_fc106a97487a9e87c2c7dc398d5281e9cf751aca.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/27.0.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="ed6560f31a6a40b5965f5879d8f2eab1f68def05">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/com.android.support-support-core-ui-27.0.2_81236ebf24e51916191012b9f4042deb577991d1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.52.2/jars/libs/infer-annotations-4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.2"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="/home/reydon227/Desktop/clients/encrypto/mobile-app/incrypto-app/android/app/build/intermediates/pre-dexed/release/infer-annotations-4.0_9df56963646d86daa808095067d621a9382d49a9.jar" />
+    </item>
+
+</items>
