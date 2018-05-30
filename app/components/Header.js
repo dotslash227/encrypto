@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View } from "react-native";
+import { View, ImageBackground, StyleSheet } from "react-native";
 import {
 	Container,
 	Header,
@@ -46,13 +46,15 @@ export default class MainHeader extends Component {
 		}
 
 		return (
-			<Header hasTabs={hasTabs}>
-				<Left>{leftSection}</Left>
-				<Body>
-					<Title>{this.props.title || "Encrypto"}</Title>
-				</Body>
-				<Right />
-			</Header>
+			<ImageBackground source={{uri:"https://www.delhinerds.com/gradient.jpg"}} style={styles.container}>
+				<Header hasTabs={hasTabs} style={{backgroundColor:"#00B2FB"}}>
+					<Left>{leftSection}</Left>
+					<Body>
+						<Title>{this.props.title || "Encrypto"}</Title>
+					</Body>
+					<Right />
+				</Header>
+			</ImageBackground>
 		);
 	}
 }
@@ -107,7 +109,7 @@ export class HomeHeader extends Component {
 		}
 
 		return (
-			<Header hasTabs={hasTabs}>
+			<Header hasTabs={hasTabs} style={{backgroundColor:"#00B2FB"}}>
 				<Left>{leftSection}</Left>
 				<Body>
 					<Title>{this.props.title || "Encrypto"}</Title>
@@ -140,3 +142,9 @@ export class HomeHeader extends Component {
 		);
 	}
 }
+
+const styles = StyleSheet.create({
+	container: {
+		width: "100%"
+	}
+})
