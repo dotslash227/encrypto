@@ -23,13 +23,16 @@ export default class DrawerContent extends Component {
 				<Image
 					source={{
 						uri:
-							"https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/react-navigation/img/drawer-cover.png"
+							"https://www.delhinerds.com/encryptologo.png"
 					}}
 					style={{
-						height: 120,
+						height: 50,
+						flex: 1,
 						alignSelf: "stretch",
 						justifyContent: "center",
-						alignItems: "center"
+						alignItems: "center",
+						marginBottom: 10,
+						marginTop: 10
 					}}
 				/>
 				<List style={styles.menuGroup}>
