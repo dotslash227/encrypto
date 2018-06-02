@@ -47,8 +47,8 @@ export default DrawerNavigator(
 		ICO: { screen: RequiresConnection(ICOScreen, NoInternetText) }
 	},
 	{
-		//initialRouteName: "Intro",
-		initialRouteName: "Watchlist",
+		initialRouteName: "Intro",
+		//initialRouteName: "Watchlist",
 		navigationOptions: {
 			header: null
 		},

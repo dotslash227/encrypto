@@ -3,6 +3,7 @@ import { View } from "react-native";
 import { HomeHeader } from "../components/Header";
 import { PickerHeader } from "../components/Home";
 import HomeCharts from "../components/HomeCharts";
+import SplashScreen from "./SplashScreen";
 
 import {
 	List,
@@ -86,7 +87,9 @@ export default class Home extends Component {
 	render() {
 		const { homeLoading } = this.state;
 		const graphRange = this.state.graph.range;
-		if (homeLoading) return <Spinner />;
+		if (homeLoading) {
+			return <SplashScreen />;
+		}
 		return (
 			<Container>
 				<HomeHeader

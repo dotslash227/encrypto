@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import AppIntroSlider from "react-native-app-intro-slider";
 import { Spinner } from "native-base";
+import SplashScreen from "./SplashScreen";
 
 const styles = StyleSheet.create({
 	image: {
@@ -118,7 +119,7 @@ export default class Intro extends Component {
 	render() {
 		const { loading } = this.state;
 		if (loading) {
-			return <Spinner />;
+			return <SplashScreen />;
 		}
 		return (
 			<AppIntroSlider
