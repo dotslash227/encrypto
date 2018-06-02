@@ -160,7 +160,6 @@ android {
 }
 
 dependencies {
-    compile project(':react-native-splash-screen')
     compile project(':react-native-onesignal')
     compile project(':react-native-facebook-account-kit')
     compile project(':react-native-fbsdk')
