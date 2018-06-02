@@ -32,13 +32,14 @@ export function getLocalUser(callback) {
 		});
 }
 
-export function loginUser({ userId, name }, callback) {
+export function loginUser({ userId, name, token }, callback) {
 	storage
 		.save({
 			key: "user",
 			data: {
 				userId,
-				name
+				name,
+				token
 			}
 		})
 		.then(r => {
