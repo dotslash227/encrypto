@@ -141,7 +141,7 @@ export default class DrawerContent extends Component {
 						</Body>
 
 					</ListItem>
-				</List>				
+				</List>
 				<View style={styles.drawerFooter}>
 					<Text style={styles.drawerFooterText}>
 						{config.displayVersion}
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
 		backgroundColor: "white",
 		marginTop: 5,
 		marginBottom: 10,
-		borderBottomWidth: 1,
+		borderBottomWidth: 0,
 		borderBottomColor: "grey",
 		paddingBottom: 10
 	},
