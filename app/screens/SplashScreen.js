@@ -21,23 +21,25 @@ export default class SplashScreen extends Component {
 
 	render() {
 		return (
-			<Container style={styles.splashCont}>
-				<Image
-				source={require('../assets/splashLogo.png')}
-			style={styles.splashImage}
-			  />
-			</Container>
+				<Image source={require('../assets/splashScreen.png')} style={styles.splashCont}>
+				</Image>
 		);
 	}
 }
 
 const styles = StyleSheet.create({
 	splashImage: {
-		width: 150,
-		height: 150
+		flex: 1,
+		resizeMode: "contain",
+		justifyContent: "flex-start"
 	},
 	splashCont: {
+		flex: 1,
+		backgroundColor: "#266daf",
+		justifyContent: "center",
 		alignItems: "center",
-		justifyContent: "center"
+		width: null,
+		height: null,
+		resizeMode: "cover"
 	}
 });
