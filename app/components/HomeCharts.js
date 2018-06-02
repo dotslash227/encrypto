@@ -111,7 +111,7 @@ export default class HomeCharts extends Component {
 			});
 		}
 		return (
-			<View>
+			<View style={{backgroundColor:"white"}}>
 				<Info {...this.props} {...this.state} />
 				<View style={styles.chartContainer}>
 					{selected.isComparing ? (
@@ -210,7 +210,7 @@ class Info extends Component {
 const styles = StyleSheet.create({
 	infoContainer: {
 		padding: 10,
-		backgroundColor: "#E5E9EE"
+		backgroundColor: "white"
 	},
 	bigText: {
 		fontSize: 20,

@@ -360,7 +360,7 @@ export class PickerTwoContainer extends Component {
 					<Col
 						style={{
 							justifyContent: "center",
-							alignItems: "center"
+							alignItems: "center",
 						}}
 					>
 						<Button
@@ -397,11 +397,11 @@ export class PickerTwoContainer extends Component {
 
 const styles = StyleSheet.create({
 	pickerOne: {
-		backgroundColor: "#324152",
+		backgroundColor: "#3174b3",
 		height: 50
 	},
 	pickerTwoContainer: {
-		backgroundColor: "#324152"
+		backgroundColor: "#3174b3"
 		/* alignItems: "center",
 		justifyContent: "center" */
 	},
@@ -414,7 +414,7 @@ const styles = StyleSheet.create({
 		justifyContent: "center"
 	},
 	compareButton: {
-		backgroundColor: "#00B2FB"
+		backgroundColor: "#324d79"
 	},
 	//Picker:
 	pickerOverlay: {
