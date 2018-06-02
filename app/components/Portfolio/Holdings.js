@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import { Col, Row, Grid } from "react-native-easy-grid";
 import { Container } from "native-base";
+import { formatRate } from "../../utils/common";
 
 class SingleHolding extends Component {
 	render() {
+		const { data } = this.props;
 		return (
 			<View style={styles.singleHolding}>
 				<Grid>
@@ -17,10 +19,10 @@ class SingleHolding extends Component {
 						/>
 					</Col>
 					<Col style={styles.center}>
-						<Text>Zebpay</Text>
+						<Text>{this.props.exName}</Text>
 					</Col>
 					<Col style={styles.center}>
-						<Text>&#8377; 200</Text>
+						<Text>&#8377; {formatRate(data.currentValue)}</Text>
 					</Col>
 				</Grid>
 			</View>
@@ -29,12 +31,27 @@ class SingleHolding extends Component {
 }
 
 export default class Holdings extends Component {
+
 	render() {
+		const { isEmpty, portfolio } = this.props;
+		if(isEmpty) {
+			return (
+				<View style={styles.center}>
+					<Text style={{ paddingTop: 20, fontSize: 20 }}>Nothing Here.</Text>
+				</View>
+			);
+		}
+		// Sort Portfolio:
+		const sortedPortfolio = portfolio.sort((a, b) => b.created - a.created);
+		const portfolioList = sortedPortfolio.map((data) => {
+			let exName = this.props.exchanges.filter(e => e.code === data.exchangeCode)[0].displayName;
+			return (
+			  <SingleHolding coin={data.currencyCode} exName={exName} key={data._id} data={data.track} />
+			)
+		});
 		return (
 			<View style={styles.container}>
-				<SingleHolding coin="BTC" />
-				<SingleHolding coin="LTC" />
-				<SingleHolding coin="XRP" />
+				{portfolioList}
 			</View>
 		);
 	}

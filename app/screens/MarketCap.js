@@ -17,6 +17,8 @@ import {
 	Thumbnail
 } from "native-base";
 
+import { formatRate } from "../utils/common";
+
 export default class MarketCap extends Component {
 	constructor(props) {
 		super(props);
@@ -84,15 +86,15 @@ class ListOfCoins extends Component {
 				<ListItem key={ticker.id}>
 					<Thumbnail
 						square
-						size={80}
-						source={{ uri: "http://via.placeholder.com/80x80" }}
+						size={32}
+						source={{ uri: `https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/32/color/${ticker.symbol.toLowerCase()}.png` }}
 					/>
 					<Body>
 						<Text>{ticker.name}</Text>
-						<Text note>{ticker.price_inr} INR</Text>
+						<Text note>{formatRate(ticker.price_inr)} INR</Text>
 					</Body>
 					<Right>
-						<Text note>{percentage}</Text>
+						<Text style={styles.percentage} note>{percentage}%</Text>
 					</Right>
 				</ListItem>
 			);
@@ -103,7 +105,7 @@ class ListOfCoins extends Component {
 
 const styles = StyleSheet.create({
 	percentage: {
-		fontSize: 24
+		fontSize: 18
 	},
 	up: {
 		color: "green"

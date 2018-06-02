@@ -25,6 +25,7 @@ import Value from "../../components/Portfolio/Value";
 import Holdings from "../../components/Portfolio/Holdings";
 
 import { getLocalUser, cache } from "../../utils/common";
+import config from "../../config.json";
 
 export default class AddPortfolio extends Component {
 	constructor(props) {
@@ -48,11 +49,21 @@ export default class AddPortfolio extends Component {
 	}
 
 	componentWillMount() {
-		cache.availableCurrencies((err, availableCurrencies) =>
-			this.setState({ availableCurrencies })
-		);
-		cache.currencies((err, currencies) => this.setState({ currencies }));
-		cache.exchanges((err, exchanges) => this.setState({ exchanges }));
+		var _this = this;
+		getLocalUser((err, user) => {
+			if (user) {
+				console.log("User is logged in", user);
+				_this.setState({ loggedIn: true, user });
+				cache.availableCurrencies((err, availableCurrencies) =>
+					_this.setState({ availableCurrencies })
+				);
+				cache.currencies((err, currencies) => this.setState({ currencies }));
+				cache.exchanges((err, exchanges) => this.setState({ exchanges }));
+			} else {
+				console.log("User is not logged in");
+				_this.props.navigation.navigate("Login");
+			}
+		});
 	}
 
 	componentDidMount() {}
@@ -61,7 +72,41 @@ export default class AddPortfolio extends Component {
 		this.setState({ selected });
 	}
 
+	sendToServer({
+		selected
+	}, callback) {
+		fetch(`${config.api.base}/api/portfolio?token=${this.state.user.token}`, {
+			method: 'POST',
+			headers: {
+				Accept: 'application/json',
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				"exchangeCode": selected.selectedExchange,
+				"currencyCode": selected.selectedCurrency,
+				"coins": selected.inputCoins.toString(),
+				"alert": false,
+				"valueChange": selected.inputBuyValue.toString()
+			}),
+		})
+		.then(response => response.json())
+		.then(response => {
+			console.log({response});
+			if (response && response.success) {
+				return callback(null, true);
+			}
+			else {
+				return callback(response);
+			};
+		})
+		.catch(e => {
+			console.log(e);
+			return callback(e);
+		});
+	}
+
 	submitButton() {
+		var _this = this;
 		const { selected } = this.state;
 		if (
 			!selected ||
@@ -79,8 +124,10 @@ export default class AddPortfolio extends Component {
 			return false;
 		}
 		console.log({ selected });
-		// ToDo: Send Request
-		this.setState({ successModal: true });
+		this.sendToServer({selected}, function(err) {
+			if(err) console.log(err);
+			_this.setState({ successModal: true });
+		});
 	}
 
 	render() {

@@ -86,7 +86,8 @@ export default class Login extends Component {
 									loginUser(
 										{
 											userId: response.user.id,
-											name: response.user.name
+											name: response.user.name,
+											token: response.token
 										},
 										() => {
 											main.sendToHome();
@@ -131,7 +132,8 @@ export default class Login extends Component {
 							loginUser(
 								{
 									userId: response.user.id,
-									name: response.user.name
+									name: response.user.name,
+									token: response.token
 								},
 								() => {
 									main.sendToHome();

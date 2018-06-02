@@ -1,4 +1,6 @@
 export function formatRate(x) {
+	x = parseFloat(x);
+	if(typeof(x) === "number") x = x.toFixed(2);
 	x = x.toString();
 	var afterPoint = "";
 	if (x.indexOf(".") > 0) afterPoint = x.substring(x.indexOf("."), x.length);
@@ -32,13 +34,14 @@ export function getLocalUser(callback) {
 		});
 }
 
-export function loginUser({ userId, name }, callback) {
+export function loginUser({ userId, name, token }, callback) {
 	storage
 		.save({
 			key: "user",
 			data: {
 				userId,
-				name
+				name,
+				token
 			}
 		})
 		.then(r => {
