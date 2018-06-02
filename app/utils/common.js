@@ -1,4 +1,6 @@
 export function formatRate(x) {
+	x = parseFloat(x);
+	if(typeof(x) === "number") x = x.toFixed(2);
 	x = x.toString();
 	var afterPoint = "";
 	if (x.indexOf(".") > 0) afterPoint = x.substring(x.indexOf("."), x.length);
