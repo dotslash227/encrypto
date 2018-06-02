@@ -32,7 +32,8 @@ export default class Home extends Component {
 				exchange: "ZEB",
 				exchangeTwo: "COINDELTA",
 				isComparing: false,
-				country: "IN"
+				country: "IN",
+				countryImage: '../assets/india.png'
 			},
 			graph: {
 				range: 1 //Days
@@ -107,7 +108,7 @@ export default class Home extends Component {
 					<HomeCharts {...this.state} />
 				</Content>
 				<Footer>
-					<FooterTab>
+					<FooterTab style={{backgroundColor:"#324d79"}}>
 						<Button
 							onPress={() => this.setGraphRange(1)}
 							active={graphRange === 1}
@@ -123,6 +124,7 @@ export default class Home extends Component {
 						<Button
 							onPress={() => this.setGraphRange(30)}
 							active={graphRange === 30}
+							color = "#385686"
 						>
 							<Text>30D</Text>
 						</Button>

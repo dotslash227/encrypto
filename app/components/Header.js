@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, ImageBackground, StyleSheet } from "react-native";
+import { View, ImageBackground, StyleSheet, Image } from "react-native";
 import {
 	Container,
 	Header,
@@ -9,7 +9,7 @@ import {
 	Button,
 	Icon,
 	Title,
-	Text
+	Text,
 } from "native-base";
 import ModalFilterPicker from "react-native-modal-filter-picker";
 
@@ -47,7 +47,7 @@ export default class MainHeader extends Component {
 
 		return (
 			<ImageBackground source={{uri:"https://www.delhinerds.com/gradient.jpg"}} style={styles.container}>
-				<Header hasTabs={hasTabs} style={{backgroundColor:"#00B2FB"}}>
+				<Header hasTabs={hasTabs} style={{backgroundColor:"#3174b3"}}>
 					<Left>{leftSection}</Left>
 					<Body>
 						<Title>{this.props.title || "Encrypto"}</Title>
@@ -89,6 +89,7 @@ export class HomeHeader extends Component {
 		let hasTabs = false;
 		if (this.props.hasTabs) hasTabs = true;
 		let hasBackButton = this.props.hasBackButton ? true : false;
+		// let hasCountryFlag = this.state.selected.countryImage ? true : false;
 		let leftSection = (
 			<Button
 				transparent
@@ -109,7 +110,7 @@ export class HomeHeader extends Component {
 		}
 
 		return (
-			<Header hasTabs={hasTabs} style={{backgroundColor:"#00B2FB"}}>
+			<Header hasTabs={hasTabs} style={{backgroundColor:"#3174b3"}}>
 				<Left>{leftSection}</Left>
 				<Body>
 					<Title>{this.props.title || "Encrypto"}</Title>
@@ -121,7 +122,10 @@ export class HomeHeader extends Component {
 							this.setState({ countryModalVisible: true })
 						}
 					>
-						<Icon name="md-flag" />
+						<Image source={require("../assets/india.png")}
+						style={{height:20, width:20, marginTop:4, marginRight:-15}}
+						name="md-flag" />
+						<Icon name="" />
 					</Button>
 					<Button
 						transparent
