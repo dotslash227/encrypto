@@ -87,7 +87,7 @@ class ListOfCoins extends Component {
 					<Thumbnail
 						square
 						size={32}
-						source={{ uri: `https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/32/color/${ticker.symbol.toLowerCase()}.png` }}
+						source={{ uri: `https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/128/color/${ticker.symbol.toLowerCase()}.png` }}
 					/>
 					<Body>
 						<Text>{ticker.name}</Text>
