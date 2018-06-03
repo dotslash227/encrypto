@@ -3,6 +3,7 @@ package com.encryptoapp;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.oblador.vectoricons.VectorIconsPackage;
 import com.geektime.rnonesignalandroid.ReactNativeOneSignalPackage;
 import io.underscope.react.fbak.RNAccountKitPackage;
 import com.facebook.reactnative.androidsdk.FBSDKPackage;
@@ -38,6 +39,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new VectorIconsPackage(),
             new ReactNativeOneSignalPackage(),
             new RNAccountKitPackage(),
             new FBSDKPackage(mCallbackManager),
