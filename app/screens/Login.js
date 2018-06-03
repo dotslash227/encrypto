@@ -50,6 +50,7 @@ export default class Login extends Component {
 		console.log({ source });
 		if (source === "facebook") this.loginFacebook();
 		else if (source === "accountkit") this.loginAccountKit();
+		else if (source === "guest") this.sendToHome();
 	}
 
 	sendToHome() {
@@ -167,7 +168,8 @@ export default class Login extends Component {
 						iconLeft
 						style={styles.loginGuest}
 						>
-						<Icon name="contacts" style={{color:"black"}} />
+						<Icon name="contacts" style={{color:"black"}}
+						onPress = {()=>this.login("guest")}/>
 						<Text style={{color:"black", fontSize:12}}>Continue as guest</Text>
 					</Button>
 				</View>
@@ -217,8 +219,8 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 	},
 	logo:{
-		width: 125,
-		height: 125
+		width: 200,
+		height: 200
 	},
 	backgroundImage:{
 		flex: 1,

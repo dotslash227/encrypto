@@ -5,9 +5,22 @@ import { Spinner } from "native-base";
 import SplashScreen from "./SplashScreen";
 
 const styles = StyleSheet.create({
+	buttons:{
+		width:75,
+		height: 35,
+		padding: 5,
+		backgroundColor: "white",
+		flex: 1,
+	},
+	buttonText:{
+		color:"#3174b3",
+		textAlign: "center",
+		fontSize: 16
+	},
 	image: {
-		width: 320,
-		height: 320
+		width: "115%",
+		height: "115%",
+		resizeMode: "cover"
 	},
 	text: {
 		color: "#333",
@@ -27,31 +40,25 @@ const styles = StyleSheet.create({
 const slides = [
 	{
 		key: "somethun",
-		title: "Title 1",
-		text: "Description.\nSay something cool",
-		image: require("./../assets/1.jpg"),
+		image: require("./../assets/intro1.png"),
 		imageStyle: styles.image,
-		backgroundColor: "#E1E1E1",
+		backgroundColor: "#317fb3",
 		textStyle: styles.text,
 		titleStyle: styles.title
 	},
 	{
 		key: "somethun-dos",
-		title: "Title 2",
-		text: "Other cool stuff",
-		image: require("./../assets/1.jpg"),
+		image: require("./../assets/intro1.png"),
 		imageStyle: styles.image,
-		backgroundColor: "#E1E1E1",
+		backgroundColor: "#317fb3",
 		textStyle: styles.text,
 		titleStyle: styles.title
 	},
 	{
 		key: "somethun1",
-		title: "Rocket guy",
-		text: "I'm already out of descriptions\n\nLorem ipsum bla bla bla",
-		image: require("./../assets/1.jpg"),
+		image: require("./../assets/intro1.png"),
 		imageStyle: styles.image,
-		backgroundColor: "#E1E1E1",
+		backgroundColor: "#317fb3",
 		textStyle: styles.text,
 		titleStyle: styles.title
 	}
@@ -64,6 +71,29 @@ export default class Intro extends Component {
 			loading: true
 		};
 	}
+
+	_renderNextButton = () => {
+		return (
+			<View style={styles.buttons}>
+				<Text style={styles.buttonText}>Next</Text>
+			</View>
+		);
+	}
+
+	_renderSkipButton = () => {
+		return (
+			<Text style={{fontSize:17, marginTop:-5, color:"white"}}>Skip</Text>
+		);
+	}
+
+	_renderDoneButton = () => {
+		return (
+			<View style={styles.buttons}>
+				<Text style={styles.buttonText}>Done</Text>
+			</View>
+		);
+	}
+
 	componentWillMount() {
 		// Exp: Load Currencies, etc
 		let containers = ["availableCurrencies", "exchanges", "currencies"];
@@ -118,15 +148,18 @@ export default class Intro extends Component {
 	};
 	render() {
 		const { loading } = this.state;
-		if (loading) {
-			return <SplashScreen />;
-		}
+		// if (loading) {
+		// 	return <SplashScreen />;
+		// }
 		return (
 			<AppIntroSlider
 				slides={slides}
 				onDone={this._onDone}
 				onSkip={this._onSkip}
 				showSkipButton={true}
+				renderNextButton = {this._renderNextButton}
+				renderSkipButton = {this._renderSkipButton}
+				renderDoneButton = {this._renderDoneButton}
 			/>
 		);
 	}

@@ -50,7 +50,7 @@ export default class DrawerContent extends Component {
 						icon
 					>
 					<Left>
-						<Icon type="FontAwesome" name="chart-pie" style={styles.icon} />
+						<Icon type="FontAwesome" name="fa-chart-pie" style={styles.icon} />
 					</Left>
 						<Body style={styles.removeBorder}>
 							<Text style={styles.drawerText}>Portfolio</Text>
