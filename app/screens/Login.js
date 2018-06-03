@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, ImageBackground, Image } from "react-native";
 import {
 	Container,
 	Content,
@@ -150,52 +150,82 @@ export default class Login extends Component {
 
 	render() {
 		return (
-			<Container>
-				<LoginHeader {...this.props} />
-				<Content style={styles.content}>
-					<H1 style={[styles.h1, styles.textCenter]}>Login</H1>
-					<H3 style={[styles.h3, styles.textCenter]}>
-						Please Login To Continue
-					</H3>
-					<Text style={[styles.textCenter]}>
-						Create an Account or Login to an existing account:
-					</Text>
-					<View style={styles.buttonGroup}>
-						<Button
-							block
-							iconLeft
-							style={styles.loginFacebook}
-							onPress={() => this.login("facebook")}
+			<ImageBackground source={require('../assets/bgimage.png')} style={styles.backgroundImage}>
+				<Image source={require("../assets/logo.png")} style={styles.logo} />
+				<View style={styles.buttonGroup}>
+					<Button
+						block
+						iconLeft
+						style={styles.loginAccountKit}
+						onPress={() => this.login("accountkit")}
+						light
+					>
+						<Text style={{fontSize:12}}>Signup via Email Authenticator</Text>
+					</Button>
+					<Button
+						block
+						iconLeft
+						style={styles.loginGuest}
 						>
-							<Icon name="logo-facebook" />
-							<Text>Facebook</Text>
-						</Button>
-						<Button
-							block
-							iconLeft
-							style={styles.loginGoogle}
-							onPress={() => this.login("google")}
-						>
-							<Icon name="logo-google" />
-							<Text>Google</Text>
-						</Button>
-						<Button
-							block
-							iconLeft
-							style={styles.loginAccountKit}
-							onPress={() => this.login("accountkit")}
-							light
-						>
-							<Text>Email</Text>
-						</Button>
+						<Icon name="contacts" style={{color:"black"}} />
+						<Text style={{color:"black", fontSize:12}}>Continue as guest</Text>
+					</Button>
+				</View>
+
+				<View style={styles.footerParent}>
+					<Text style={{color:"white", fontSize: 12, marginBottom:10}}>Or login with</Text>
+					<View style={styles.footer}>
+						<Image source={require("../assets/fblogo.png")}
+							style={styles.fbImage}
+							onPress={()=> this.login("facebook")}
+						/>
+						<Image source={require("../assets/googlelogin.png")}
+							style={styles.fbImage}
+							onPress={()=>this.login("google")}
+						/>
+						<Image source={require("../assets/twitterlogin.png")}
+							style={styles.fbImage}
+							onPress={()=>this.login("google")}
+						/>
 					</View>
-				</Content>
-			</Container>
+				</View>
+			</ImageBackground>
 		);
 	}
 }
 
 const styles = StyleSheet.create({
+	fbImage:{
+		height: 30,
+		width: 30,
+		marginRight: 15,
+		marginBottom: 5
+	},
+	footerParent: {
+		position: 'absolute',
+		left: 0,
+		right: 0,
+		bottom: 5,
+		textAlign: "center",
+		alignItems: "center",
+		justifyContent: "center"
+	},
+	footer:{
+		flexDirection: "row",
+		textAlign: 'center',
+		alignItems: 'center',
+		justifyContent: "center",
+	},
+	logo:{
+		width: 125,
+		height: 125
+	},
+	backgroundImage:{
+		flex: 1,
+		justifyContent: 'center',
+		alignItems: 'center',
+		zIndex: -100
+	},
 	content: {
 		padding: 10
 	},
@@ -207,10 +237,12 @@ const styles = StyleSheet.create({
 	},
 	h1: {
 		textAlign: "center",
-		paddingBottom: 10
+		paddingBottom: 10,
+		zIndex:2
 	},
 	h3: {
-		paddingBottom: 10
+		paddingBottom: 10,
+		zIndex:1
 	},
 	buttonGroup: {
 		padding: 20,
@@ -218,6 +250,17 @@ const styles = StyleSheet.create({
 	},
 	loginFacebook: {
 		marginBottom: 10
+	},
+	loginGuest: {
+		marginBottom: 10,
+		backgroundColor: "white",
+		opacity: 0.85
+	},
+	loginAccountKit: {
+		marginBottom:10,
+		backgroundColor: 'white',
+		width:250,
+		opacity: 0.85
 	},
 	loginGoogle: {
 		marginBottom: 10,
