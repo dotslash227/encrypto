@@ -47,8 +47,8 @@ export default DrawerNavigator(
 		ICO: { screen: RequiresConnection(ICOScreen, NoInternetText) }
 	},
 	{
-		initialRouteName: "Home",
-		//initialRouteName: "Portfolio",
+		//initialRouteName: "Home",
+		initialRouteName: "MarketCap",
 		navigationOptions: {
 			header: null
 		},

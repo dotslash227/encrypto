@@ -18,6 +18,7 @@ export default class MainHeader extends Component {
 		let hasTabs = false;
 		if (this.props.hasTabs) hasTabs = true;
 		let hasBackButton = this.props.hasBackButton ? true : false;
+		let hasSearch = this.props.hasSearch ? true : false;
 		let leftSection = (
 			<Button
 				transparent
@@ -26,6 +27,7 @@ export default class MainHeader extends Component {
 				<Icon name="md-menu" />
 			</Button>
 		);
+		let rightSection;
 		if (hasBackButton) {
 			if (this.props.closeModal) {
 				leftSection = (
@@ -43,6 +45,15 @@ export default class MainHeader extends Component {
 					</Button>
 				);
 			}
+		} else if(hasSearch) {
+			rightSection = (
+				<Button
+						transparent
+						onPress={() => this.props.showSearch()}
+					>
+						<Icon name="md-search" />
+					</Button>
+			)
 		}
 
 		return (
@@ -52,7 +63,7 @@ export default class MainHeader extends Component {
 					<Body>
 						<Title>{this.props.title || "Encrypto"}</Title>
 					</Body>
-					<Right />
+					<Right>{rightSection}</Right>
 				</Header>
 			</ImageBackground>
 		);

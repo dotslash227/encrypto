@@ -14,9 +14,11 @@ import {
 	Right,
 	Switch,
 	Spinner,
-	Thumbnail
+	Thumbnail,
+	Button
 } from "native-base";
 
+import SearchBar from 'react-native-searchbar';
 import { formatRate } from "../utils/common";
 
 export default class MarketCap extends Component {
@@ -27,9 +29,12 @@ export default class MarketCap extends Component {
 			ticker: [],
 			error: null
 		};
+		this.showSearchBar = this.showSearchBar.bind(this);
+		this._handleResults = this._handleResults.bind(this);
+		this.searchOnBack = this.searchOnBack.bind(this);
 	}
 
-	componentDidMount() {
+	fetchMarketRates() {
 		fetch("https://api.coinmarketcap.com/v1/ticker/?convert=INR&limit=20", {
 			method: "GET",
 			headers: {
@@ -47,6 +52,23 @@ export default class MarketCap extends Component {
 			});
 	}
 
+	componentDidMount() {
+		this.fetchMarketRates();
+	}
+
+	_handleResults(results) {
+		this.setState({ ticker: results });
+	  }
+	
+	showSearchBar() {
+		this.searchBar.show();
+	}
+
+	searchOnBack() {
+		this.fetchMarketRates();
+		this.searchBar.hide();
+	}
+
 	render() {
 		const { ticker, loading, error } = this.state;
 		let content;
@@ -57,8 +79,16 @@ export default class MarketCap extends Component {
 		}
 		return (
 			<Container>
-				<Header {...this.props} title="Market Cap" />
-				<Content>{content}</Content>
+				<SearchBar
+			ref={(ref) => this.searchBar = ref}
+			data={ticker}
+			onBack={this.searchOnBack}
+			handleResults={this._handleResults}
+		  />
+		  <Header {...this.props} title="Market Cap" hasSearch={true} showSearch={this.showSearchBar} />
+				<Content>
+					{content}
+				</Content>
 			</Container>
 		);
 	}
