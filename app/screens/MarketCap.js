@@ -35,7 +35,7 @@ export default class MarketCap extends Component {
 	}
 
 	fetchMarketRates() {
-		fetch("https://api.coinmarketcap.com/v1/ticker/?convert=INR&limit=20", {
+		fetch("https://satoshi.encrypto.tech/api/data/marketcap?limit=100", {
 			method: "GET",
 			headers: {
 				Accept: "application/json",
