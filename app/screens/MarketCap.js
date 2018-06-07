@@ -15,7 +15,10 @@ import {
 	Switch,
 	Spinner,
 	Thumbnail,
-	Button
+	Button,
+	Grid,
+	Col,
+	Row
 } from "native-base";
 
 import SearchBar from 'react-native-searchbar';
@@ -35,7 +38,7 @@ export default class MarketCap extends Component {
 	}
 
 	fetchMarketRates() {
-		fetch("https://satoshi.encrypto.tech/api/data/marketcap?limit=100", {
+		fetch("https://satoshi.encrypto.tech/api/data/marketcap?limit=2000", {
 			method: "GET",
 			headers: {
 				Accept: "application/json",
@@ -86,9 +89,7 @@ export default class MarketCap extends Component {
 			handleResults={this._handleResults}
 		  />
 		  <Header {...this.props} title="Market Cap" hasSearch={true} showSearch={this.showSearchBar} />
-				<Content>
-					{content}
-				</Content>
+					<Content>{content}</Content>
 			</Container>
 		);
 	}
@@ -98,49 +99,66 @@ class ListOfCoins extends Component {
 	render() {
 		const { ticker } = this.props;
 		let list = ticker.map(ticker => {
-			let percentage;
+			return <SingleRow ticker={ticker} />;
+		});
+		return (
+			<View>
+				<Grid style={[styles.tableRow, {backgroundColor: "#F2F2F2"}]}>
+					<Col size={30}><Text style={styles.tableText}>Name</Text></Col>
+					<Col size={30}><Text style={styles.tableText}>Market Cap</Text></Col>
+					<Col size={15}><Text style={styles.tableText}>Price</Text></Col>
+					<Col size={15}><Text style={styles.tableText}>Change</Text></Col>
+				</Grid>
+				{list}
+			</View>
+		);
+	}
+}
+
+class SingleRow extends Component {
+	render() {
+		const ticker = this.props.ticker;
+		let percentage;
 			if (ticker.percent_change_24h.indexOf("-") > -1) {
 				percentage = (
-					<Text style={[styles.percentage, styles.down]}>
-						{ticker.percent_change_24h}
+					<Text style={[styles.percentage, styles.down, styles.tableText]}>
+						-{ticker.percent_change_24h}%
 					</Text>
 				);
 			} else {
 				percentage = (
-					<Text style={[styles.percentage, styles.up]}>
-						{ticker.percent_change_24h}
+					<Text style={[styles.percentage, styles.up, styles.tableText]}>
+						+{ticker.percent_change_24h}%
 					</Text>
 				);
 			}
 			return (
-				<ListItem key={ticker.id}>
-					<Thumbnail
-						square
-						size={32}
-						source={{ uri: `https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/128/color/${ticker.symbol.toLowerCase()}.png` }}
-					/>
-					<Body>
-						<Text>{ticker.name}</Text>
-						<Text note>{formatRate(ticker.price_inr)} INR</Text>
-					</Body>
-					<Right>
-						<Text style={styles.percentage} note>{percentage}%</Text>
-					</Right>
-				</ListItem>
+				<View key={ticker.id} style={styles.tableRow}>
+					<Grid><Col size={30}><Text style={styles.tableText}>{ticker.name} ({ticker.symbol})</Text></Col>
+					<Col size={30}><Text style={[styles.tableText, {fontSize: 10}]}>{formatRate(ticker.market_cap_usd)}</Text></Col>
+					<Col size={15}><Text style={styles.tableText}>{formatRate(ticker.price_usd)}</Text></Col>
+					<Col size={15}>{percentage}</Col></Grid>
+				</View>
 			);
-		});
-		return <List>{list}</List>;
 	}
 }
 
 const styles = StyleSheet.create({
 	percentage: {
-		fontSize: 18
+		fontSize: 10
 	},
 	up: {
 		color: "green"
 	},
 	down: {
 		color: "red"
+	},
+	tableText: {
+		fontSize: 11,
+		textAlign: "center"
+	},
+	tableRow: {
+		paddingTop: 10,
+		paddingBottom: 10
 	}
 });
