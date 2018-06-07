@@ -38,7 +38,7 @@ export default class MarketCap extends Component {
 	}
 
 	fetchMarketRates() {
-		fetch("https://satoshi.encrypto.tech/api/data/marketcap?limit=2000", {
+		fetch("https://satoshi.encrypto.tech/api/data/marketcap?limit=50", {
 			method: "GET",
 			headers: {
 				Accept: "application/json",
