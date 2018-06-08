@@ -31,7 +31,7 @@ export default DrawerNavigator(
 			screen: IntroScreen
 		},
 		News: { screen: RequiresConnection(NewsScreen, NoInternetText) },
-		Events: { screen: RequiresConnection(EventsScreen, NoInternetText) },
+		// Events: { screen: RequiresConnection(EventsScreen, NoInternetText) },
 		Settings: { screen: SettingsScreen },
 		Portfolio: {
 			screen: RequiresConnection(PortfolioScreen, NoInternetText)
@@ -47,8 +47,8 @@ export default DrawerNavigator(
 		ICO: { screen: RequiresConnection(ICOScreen, NoInternetText) }
 	},
 	{
-		//initialRouteName: "Home",
-		initialRouteName: "MarketCap",
+		initialRouteName: "Home",
+		// initialRouteName: "MarketCap",
 		navigationOptions: {
 			header: null
 		},
