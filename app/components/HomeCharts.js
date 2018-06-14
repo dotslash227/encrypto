@@ -178,36 +178,123 @@ class Info extends Component {
 			);
 			curTwoExName = curTwoFilter[0].displayName;
 		}
-		return (
-			<Grid style={styles.infoContainer}>
-				<Col>
-					<Text style={styles.bigText}>
-						&#8377; {formatRate(curOneRate.rate)}
-					</Text>
-					<Text style={styles.smallText}>
-						{curOneRate.currencyCode}/INR Price
-					</Text>
-					<Text style={styles.smallText}>{curOneExName}</Text>
-				</Col>
-				{selected.isComparing && curTwoRate ? (
-					<Col>
+
+		if (!selected.isComparing){
+			return (
+				<Grid style={styles.infoContainer}>
+					<Col style={styles.colBorder}>
 						<Text style={styles.bigText}>
-							&#8377; {formatRate(curTwoRate.rate)}
+							Buy
 						</Text>
 						<Text style={styles.smallText}>
-							{curTwoRate.currencyCode}/INR Price
+							{curOneRate.currencyCode}/INR
 						</Text>
-						<Text style={styles.smallText}>{curTwoExName}</Text>
+						<Text style={styles.smallText}>
+							{formatRate(curOneRate.rate)}
+						</Text>
 					</Col>
-				) : (
-					<View />
-				)}
-			</Grid>
-		);
+					<Col style={styles.colBorder}>
+						<Text style={styles.smallText}>
+							Change 24 Hours
+						</Text>
+						<Text style={{color:"red", textAlign:"center"}}>
+							8%
+						</Text>
+					</Col>
+					<Col style={styles.colBorder}>
+						<Text style={styles.bigText}>
+							Sell
+						</Text>
+						<Text style={styles.smallText}>
+							{curOneRate.currencyCode}/INR
+						</Text>
+						<Text style={styles.smallText}>
+							{formatRate(curOneRate.sell)}
+						</Text>
+					</Col>
+					<Col>
+						<Text style={styles.smallText}>
+							Change 24 Hours
+						</Text>
+						<Text style={{color:"green", textAlign:"center"}}>
+							10%
+						</Text>
+					</Col>
+				</Grid>
+			);
+		}
+		else {
+			return(
+				<Grid style={styles.infoContainer}>
+					<Col style={styles.colBorder}>
+						<Grid style={styles.compareText}>
+							<Text style={styles.smallText}>
+								Buy 1
+							</Text>
+							<Text style={styles.comapreText}>
+								{formatRate(curOneRate.rate)}
+							</Text>
+						</Grid>
+							<Text style={styles.smallText}>
+								Buy 2
+							</Text>
+							<Text style={styles.comapreText}>
+								{formatRate(curTwoRate.rate)}
+							</Text>
+					</Col>
+					<Col style={styles.colBorder}>
+						<Grid style={styles.compareText}>
+							<Text style={{color:"green", textAlign:"center"}}>
+								10%
+							</Text>
+						</Grid>
+						<Text style={{color:"green", textAlign:"center"}}>
+							10%
+						</Text>
+					</Col>
+					<Col style={styles.colBorder}>
+						<Grid style={styles.compareText}>
+							<Text style={styles.smallText}>
+								Sell 1
+							</Text>
+							<Text style={styles.comapreText}>
+								{formatRate(curOneRate.sell)}
+							</Text>
+						</Grid>
+							<Text style={styles.smallText}>
+								Sell 2
+							</Text>
+							<Text style={styles.comapreText}>
+								{formatRate(curTwoRate.sell)}
+							</Text>
+					</Col>
+					<Col>
+						<Grid style={styles.compareText}>
+							<Text style={{color:"green", textAlign:"center"}}>
+								10%
+							</Text>
+						</Grid>
+						<Text style={{color:"green", textAlign:"center"}}>
+							10%
+						</Text>
+					</Col>
+				</Grid>
+			);
+		}
 	}
 }
 
 const styles = StyleSheet.create({
+	compareText: {
+		borderBottomColor: "black",
+		borderBottomWidth: 1,
+		fontSize: 14,
+	},
+	colBorder:{
+		borderRightColor: "black",
+		borderRightWidth: 1,
+		paddingLeft: 5,
+	},
 	infoContainer: {
 		padding: 10,
 		backgroundColor: "white"
