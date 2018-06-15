@@ -7,7 +7,7 @@ import {
 	Content,
 	Button,
 	Icon,
-	Spinner
+	Spinner,
 } from "native-base";
 import { Col, Row, Grid } from "react-native-easy-grid";
 
@@ -225,66 +225,86 @@ class Info extends Component {
 		}
 		else {
 			return(
-				<Grid style={styles.infoContainer}>
-					<Col style={styles.colBorder}>
-						<Grid style={styles.compareText}>
+				<Grid>
+					<Row style={styles.compareRow}>
+						<Col style={styles.colBorder}>
 							<Text style={styles.smallText}>
 								Buy 1
 							</Text>
-							<Text style={styles.comapreText}>
-								{formatRate(curOneRate.rate)}
-							</Text>
-						</Grid>
 							<Text style={styles.smallText}>
-								Buy 2
+								{formatRate(curOneRate.buy)}
 							</Text>
-							<Text style={styles.comapreText}>
-								{formatRate(curTwoRate.rate)}
+						</Col>
+						<Col style={styles.colBorder}>
+							<Text style={styles.smallText}>
+								% change
 							</Text>
-					</Col>
-					<Col style={styles.colBorder}>
-						<Grid style={styles.compareText}>
-							<Text style={{color:"green", textAlign:"center"}}>
-								10%
+							<Text style={styles.smallText}>
+								8%
 							</Text>
-						</Grid>
-						<Text style={{color:"green", textAlign:"center"}}>
-							10%
-						</Text>
-					</Col>
-					<Col style={styles.colBorder}>
-						<Grid style={styles.compareText}>
+						</Col>
+						<Col style={styles.colBorder}>
 							<Text style={styles.smallText}>
 								Sell 1
 							</Text>
-							<Text style={styles.comapreText}>
+							<Text style={styles.smallText}>
 								{formatRate(curOneRate.sell)}
 							</Text>
-						</Grid>
+						</Col>
+						<Col style={styles.colBorder}>
 							<Text style={styles.smallText}>
-								Sell 2
+								% change
 							</Text>
-							<Text style={styles.comapreText}>
-								{formatRate(curTwoRate.sell)}
+							<Text style={styles.smallText}>
+								8%
 							</Text>
-					</Col>
-					<Col>
-						<Grid style={styles.compareText}>
-							<Text style={{color:"green", textAlign:"center"}}>
-								10%
-							</Text>
-						</Grid>
-						<Text style={{color:"green", textAlign:"center"}}>
-							10%
-						</Text>
-					</Col>
-				</Grid>
+						</Col>
+					 </Row>
+					 <Row style={styles.compareRow}>
+						 <Col style={styles.colBorder}>
+							 <Text style={styles.smallText}>
+								 Buy 2
+							 </Text>
+							 <Text style={styles.smallText}>
+								 {formatRate(curOneRate.buy)}
+							 </Text>
+						 </Col>
+						 <Col style={styles.colBorder}>
+							 <Text style={styles.smallText}>
+								 % change
+							 </Text>
+							 <Text style={styles.smallText}>
+								 8%
+							 </Text>
+						 </Col>
+						 <Col style={styles.colBorder}>
+							 <Text style={styles.smallText}>
+								 Sell 2
+							 </Text>
+							 <Text style={styles.smallText}>
+								 {formatRate(curOneRate.sell)}
+							 </Text>
+						 </Col>
+						 <Col style={styles.colBorder}>
+							 <Text style={styles.smallText}>
+								 % change
+							 </Text>
+							 <Text style={styles.smallText}>
+								 8%
+							 </Text>
+						 </Col>
+					 </Row>
+					</Grid>
 			);
 		}
 	}
 }
 
 const styles = StyleSheet.create({
+	compareRow:{
+		borderBottomColor: "black",
+		borderBottomWidth: 1
+	},
 	compareText: {
 		borderBottomColor: "black",
 		borderBottomWidth: 1,

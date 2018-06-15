@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, StyleSheet, ImageBackground, Image } from "react-native";
+import { TouchableOpacity, View, StyleSheet, ImageBackground, Image } from "react-native";
 import {
 	Container,
 	Content,
@@ -50,16 +50,26 @@ export default class Login extends Component {
 		console.log({ source });
 		if (source === "facebook") this.loginFacebook();
 		else if (source === "accountkit") this.loginAccountKit();
-		else if (source === "guest") this.sendToHome();
+		else if (source === "guest") this.sendToPortfolio();
 	}
 
 	sendToHome() {
+		var _this = this;
 		const resetAction = NavigationActions.reset({
 			index: 0,
 			actions: [NavigationActions.navigate({ routeName: "Home" })]
 		});
 		this.props.navigation.dispatch(resetAction);
 		this.props.navigation.navigate("Home");
+	}
+
+	sendToPortfolio() {
+		const resetAction = NavigationActions.reset({
+			index: 0,
+			actions: [NavigationActions.navigate({ routeName: "Portfolio" })]
+		});
+		this.props.navigation.dispatch(resetAction);
+		this.props.navigation.navigate("Portfolio");
 	}
 
 	loginFacebook() {
@@ -167,9 +177,9 @@ export default class Login extends Component {
 						block
 						iconLeft
 						style={styles.loginGuest}
+						onPress = {()=>this.login("guest")}
 						>
-						<Icon name="contacts" style={{color:"black"}}
-						onPress = {()=>this.login("guest")}/>
+						<Icon name="contacts" style={{color:"black"}} />
 						<Text style={{color:"black", fontSize:12}}>Continue as guest</Text>
 					</Button>
 				</View>
@@ -177,18 +187,21 @@ export default class Login extends Component {
 				<View style={styles.footerParent}>
 					<Text style={{color:"white", fontSize: 12, marginBottom:10}}>Or login with</Text>
 					<View style={styles.footer}>
-						<Image source={require("../assets/fblogo.png")}
-							style={styles.fbImage}
-							onPress={()=> this.login("facebook")}
-						/>
-						<Image source={require("../assets/googlelogin.png")}
-							style={styles.fbImage}
-							onPress={()=>this.login("google")}
-						/>
-						<Image source={require("../assets/twitterlogin.png")}
-							style={styles.fbImage}
-							onPress={()=>this.login("google")}
-						/>
+						<TouchableOpacity activeOpacity={0.5} onPress={()=>this.login("facebook")}>
+							<Image source={require("../assets/fblogo.png")}
+								style={styles.fbImage}
+							/>
+						</TouchableOpacity>
+						<TouchableOpacity activeOpacity={0.5} onPress={()=>this.login("google")}>
+							<Image source={require("../assets/googlelogin.png")}
+								style={styles.fbImage}
+							/>
+						</TouchableOpacity>
+						<TouchableOpacity activeOpacity={0.5} onPress={()=>this.login("twitter")}>
+							<Image source={require("../assets/twitterlogin.png")}
+								style={styles.fbImage}
+							/>
+						</TouchableOpacity>
 					</View>
 				</View>
 			</ImageBackground>
@@ -198,8 +211,8 @@ export default class Login extends Component {
 
 const styles = StyleSheet.create({
 	fbImage:{
-		height: 30,
-		width: 30,
+		height: 50,
+		width: 50,
 		marginRight: 15,
 		marginBottom: 5
 	},

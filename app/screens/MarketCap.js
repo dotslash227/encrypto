@@ -38,7 +38,7 @@ export default class MarketCap extends Component {
 	}
 
 	fetchMarketRates() {
-		fetch("https://satoshi.encrypto.tech/api/data/marketcap?limit=50", {
+		fetch("https://satoshi.encrypto.tech/api/data/marketcap?limit=2500", {
 			method: "GET",
 			headers: {
 				Accept: "application/json",
@@ -62,7 +62,7 @@ export default class MarketCap extends Component {
 	_handleResults(results) {
 		this.setState({ ticker: results });
 	  }
-	
+
 	showSearchBar() {
 		this.searchBar.show();
 	}
@@ -104,10 +104,10 @@ class ListOfCoins extends Component {
 		return (
 			<View>
 				<Grid style={[styles.tableRow, {backgroundColor: "#F2F2F2"}]}>
-					<Col size={30}><Text style={styles.tableText}>Name</Text></Col>
-					<Col size={30}><Text style={styles.tableText}>Market Cap</Text></Col>
-					<Col size={15}><Text style={styles.tableText}>Price</Text></Col>
-					<Col size={15}><Text style={styles.tableText}>Change</Text></Col>
+					<Col size={30}><Text style={styles.tableText}>Currency Name</Text></Col>
+					<Col size={30}><Text style={styles.tableText}>Market Cap (USD)</Text></Col>
+					<Col size={15}><Text style={styles.tableText}>Price (USD)</Text></Col>
+					<Col size={15}><Text style={styles.tableText}>% Change</Text></Col>
 				</Grid>
 				{list}
 			</View>
