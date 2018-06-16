@@ -73,7 +73,15 @@ export default class MarketCap extends Component {
 
 	searchOnBack() {
 		this.fetchMarketRates();
-		this.searchBar.hide();
+		//this.searchBar.hide();
+	}
+
+	checkSearchValue(val) {
+		console.log({val});
+		if(val === "") {
+			this.fetchMarketRates();
+		}
+		//this.searchBar.hide();
 	}
 	
 	loadMore() {
@@ -93,19 +101,32 @@ export default class MarketCap extends Component {
 		}
 		return (
 			<Container>
-				<SearchBar
+		  <Header {...this.props} title="Market Cap" hasSearch={true} showSearch={this.showSearchBar} />
+					<Content>
+					<SearchBar
 			ref={(ref) => this.searchBar = ref}
 			data={ticker}
 			onBack={this.searchOnBack}
 			handleResults={this._handleResults}
+			showOnLoad
+			hideBack
+			hideX={false}
+			focusOnLayout={false}
+			onX={this.searchOnBack}
+			allDataOnEmptySearch={true}
 		  />
-		  <Header {...this.props} title="Market Cap" hasSearch={true} showSearch={this.showSearchBar} />
-					<Content>
+					<EmptySpace />
 					{content}
 					<Button full light onPress={() => this.loadMore()}><Text>More</Text></Button>
 					</Content>
 			</Container>
 		);
+	}
+}
+
+class EmptySpace extends Component {
+	render() {
+		return <View style={{height: 60}} />
 	}
 }
 

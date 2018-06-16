@@ -57,7 +57,6 @@ export default class MainHeader extends Component {
 		}
 
 		return (
-			<ImageBackground source={{uri:"https://www.delhinerds.com/gradient.jpg"}} style={styles.container}>
 				<Header hasTabs={hasTabs} style={{backgroundColor:"#3174b3"}}>
 					<Left>{leftSection}</Left>
 					<Body>
@@ -65,7 +64,6 @@ export default class MainHeader extends Component {
 					</Body>
 					<Right>{rightSection}</Right>
 				</Header>
-			</ImageBackground>
 		);
 	}
 }
