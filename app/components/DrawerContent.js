@@ -37,7 +37,7 @@ export default class DrawerContent extends Component {
 						icon
 					>
 					<Left>
-						<Icon name="home" style={styles.icon} />
+						<Icon name="ios-home" style={styles.icon} />
 					</Left>
 						<Body style={styles.removeBorder}>
 							<Text style={styles.drawerText}>Home</Text>
@@ -50,7 +50,7 @@ export default class DrawerContent extends Component {
 						icon
 					>
 					<Left>
-						<Icon type="FontAwesome" name="fa-chart-pie" style={styles.icon} />
+						<Icon name="ios-home" style={styles.icon} />
 					</Left>
 						<Body style={styles.removeBorder}>
 							<Text style={styles.drawerText}>Portfolio</Text>
@@ -63,7 +63,7 @@ export default class DrawerContent extends Component {
 						icon
 					>
 					<Left>
-						<Icon type="FontAwesome" name="clock" style={styles.icon} />
+						<Icon  name="ios-home" style={styles.icon} />
 					</Left>
 						<Body style={styles.removeBorder}>
 							<Text style={styles.drawerText}>Watchlist</Text>
@@ -76,7 +76,7 @@ export default class DrawerContent extends Component {
 						icon
 					>
 					<Left>
-						<Icon type="MaterialIcons" name="monetization_on" style={styles.icon} />
+						<Icon name="ios-home" style={styles.icon} />
 					</Left>
 						<Body style={styles.removeBorder}>
 							<Text style={styles.drawerText}>
@@ -91,7 +91,7 @@ export default class DrawerContent extends Component {
 						icon
 					>
 					<Left>
-						<Icon type="FontAwesome" name="news" style={styles.icon} />
+						<Icon  name="ios-home" style={styles.icon} />
 					</Left>
 						<Body style={styles.removeBorder}>
 							<Text style={styles.drawerText}>News</Text>
@@ -104,7 +104,7 @@ export default class DrawerContent extends Component {
 						icon
 					>
 					<Left>
-						<Icon type="FontAwesome" name="news" style={styles.icon} />
+						<Icon  name="ios-home" style={styles.icon} />
 					</Left>
 						<Body style={styles.removeBorder}>
 							<Text style={styles.drawerText}>
@@ -120,7 +120,7 @@ export default class DrawerContent extends Component {
 						icon
 					>
 					<Left>
-						<Icon type="FontAwesome" name="news" style={styles.icon} />
+						<Icon  name="ios-home" style={styles.icon} />
 					</Left>
 						<Body style={styles.removeBorder}>
 							<Text style={styles.drawerText}>ICO</Text>
@@ -134,7 +134,7 @@ export default class DrawerContent extends Component {
 						icon
 					>
 					<Left>
-						<Icon type="FontAwesome" name="news" style={styles.icon} />
+						<Icon  name="ios-home" style={styles.icon} />
 					</Left>
 						<Body style={styles.removeBorder}>
 							<Text style={styles.drawerText}>Settings</Text>

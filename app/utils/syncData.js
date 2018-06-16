@@ -77,3 +77,24 @@ export function syncExchanges(params) {
 			}
 		});
 }
+
+// Market Cap
+export function syncMarketCap(params) {
+	fetch("https://satoshi.encrypto.tech/api/data/marketcap?limit=500", {
+		method: "GET",
+		headers: {
+			Accept: "application/json",
+			"Content-Type": "application/json"
+		}
+	})
+		.then(response => response.json())
+		.then(response => {
+			storage.save({
+				key: "marketCap", // Note: Do not use underscore("_") in key!
+				//id: '1001',	  // Note: Do not use underscore("_") in id!
+				data: JSON.stringify(response),
+				expires: 1000 * 60 * 60 * 24
+			});
+			console.log("Saved Market Cap data");
+		});
+}

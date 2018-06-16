@@ -27,8 +27,11 @@ import { AsyncStorage } from "react-native";
 import {
 	syncAvailableCurrencies,
 	syncCurrencies,
-	syncExchanges
+	syncExchanges,
+	syncMarketCap
 } from "./utils/syncData";
+
+import { getCacheUsingKey } from "./utils/common";
 
 import OneSignal from 'react-native-onesignal';
 
@@ -117,8 +120,19 @@ var storage = new Storage({
 		},
 		exchanges(params) {
 			syncExchanges(params);
+		},
+		marketCap(params) {
+			syncMarketCap(params);
 		}
 	}
 });
 
+/* storage.remove({
+	key: 'marketCap'
+}); */
+
 global.storage = storage;
+
+// Initial Sync
+getCacheUsingKey("marketCap", () => {});
+// Initial Sync END

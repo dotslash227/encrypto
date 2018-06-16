@@ -22,7 +22,7 @@ import {
 } from "native-base";
 
 import SearchBar from 'react-native-searchbar';
-import { formatRate } from "../utils/common";
+import { formatRate, getCacheUsingKey } from "../utils/common";
 
 export default class MarketCap extends Component {
 	constructor(props) {
@@ -30,29 +30,32 @@ export default class MarketCap extends Component {
 		this.state = {
 			loading: true,
 			ticker: [],
-			error: null
+			error: null,
+			display: 10
 		};
 		this.showSearchBar = this.showSearchBar.bind(this);
 		this._handleResults = this._handleResults.bind(this);
 		this.searchOnBack = this.searchOnBack.bind(this);
+		this.fetchMarketRates = this.fetchMarketRates.bind(this);
 	}
 
 	fetchMarketRates() {
-		fetch("https://satoshi.encrypto.tech/api/data/marketcap?limit=2500", {
-			method: "GET",
-			headers: {
-				Accept: "application/json",
-				"Content-Type": "application/json"
-			}
+		var _this = this;
+		storage
+		.load({
+			key: "marketCap",
+			autoSync: true,
+			syncInBackground: true
 		})
-			.then(response => response.json())
-			.then(response => {
-				this.setState({ loading: false, ticker: response });
-			})
-			.catch(e => {
-				console.log(e);
-				this.setState({ loading: false, error: "Something went wrong." });
+		.then(ret => {
+			Promise.resolve(JSON.parse(ret)).then(ticker => {
+				_this.setState({ loading: false, ticker: ticker });
 			});
+		})
+		.catch(e => {
+			_this.setState({ loading: false, error: "Something went wrong." });
+			console.log(e, null)
+		});
 	}
 
 	componentDidMount() {
@@ -60,6 +63,7 @@ export default class MarketCap extends Component {
 	}
 
 	_handleResults(results) {
+		console.log("Handle Results was fired");
 		this.setState({ ticker: results });
 	  }
 
@@ -71,14 +75,21 @@ export default class MarketCap extends Component {
 		this.fetchMarketRates();
 		this.searchBar.hide();
 	}
+	
+	loadMore() {
+		const display = this.state.display;
+		this.setState({display: display + 10});
+	}
 
 	render() {
 		const { ticker, loading, error } = this.state;
 		let content;
 		if (loading) {
 			content = <Spinner />;
+		} else if(error) {
+			content = <Text>Somthing went wrong</Text>;
 		} else {
-			content = (<ListOfCoins ticker={ticker} />);
+			content = (<ListOfCoins ticker={ticker} display={this.state.display} />);
 		}
 		return (
 			<Container>
@@ -89,7 +100,10 @@ export default class MarketCap extends Component {
 			handleResults={this._handleResults}
 		  />
 		  <Header {...this.props} title="Market Cap" hasSearch={true} showSearch={this.showSearchBar} />
-					<Content>{content}</Content>
+					<Content>
+					{content}
+					<Button full light onPress={() => this.loadMore()}><Text>More</Text></Button>
+					</Content>
 			</Container>
 		);
 	}
@@ -97,9 +111,10 @@ export default class MarketCap extends Component {
 
 class ListOfCoins extends Component {
 	render() {
-		const { ticker } = this.props;
+		let ticker = this.props.ticker;
+		ticker = ticker.slice(0, (this.props.display || 5));
 		let list = ticker.map(ticker => {
-			return <SingleRow ticker={ticker} />;
+			return <SingleRow key={ticker.id} ticker={ticker} />;
 		});
 		return (
 			<View>
