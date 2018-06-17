@@ -5,5 +5,12 @@
 	"onesignal": {
 		"appId": "557621d9-a553-4db0-be7c-49096cbda27e"
 	},
-	"displayVersion": "v1.0"
+	"displayVersion": "v1.0",
+	"oauth": {
+		"twitter": {
+			"consumer_key": "RPDYOFOQtoRJEyLRtMCh2Vtt7",
+			"consumer_secret": "BP6HF4XCrHKB0RX7YXcZVWcD1yDfvGonbsKdPQJJCJWSZS1M0M",
+			"callback_url": "http://www.encrypto.tech"
+		  }
+	}
 }

@@ -1,0 +1,6 @@
+framework module Pods_EncryptoAppTests {
+  umbrella header "Pods-EncryptoAppTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

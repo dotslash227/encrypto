@@ -27,6 +27,11 @@ import { LoginManager, AccessToken } from "react-native-fbsdk";
 // Account Kit
 import RNAccountKit from "react-native-facebook-account-kit";
 
+/* OAuth */
+import OAuthManager from 'react-native-oauth';
+const manager = new OAuthManager('Encrypto');
+manager.configure(config.oauth);
+
 class LoginHeader extends Component {
 	render() {
 		return (
@@ -51,6 +56,7 @@ export default class Login extends Component {
 		if (source === "facebook") this.loginFacebook();
 		else if (source === "accountkit") this.loginAccountKit();
 		else if (source === "guest") this.sendToPortfolio();
+		else if(source === "twitter") this.loginTwitter();
 	}
 
 	sendToHome() {
@@ -159,6 +165,12 @@ export default class Login extends Component {
 		});
 	}
 
+	loginTwitter() {
+		manager.authorize('twitter')
+			.then(resp => console.log({resp}))
+			.catch(err => console.log(JSON.stringify(err)));
+	}
+
 	render() {
 		return (
 			<ImageBackground source={require('../assets/bgimage.png')} style={styles.backgroundImage}>
@@ -221,13 +233,11 @@ const styles = StyleSheet.create({
 		left: 0,
 		right: 0,
 		bottom: 5,
-		textAlign: "center",
 		alignItems: "center",
 		justifyContent: "center"
 	},
 	footer:{
 		flexDirection: "row",
-		textAlign: 'center',
 		alignItems: 'center',
 		justifyContent: "center",
 	},
