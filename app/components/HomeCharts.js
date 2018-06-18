@@ -164,12 +164,12 @@ class Info extends Component {
 		const { selected, curOneData, curTwoData } = this.props;
 		const curOneRate = curOneData[0];
 		const lastCurOne = curOneData[1];
-		let buypercentage = (lastCurOne.rate - curOneRate.rate)/100
+		let buypercentage = (curOneRate.rate - lastCurOne.rate)/100
 		let percentage;
 		if (buypercentage<0){
 				percentage = (
 					<Text style={{color:"red", textAlign:"center"}}>
-						-{buypercentage}%
+						{buypercentage}%
 					</Text>
 				);
 		} else{
@@ -179,12 +179,12 @@ class Info extends Component {
 				</Text>
 			);
 		}
-		let sellPercentage = (lastCurOne.sell-curOneRate.sell)/100
+		let sellPercentage = (curOneRate.sell-lastCurOne.sell)/100
 		let sellShow;
 		if (buypercentage<0){
 				sellShow = (
 					<Text style={{color:"red", textAlign:"center"}}>
-						-{sellPercentage}%
+						{sellPercentage}%
 					</Text>
 				);
 		} else{
@@ -222,7 +222,7 @@ class Info extends Component {
 			} else{
 				buy2show = (
 					<Text style={{color:"green", textAlign:"center"}}>
-						+{sellPercentage}%
+						{sellPercentage}%
 					</Text>
 				);
 			}
@@ -235,7 +235,7 @@ class Info extends Component {
 			} else{
 				sell2show = (
 					<Text style={{color:"green", textAlign:"center"}}>
-						+{sellPercentage}%
+							{sellPercentage}%
 					</Text>
 				);
 			}
