@@ -163,6 +163,39 @@ class Info extends Component {
 	render() {
 		const { selected, curOneData, curTwoData } = this.props;
 		const curOneRate = curOneData[0];
+		const lastCurOne = curOneData[curOneData.length-1];
+		let buypercentage = (lastCurOne.rate - curOneRate.rate)/100
+		let percentage;
+		if (buypercentage<0){
+				percentage = (
+					<Text style={{color:"red", textAlign:"center"}}>
+						-{buypercentage}%
+					</Text>
+				);
+		} else{
+			percentage = (
+				<Text style={{color:"green", textAlign:"center"}}>
+					+{buypercentage}%
+				</Text>
+			);
+		}
+		let sellPercentage = (lastCurOne.sell-curOneRate.sell)/100
+		let sellShow;
+		if (buypercentage<0){
+				sellShow = (
+					<Text style={{color:"red", textAlign:"center"}}>
+						-{sellPercentage}%
+					</Text>
+				);
+		} else{
+			sellShow = (
+				<Text style={{color:"green", textAlign:"center"}}>
+					+{sellPercentage}%
+				</Text>
+			);
+		}
+		let buy2show;
+		let sell2show;
 		//const curOneRateYesterday = curOneData[curOneData.length - 1];
 		const curOneFilter = this.props.exchanges.filter(
 			e => e.code === selected.exchange.toUpperCase()
@@ -173,9 +206,39 @@ class Info extends Component {
 		let curTwoExName;
 		if (selected.isComparing && curTwoData && curTwoData.length > 0) {
 			curTwoRate = curTwoData[0];
+			lastCurTwo = curTwoData[curTwoData.length-1];
+			const cur2buyPercent = (curTwoRate.rate-lastCurTwo.rate)/100
+			const cur2sellPercent = (curTwoRate.sell-lastCurTwo.sell)/100
 			let curTwoFilter = this.props.exchanges.filter(
 				e => e.code === selected.exchangeTwo.toUpperCase()
 			);
+
+			if (cur2buyPercent<0){
+					buy2show = (
+						<Text style={{color:"red", textAlign:"center"}}>
+							-{sellPercentage}%
+						</Text>
+					);
+			} else{
+				buy2show = (
+					<Text style={{color:"green", textAlign:"center"}}>
+						+{sellPercentage}%
+					</Text>
+				);
+			}
+			if (cur2sellPercent<0){
+					sell2show = (
+						<Text style={{color:"red", textAlign:"center"}}>
+							-{sellPercentage}%
+						</Text>
+					);
+			} else{
+				sell2show = (
+					<Text style={{color:"green", textAlign:"center"}}>
+						+{sellPercentage}%
+					</Text>
+				);
+			}
 			curTwoExName = curTwoFilter[0].displayName;
 		}
 
@@ -197,9 +260,7 @@ class Info extends Component {
 						<Text style={styles.smallText}>
 							Change 24 Hours
 						</Text>
-						<Text style={{color:"red", textAlign:"center"}}>
-							8%
-						</Text>
+						{percentage}
 					</Col>
 					<Col style={styles.colBorder}>
 						<Text style={styles.bigText}>
@@ -216,9 +277,7 @@ class Info extends Component {
 						<Text style={styles.smallText}>
 							Change 24 Hours
 						</Text>
-						<Text style={{color:"green", textAlign:"center"}}>
-							10%
-						</Text>
+						{sellShow}
 					</Col>
 				</Grid>
 			);
@@ -239,9 +298,7 @@ class Info extends Component {
 							<Text style={styles.smallText}>
 								% change
 							</Text>
-							<Text style={styles.smallText}>
-								8%
-							</Text>
+							{percentage}
 						</Col>
 						<Col style={styles.colBorder}>
 							<Text style={styles.smallText}>
@@ -255,9 +312,7 @@ class Info extends Component {
 							<Text style={styles.smallText}>
 								% change
 							</Text>
-							<Text style={styles.smallText}>
-								8%
-							</Text>
+							{sellShow}
 						</Col>
 					 </Row>
 					 <Row style={styles.compareRow}>
@@ -273,9 +328,7 @@ class Info extends Component {
 							 <Text style={styles.smallText}>
 								 % change
 							 </Text>
-							 <Text style={styles.smallText}>
-								 8%
-							 </Text>
+							 {buy2show}
 						 </Col>
 						 <Col style={styles.colBorder}>
 							 <Text style={styles.smallText}>
@@ -289,9 +342,7 @@ class Info extends Component {
 							 <Text style={styles.smallText}>
 								 % change
 							 </Text>
-							 <Text style={styles.smallText}>
-								 8%
-							 </Text>
+							 {sell2show}
 						 </Col>
 					 </Row>
 					</Grid>
