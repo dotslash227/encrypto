@@ -83,7 +83,7 @@ export default class MarketCap extends Component {
 		}
 		//this.searchBar.hide();
 	}
-	
+
 	loadMore() {
 		const display = this.state.display;
 		this.setState({display: display + 10});
@@ -101,7 +101,7 @@ export default class MarketCap extends Component {
 		}
 		return (
 			<Container>
-		  <Header {...this.props} title="Market Cap" hasSearch={true} showSearch={this.showSearchBar} />
+		  <Header {...this.props} title="Market Cap" hasSearch={false} showSearch={this.showSearchBar} />
 					<Content>
 					<SearchBar
 			ref={(ref) => this.searchBar = ref}
