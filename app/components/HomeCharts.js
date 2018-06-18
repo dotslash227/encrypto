@@ -163,7 +163,7 @@ class Info extends Component {
 	render() {
 		const { selected, curOneData, curTwoData } = this.props;
 		const curOneRate = curOneData[0];
-		const lastCurOne = curOneData[curOneData.length-1];
+		const lastCurOne = curOneData[1];
 		let buypercentage = (lastCurOne.rate - curOneRate.rate)/100
 		let percentage;
 		if (buypercentage<0){
@@ -206,7 +206,7 @@ class Info extends Component {
 		let curTwoExName;
 		if (selected.isComparing && curTwoData && curTwoData.length > 0) {
 			curTwoRate = curTwoData[0];
-			lastCurTwo = curTwoData[curTwoData.length-1];
+			lastCurTwo = curTwoData[1];
 			const cur2buyPercent = (curTwoRate.rate-lastCurTwo.rate)/100
 			const cur2sellPercent = (curTwoRate.sell-lastCurTwo.sell)/100
 			let curTwoFilter = this.props.exchanges.filter(
