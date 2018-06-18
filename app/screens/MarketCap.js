@@ -31,7 +31,7 @@ export default class MarketCap extends Component {
 			loading: true,
 			ticker: [],
 			error: null,
-			display: 10
+			display: 25
 		};
 		this.showSearchBar = this.showSearchBar.bind(this);
 		this._handleResults = this._handleResults.bind(this);
