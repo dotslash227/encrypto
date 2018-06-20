@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TouchableOpacity, View, StyleSheet, ImageBackground, Image } from "react-native";
+import { TouchableOpacity, View, StyleSheet, ImageBackground, Image, Platform } from "react-native";
 import {
 	Container,
 	Content,
@@ -28,9 +28,27 @@ import { LoginManager, AccessToken } from "react-native-fbsdk";
 import RNAccountKit from "react-native-facebook-account-kit";
 
 /* OAuth */
+const oauthConfig = {
+	"twitter": {
+		"consumer_key": "RPDYOFOQtoRJEyLRtMCh2Vtt7",
+		"consumer_secret": "BP6HF4XCrHKB0RX7YXcZVWcD1yDfvGonbsKdPQJJCJWSZS1M0M",
+		"callback_url": "http://www.encrypto.tech"
+	  }
+}
+if(Platform.OS === "android") {
+	oauthConfig.google = {
+		client_id: "910189157341-kale525t283g17fkdmb9g45foan0a9hu.apps.googleusercontent.com"
+	};
+} else {
+	oauthConfig.google = {
+		"callback_url": `com.googleusercontent.apps.910189157341-ctk16vc6t5ve8fn9d64un9vdo1dd7nls:google`,
+		"client_id": "910189157341-ctk16vc6t5ve8fn9d64un9vdo1dd7nls.apps.googleusercontent.com"
+	}
+}
+console.log({oauthConfig});
 import OAuthManager from 'react-native-oauth';
 const manager = new OAuthManager('Encrypto');
-manager.configure(config.oauth);
+manager.configure(oauthConfig);
 
 class LoginHeader extends Component {
 	render() {
@@ -57,6 +75,7 @@ export default class Login extends Component {
 		else if (source === "accountkit") this.loginAccountKit();
 		else if (source === "guest") this.sendToPortfolio();
 		else if(source === "twitter") this.loginTwitter();
+		else if(source === "google") this.loginGoogle();
 	}
 
 	sendToHome() {
@@ -167,6 +186,12 @@ export default class Login extends Component {
 
 	loginTwitter() {
 		manager.authorize('twitter')
+			.then(resp => console.log({resp}))
+			.catch(err => console.log(JSON.stringify(err)));
+	}
+
+	loginGoogle() {
+		manager.authorize('google', {scopes: 'email'})
 			.then(resp => console.log({resp}))
 			.catch(err => console.log(JSON.stringify(err)));
 	}
