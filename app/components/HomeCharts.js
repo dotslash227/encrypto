@@ -164,7 +164,7 @@ class Info extends Component {
 		const { selected, curOneData, curTwoData } = this.props;
 		const curOneRate = curOneData[0];
 		const lastCurOne = curOneData[1];
-		let buypercentage = (curOneRate.rate - lastCurOne.rate)/100
+		let buypercentage = ((curOneRate.rate - lastCurOne.rate)/100).toFixed(2)
 		let percentage;
 		if (buypercentage<0){
 				percentage = (
@@ -179,7 +179,7 @@ class Info extends Component {
 				</Text>
 			);
 		}
-		let sellPercentage = (curOneRate.sell-lastCurOne.sell)/100
+		let sellPercentage = ((curOneRate.sell-lastCurOne.sell)/100).toFixed(2)
 		let sellShow;
 		if (buypercentage<0){
 				sellShow = (
@@ -196,6 +196,8 @@ class Info extends Component {
 		}
 		let buy2show;
 		let sell2show;
+		let showbuydiff;
+		let showselldiff;
 		//const curOneRateYesterday = curOneData[curOneData.length - 1];
 		const curOneFilter = this.props.exchanges.filter(
 			e => e.code === selected.exchange.toUpperCase()
@@ -207,8 +209,8 @@ class Info extends Component {
 		if (selected.isComparing && curTwoData && curTwoData.length > 0) {
 			curTwoRate = curTwoData[0];
 			lastCurTwo = curTwoData[1];
-			const cur2buyPercent = (curTwoRate.rate-lastCurTwo.rate)/100
-			const cur2sellPercent = (curTwoRate.sell-lastCurTwo.sell)/100
+			const cur2buyPercent = ((curTwoRate.rate-lastCurTwo.rate)/100).toFixed(2)
+			const cur2sellPercent = ((curTwoRate.sell-lastCurTwo.sell)/100).toFixed(2)
 			let curTwoFilter = this.props.exchanges.filter(
 				e => e.code === selected.exchangeTwo.toUpperCase()
 			);
@@ -240,7 +242,36 @@ class Info extends Component {
 				);
 			}
 			curTwoExName = curTwoFilter[0].displayName;
+
+			const buydiff = (curOneRate.rate-curTwoRate.rate).toFixed(2)
+			const selldiff = (curOneRate.sell-curTwoRate.sell).toFixed(2)
+
+			if (buydiff<0){
+				showbuydiff = (
+					<Text style={{color:"red", textAlign:"center"}}>
+						{buydiff}
+					</Text>
+				);
+			} else{
+				showbuydiff = (<Text style={{color:"green", textAlign:"center"}}>
+					{buydiff}
+				</Text>);
+			}
+
+			if (selldiff<0){
+				showselldiff = (
+					<Text style={{color:"red", textAlign:"center"}}>
+						{selldiff}
+					</Text>
+				);
+			} else{
+				showselldiff = (<Text style={{color:"green", textAlign:"center"}}>
+					{selldiff}
+				</Text>);
+			}
 		}
+
+
 
 		if (!selected.isComparing){
 			return (
@@ -288,7 +319,7 @@ class Info extends Component {
 					<Row style={styles.compareRow}>
 						<Col style={styles.colBorder}>
 							<Text style={styles.smallText}>
-								Buy 1
+								{selected.exchange}
 							</Text>
 							<Text style={styles.smallText}>
 								{formatRate(curOneRate.buy)}
@@ -302,7 +333,7 @@ class Info extends Component {
 						</Col>
 						<Col style={styles.colBorder}>
 							<Text style={styles.smallText}>
-								Sell 1
+								{selected.exchange}
 							</Text>
 							<Text style={styles.smallText}>
 								{formatRate(curOneRate.sell)}
@@ -318,7 +349,7 @@ class Info extends Component {
 					 <Row style={styles.compareRow}>
 						 <Col style={styles.colBorder}>
 							 <Text style={styles.smallText}>
-								 Buy 2
+								 {selected.exchangeTwo}
 							 </Text>
 							 <Text style={styles.smallText}>
 								 {formatRate(curOneRate.buy)}
@@ -332,7 +363,7 @@ class Info extends Component {
 						 </Col>
 						 <Col style={styles.colBorder}>
 							 <Text style={styles.smallText}>
-								 Sell 2
+								 {selected.exchangeTwo}
 							 </Text>
 							 <Text style={styles.smallText}>
 								 {formatRate(curOneRate.sell)}
@@ -344,6 +375,20 @@ class Info extends Component {
 							 </Text>
 							 {sell2show}
 						 </Col>
+					 </Row>
+					 <Row>
+					 	<Col style={styles.colBorder}>
+							<Text style={styles.smallText}>Buy Diff.</Text>
+						</Col>
+						<Col style={styles.colBorder}>
+							{showbuydiff}
+						</Col>
+						<Col style={styles.colBorder}>
+							<Text style={styles.smallText}>Sell Diff.</Text>
+						</Col>
+						<Col style={styles.colBorder}>
+							{showselldiff}
+						</Col>
 					 </Row>
 					</Grid>
 			);

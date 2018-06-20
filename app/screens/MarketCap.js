@@ -170,10 +170,12 @@ class SingleRow extends Component {
 			}
 			return (
 				<View key={ticker.id} style={styles.tableRow}>
-					<Grid><Col size={30}><Text style={styles.tableText}>{ticker.name} ({ticker.symbol})</Text></Col>
-					<Col size={30}><Text style={[styles.tableText, {fontSize: 10}]}>{formatRate(ticker.market_cap_usd)}</Text></Col>
-					<Col size={15}><Text style={styles.tableText}>{formatRate(ticker.price_usd)}</Text></Col>
-					<Col size={15}>{percentage}</Col></Grid>
+					<Grid>
+						<Col size={30}><Text style={styles.tableText}>{ticker.id.toUpperCase()} ({ticker.symbol})</Text></Col>
+						<Col size={30}><Text style={[styles.tableText, {fontSize: 10}]}>{formatRate(ticker.market_cap_usd)}</Text></Col>
+						<Col size={15}><Text style={styles.tableText}>{formatRate(ticker.price_usd)}</Text></Col>
+						<Col size={15}>{percentage}</Col>
+					</Grid>
 				</View>
 			);
 	}
@@ -191,7 +193,7 @@ const styles = StyleSheet.create({
 	},
 	tableText: {
 		fontSize: 11,
-		textAlign: "center"
+		textAlign: "center",
 	},
 	tableRow: {
 		paddingTop: 10,
