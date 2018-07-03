@@ -3,6 +3,7 @@ package com.encryptoapp;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.github.wuxudong.rncharts.MPAndroidChartPackage;
 import io.fullstack.oauth.OAuthManagerPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.geektime.rnonesignalandroid.ReactNativeOneSignalPackage;
@@ -40,6 +41,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new MPAndroidChartPackage(),
             new OAuthManagerPackage(),
             new VectorIconsPackage(),
             new ReactNativeOneSignalPackage(),
