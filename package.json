@@ -9,6 +9,7 @@
 	"dependencies": {
 		"axios": "^0.18.0",
 		"babel-preset-react-native": "^2.1.0",
+		"immutability-helper": "^2.7.1",
 		"moment": "^2.20.1",
 		"native-base": "^2.3.7",
 		"react": "16.2.0",

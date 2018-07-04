@@ -141,6 +141,22 @@ export default class DrawerContent extends Component {
 						</Body>
 
 					</ListItem>
+
+					<ListItem
+						style={styles.listItem}
+						button
+						onPress={() => this.goToScreen("TestScreen")}
+						icon
+					>
+					<Left>
+						<Icon  name="ios-home" style={styles.icon} />
+					</Left>
+						<Body style={styles.removeBorder}>
+							<Text style={styles.drawerText}>TestScreen</Text>
+						</Body>
+
+					</ListItem>
+
 				</List>
 				<View style={styles.drawerFooter}>
 					<Text style={styles.drawerFooterText}>

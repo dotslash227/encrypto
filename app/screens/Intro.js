@@ -110,7 +110,9 @@ export default class Intro extends Component {
 				.catch(e => console.log(e));
 		});
 
-		storage
+		this.props.navigation.navigate("Home");
+
+		/* storage
 			.load({ key: "introScreen" })
 			.then(data => {
 				this.setState({ loading: false });
@@ -122,10 +124,14 @@ export default class Intro extends Component {
 				// Not found
 				this.setState({ loading: false });
 				console.log({ e });
-			});
+			}); */
 		/* .catch(e => {
 				console.log({ e });
 			}); */
+	}
+
+	componentDidMount() {
+		
 	}
 
 	markAsSeen = () => {

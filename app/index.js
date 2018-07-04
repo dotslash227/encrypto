@@ -135,4 +135,7 @@ global.storage = storage;
 
 // Initial Sync
 getCacheUsingKey("marketCap", () => {});
+getCacheUsingKey("availableCurrencies", () => {});
+getCacheUsingKey("currencies", () => {});
+getCacheUsingKey("exchanges", () => {});
 // Initial Sync END

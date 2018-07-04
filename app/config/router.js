@@ -13,6 +13,7 @@ import LoginScreen from "../screens/Login";
 import PortfolioScreen from "../screens/Portfolio/Index";
 import WatchlistScreen from "../screens/Watchlist/Index";
 import AddToPortfolioScreen from "../screens/Portfolio/Add";
+import TestScreen from "../screens/Test";
 
 // Components
 import DrawerContent from "../components/DrawerContent";
@@ -44,10 +45,11 @@ export default DrawerNavigator(
 			screen: RequiresConnection(MarketCapScreen, NoInternetText)
 		},
 		Login: { screen: RequiresConnection(LoginScreen, NoInternetText) },
-		ICO: { screen: RequiresConnection(ICOScreen, NoInternetText) }
+		ICO: { screen: RequiresConnection(ICOScreen, NoInternetText) },
+		TestScreen: { screen: TestScreen },
 	},
 	{
-		initialRouteName: "Home",
+		initialRouteName: "Intro",
 		// initialRouteName: "MarketCap",
 		navigationOptions: {
 			header: null

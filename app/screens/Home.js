@@ -65,6 +65,7 @@ export default class Home extends Component {
 					console.log(stateChange);
 					this.setState(stateChange);
 					console.log(this.state);
+					console.log({i, conLen: containers.length});
 					if (i >= containers.length) {
 						this.setState({ homeLoading: false });
 					}
