@@ -1,14 +1,14 @@
 PODS:
-  - Charts (3.0.3):
-    - Charts/Core (= 3.0.3)
-  - Charts/Core (3.0.3)
+  - Charts (3.1.1):
+    - Charts/Core (= 3.1.1)
+  - Charts/Core (3.1.1)
   - DCTAuth (3.0)
-  - SwiftyJSON (3.1.4)
+  - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
-  - Charts (= 3.0.3)
+  - Charts (= 3.1.1)
   - DCTAuth (from `https://github.com/danielctull/DCTAuth.git`)
-  - SwiftyJSON (= 3.1.4)
+  - SwiftyJSON (= 4.0.0)
 
 EXTERNAL SOURCES:
   DCTAuth:
@@ -20,10 +20,10 @@ CHECKOUT OPTIONS:
     :git: https://github.com/danielctull/DCTAuth.git
 
 SPEC CHECKSUMS:
-  Charts: bcde37724c161958c1438dd4883971fcb2d50c06
+  Charts: 90a4d61da0f6e06684c591e3bcab11940fe61736
   DCTAuth: 8add154decd00335d62917828896bba790ce47fd
-  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: '08bc2db8bb01d6152ed4e51d8e3d1f8fa17e3a16'
+PODFILE CHECKSUM: 05f0162255ce36e81c2f68a04ae0944dac43cf84
 
 COCOAPODS: 1.2.1
