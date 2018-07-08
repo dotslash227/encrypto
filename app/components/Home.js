@@ -36,7 +36,7 @@ export class PickerHeader extends Component {
 			PickerOptionsCurrencies.push({
 				key: currency,
 				label: `${
-					nextProps.currencies[currency.toString()]
+					nextProps.currencies[currency.toString()] ? nextProps.currencies[currency.toString()] : currency
 				} (${currency})`
 			});
 		});
