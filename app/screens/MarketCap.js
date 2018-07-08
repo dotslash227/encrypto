@@ -98,7 +98,10 @@ export default class MarketCap extends Component {
 		} else {
 			content = (<ListOfCoins ticker={ticker} display={this.state.display} />);
 		}
-
+		let moreButton;
+		if(ticker.length > 30) {
+			moreButton = (<Button full light onPress={() => this.loadMore()}><Text>More</Text></Button>);
+		}
 		return (
 			<Container>
 		  <Header {...this.props} title="Market Cap" hasSearch={false} showSearch={this.showSearchBar} />
@@ -118,7 +121,7 @@ export default class MarketCap extends Component {
 		  />
 					<EmptySpace />
 					{content}
-					<Button full light onPress={() => this.loadMore()}><Text>More</Text></Button>
+					{moreButton}
 					</Content>
 			</Container>
 		);
