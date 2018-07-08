@@ -86,7 +86,7 @@ export default class MarketCap extends Component {
 
 	loadMore() {
 		const display = this.state.display;
-		this.setState({display: display + 10});
+		this.setState({display: display + 50});
 	}
 
 	render() {
@@ -99,6 +99,7 @@ export default class MarketCap extends Component {
 		} else {
 			content = (<ListOfCoins ticker={ticker} display={this.state.display} />);
 		}
+
 		return (
 			<Container>
 		  <Header {...this.props} title="Market Cap" hasSearch={false} showSearch={this.showSearchBar} />
@@ -114,6 +115,7 @@ export default class MarketCap extends Component {
 			focusOnLayout={false}
 			onX={this.searchOnBack}
 			allDataOnEmptySearch={true}
+			heightAdjust={5}
 		  />
 					<EmptySpace />
 					{content}
