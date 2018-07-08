@@ -1,6 +1,5 @@
-//
 import React, { Component } from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Image } from "react-native";
 import Header from "../components/Header";
 import {
 	Container,
@@ -142,6 +141,7 @@ class ListOfCoins extends Component {
 		return (
 			<View>
 				<Grid style={[styles.tableRow, {backgroundColor: "#F2F2F2"}]}>
+					<Col size={10}></Col>
 					<Col size={30}><Text style={styles.tableText}>Currency Name</Text></Col>
 					<Col size={30}><Text style={styles.tableText}>Market Cap (USD)</Text></Col>
 					<Col size={15}><Text style={styles.tableText}>Price (USD)</Text></Col>
@@ -173,6 +173,7 @@ class SingleRow extends Component {
 			return (
 				<View key={ticker.id} style={styles.tableRow}>
 					<Grid>
+						<Col size={10}><Image source={{uri: `https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/128/color/${ticker.id.toLowerCase()}.png`}} style={styles.coinImage} /></Col>
 						<Col size={30}><Text style={styles.tableText}>{ticker.id.toUpperCase()} ({ticker.symbol})</Text></Col>
 						<Col size={30}><Text style={[styles.tableText, {fontSize: 10}]}>{formatRate(ticker.market_cap_usd)}</Text></Col>
 						<Col size={15}><Text style={styles.tableText}>{formatRate(ticker.price_usd)}</Text></Col>
@@ -184,6 +185,12 @@ class SingleRow extends Component {
 }
 
 const styles = StyleSheet.create({
+	coinImage: {
+		height: 25,
+		width: 25,
+		paddingRight: 20,
+		paddingLeft: 20
+	},
 	percentage: {
 		fontSize: 10
 	},
