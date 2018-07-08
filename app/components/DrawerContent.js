@@ -24,7 +24,7 @@ export default class DrawerContent extends Component {
 					<List>
 						<ListItem style={styles.removeBorder}>
 							<Left>
-								<Image source={require("../assets/user.png")} style={{width:70, height:70}} />
+								<Image source={require("../assets/User-Profile-New.png")} style={{width:70, height:70}} />
 							</Left>
 						</ListItem>
 					</List>

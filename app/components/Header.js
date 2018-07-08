@@ -57,7 +57,7 @@ export default class MainHeader extends Component {
 		}
 
 		return (
-				<Header hasTabs={hasTabs} style={{backgroundColor:"#3174b3"}}>
+				<Header hasTabs={hasTabs} style={{backgroundColor:"#021B79"}}>
 					<Left>{leftSection}</Left>
 					<Body>
 						<Title>{this.props.title || "Encrypto"}</Title>
@@ -119,7 +119,7 @@ export class HomeHeader extends Component {
 		}
 
 		return (
-			<Header hasTabs={hasTabs} style={{backgroundColor:"#3174b3"}}>
+			<Header hasTabs={hasTabs} style={{backgroundColor:"#021B79"}}>
 				<Left>{leftSection}</Left>
 				<Body>
 					<Title>{this.props.title || "Encrypto"}</Title>
