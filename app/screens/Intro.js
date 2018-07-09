@@ -96,6 +96,10 @@ export default class Intro extends Component {
 
 	componentWillMount() {
 		// Exp: Load Currencies, etc
+	}
+
+	componentDidMount() {
+
 		let containers = ["availableCurrencies", "exchanges", "currencies"];
 		containers.forEach(container => {
 			storage
@@ -110,9 +114,9 @@ export default class Intro extends Component {
 				.catch(e => console.log(e));
 		});
 
-		this.props.navigation.navigate("Home");
+		//this.props.navigation.navigate("Home");
 
-		/* storage
+		storage
 			.load({ key: "introScreen" })
 			.then(data => {
 				this.setState({ loading: false });
@@ -124,13 +128,7 @@ export default class Intro extends Component {
 				// Not found
 				this.setState({ loading: false });
 				console.log({ e });
-			}); */
-		/* .catch(e => {
-				console.log({ e });
-			}); */
-	}
-
-	componentDidMount() {
+			});
 		
 	}
 
@@ -154,9 +152,9 @@ export default class Intro extends Component {
 	};
 	render() {
 		const { loading } = this.state;
-		// if (loading) {
-		// 	return <SplashScreen />;
-		// }
+		if (loading) {
+			return <SplashScreen />;
+		}
 		return (
 			<AppIntroSlider
 				slides={slides}
