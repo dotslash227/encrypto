@@ -35,6 +35,51 @@ import { getCacheUsingKey } from "./utils/common";
 
 import OneSignal from 'react-native-onesignal';
 
+// Storage:
+// Global Storage
+var storage = new Storage({
+	size: 10000, // maximum capacity, default 1000
+	storageBackend: AsyncStorage,
+
+	// expire time, default 1 day(1000 * 3600 * 24 milliseconds).
+	// can be null, which means never expire.
+	defaultExpires: 1000 * 3600 * 24 * 7, // 7 Days
+
+	// cache data in the memory. default is true.
+	enableCache: true,
+
+	// if data was not found in storage or expired,
+	// the corresponding sync method will be invoked and return
+	// the latest data.
+	sync: {
+		availableCurrencies(params) {
+			syncAvailableCurrencies(params);
+		},
+		currencies(params) {
+			syncCurrencies(params);
+		},
+		exchanges(params) {
+			syncExchanges(params);
+		},
+		marketCap(params) {
+			syncMarketCap(params);
+		}
+	}
+});
+
+/* storage.remove({
+	key: 'marketCap'
+}); */
+
+global.storage = storage;
+
+// Initial Sync
+getCacheUsingKey("marketCap", () => {});
+getCacheUsingKey("availableCurrencies", () => {});
+getCacheUsingKey("currencies", () => {});
+getCacheUsingKey("exchanges", () => {});
+// Initial Sync END
+
 export default class App extends Component {
 
 	componentWillMount() {
@@ -95,47 +140,3 @@ const styles = StyleSheet.create({
 		marginBottom: 5
 	}
 });
-
-// Global Storage
-var storage = new Storage({
-	size: 10000, // maximum capacity, default 1000
-	storageBackend: AsyncStorage,
-
-	// expire time, default 1 day(1000 * 3600 * 24 milliseconds).
-	// can be null, which means never expire.
-	defaultExpires: null,
-
-	// cache data in the memory. default is true.
-	enableCache: true,
-
-	// if data was not found in storage or expired,
-	// the corresponding sync method will be invoked and return
-	// the latest data.
-	sync: {
-		availableCurrencies(params) {
-			syncAvailableCurrencies(params);
-		},
-		currencies(params) {
-			syncCurrencies(params);
-		},
-		exchanges(params) {
-			syncExchanges(params);
-		},
-		marketCap(params) {
-			syncMarketCap(params);
-		}
-	}
-});
-
-/* storage.remove({
-	key: 'marketCap'
-}); */
-
-global.storage = storage;
-
-// Initial Sync
-getCacheUsingKey("marketCap", () => {});
-getCacheUsingKey("availableCurrencies", () => {});
-getCacheUsingKey("currencies", () => {});
-getCacheUsingKey("exchanges", () => {});
-// Initial Sync END
