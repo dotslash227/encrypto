@@ -90,7 +90,8 @@ export default class HomeCharts extends Component {
 		const chartData = curOneData.map(data => {
 			return {
 				//x: parseInt(moment(data.created).format("H")),
-				y: data.buy
+				y: data.buy,
+				marker: formatRate(data.buy)
 			};
 		});
 		let chartTwoData;

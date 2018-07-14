@@ -25,7 +25,7 @@ class LineChartComp extends React.Component {
     this.state = {
       data: {},
       legend: {
-        enabled: true,
+        enabled: false,
         textColor: processColor('blue'),
         textSize: 12,
         position: 'BELOW_CHART_RIGHT',
@@ -45,7 +45,7 @@ class LineChartComp extends React.Component {
         enabled: true,
         digits: 2,
         backgroundTint: processColor('teal'),
-	      markerColor: processColor('#F0C0FF8C'),
+	      markerColor: processColor('#555'),
         textColor: processColor('white'),
       }
     };
@@ -83,7 +83,7 @@ class LineChartComp extends React.Component {
 			  drawFilled: true,
 			  fillColor: processColor(colors[index]),
 			  fillAlpha: 60,
-				  valueTextSize: 15,
+				  valueTextSize: 0,
 			  valueFormatter: "##.000",
 			  dashedLine: {
 				lineLength: 20,
