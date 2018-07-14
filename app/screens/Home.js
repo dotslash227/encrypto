@@ -36,7 +36,7 @@ export default class Home extends Component {
 				countryImage: '../assets/india.png'
 			},
 			graph: {
-				range: 1 //Days
+				range: 7 //Days
 			}
 		};
 		this.changeSelection = this.changeSelection.bind(this);

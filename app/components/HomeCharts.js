@@ -11,15 +11,7 @@ import {
 } from "native-base";
 import { Col, Row, Grid } from "react-native-easy-grid";
 
-import {
-	VictoryChart,
-	VictoryArea,
-	VictoryAxis,
-	VictoryTheme,
-	VictoryStack,
-	VictoryLine,
-	VictoryLabel
-} from "victory-native";
+import LineChart from "../components/Graph";
 
 import config from "../config.json";
 import { formatRate } from "../utils/common";
@@ -97,7 +89,7 @@ export default class HomeCharts extends Component {
 		const sampleData2 = [{ x: 0, y: 3 }, { x: 1, y: 10 }];
 		const chartData = curOneData.map(data => {
 			return {
-				x: parseInt(moment(data.created).format("H")),
+				//x: parseInt(moment(data.created).format("H")),
 				y: data.buy
 			};
 		});
@@ -105,7 +97,7 @@ export default class HomeCharts extends Component {
 		if (selected.isComparing && curTwoData && curTwoData.length > 0) {
 			chartTwoData = curTwoData.map(data => {
 				return {
-					x: parseInt(moment(data.created).format("H")),
+					//x: parseInt(moment(data.created).format("H")),
 					y: data.buy
 				};
 			});
@@ -115,45 +107,15 @@ export default class HomeCharts extends Component {
 				<Info {...this.props} {...this.state} />
 				<View style={styles.chartContainer}>
 					{selected.isComparing ? (
-						<VictoryChart>
-							<VictoryLine
-								data={chartData}
-								style={{
-									data: {
-										stroke: "#375A7F",
-										fillOpacity: 0,
-										strokeWidth: 5
-									}
-								}}
-							/>
-							<VictoryLine
-								data={chartTwoData}
-								style={{
-									data: {
-										stroke: "#FCFA70",
-										fillOpacity: 0,
-										strokeWidth: 5
-									}
-								}}
-							/>
-						</VictoryChart>
+						<LineChart 
+							currencies={[ {data: chartData, meta: { exchange: selected.exchange } }, {data: chartTwoData, meta: { exchange: selected.exchangeTwo } } ]}
+						/>
 					) : (
-						<VictoryChart padding={50}>
-							<VictoryLine
-								data={chartData}
-								style={{
-									data: {
-										stroke: "#375A7F",
-										fillOpacity: 0,
-										strokeWidth: 5
-									}
-								}}
-								scale="time"
-							/>
-						</VictoryChart>
+						<LineChart 
+							currencies={[ {data: chartData, meta: { exchange: selected.exchange } } ]}
+						/>
 					)}
 				</View>
-				{/* <VictoryAxis crossAxis={false} /> */}
 			</View>
 		);
 	}
