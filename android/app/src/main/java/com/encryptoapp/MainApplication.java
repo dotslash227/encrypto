@@ -9,7 +9,6 @@ import com.oblador.vectoricons.VectorIconsPackage;
 import com.geektime.rnonesignalandroid.ReactNativeOneSignalPackage;
 import io.underscope.react.fbak.RNAccountKitPackage;
 import com.facebook.reactnative.androidsdk.FBSDKPackage;
-import com.horcrux.svg.SvgPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -46,8 +45,7 @@ public class MainApplication extends Application implements ReactApplication {
             new VectorIconsPackage(),
             new ReactNativeOneSignalPackage(),
             new RNAccountKitPackage(),
-            new FBSDKPackage(mCallbackManager),
-            new SvgPackage()
+            new FBSDKPackage(mCallbackManager)
       );
     }
 
