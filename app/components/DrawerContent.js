@@ -142,7 +142,7 @@ export default class DrawerContent extends Component {
 
 					</ListItem>
 
-					<ListItem
+					{/* <ListItem
 						style={styles.listItem}
 						button
 						onPress={() => this.goToScreen("TestScreen")}
@@ -155,7 +155,7 @@ export default class DrawerContent extends Component {
 							<Text style={styles.drawerText}>TestScreen</Text>
 						</Body>
 
-					</ListItem>
+					</ListItem> */}
 
 				</List>
 				<View style={styles.drawerFooter}>
