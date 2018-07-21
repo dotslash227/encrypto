@@ -176,7 +176,7 @@ class SingleRow extends Component {
 			return (
 				<View key={ticker.id} style={styles.tableRow}>
 					<Grid>
-						<Col size={10}><Image source={{uri: `https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/128/color/${ticker.id.toLowerCase()}.png`}} style={styles.coinImage} /></Col>
+						<Col size={10}><Image source={{uri: `https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/128/color/${ticker.symbol.toLowerCase()}.png`}} style={styles.coinImage} /></Col>
 						<Col size={30}><Text style={styles.tableText}>{ticker.id.toUpperCase()} ({ticker.symbol})</Text></Col>
 						<Col size={30}><Text style={[styles.tableText, {fontSize: 10}]}>{formatRate(ticker.market_cap_usd)}</Text></Col>
 						<Col size={15}><Text style={styles.tableText}>{formatRate(ticker.price_usd)}</Text></Col>
@@ -191,8 +191,9 @@ const styles = StyleSheet.create({
 	coinImage: {
 		height: 25,
 		width: 25,
-		paddingRight: 20,
-		paddingLeft: 20
+		marginLeft: 2
+		/* paddingRight: 20,
+		paddingLeft: 20 */
 	},
 	percentage: {
 		fontSize: 10
