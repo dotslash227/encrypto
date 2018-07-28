@@ -66,12 +66,14 @@ export default class Home extends Component {
 					this.setState(stateChange);
 					console.log(this.state);
 					console.log({i, conLen: containers.length});
-					if (i >= containers.length) {
-						this.setState({ homeLoading: false });
-					}
 				})
-				.catch(e => console.log(e));
+				.catch(e => {
+					console.log(e)
+				});
 		});
+		setTimeout(() => {
+			this.setState({ homeLoading: false });
+		}, 2000);
 	}
 
 	setGraphRange(range) {

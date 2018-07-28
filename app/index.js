@@ -71,6 +71,14 @@ var storage = new Storage({
 	key: 'marketCap'
 }); */
 
+console.log("Loading introScreen");
+storage.load({key: "introScreen"})
+.then(data => {
+	console.log({data});
+}).catch(e => {
+	console.log({e});
+});
+
 global.storage = storage;
 
 // Initial Sync

@@ -100,6 +100,8 @@ export default class Intro extends Component {
 
 	componentDidMount() {
 
+		var _this = this;
+
 		let containers = ["availableCurrencies", "exchanges", "currencies"];
 		containers.forEach(container => {
 			storage
@@ -119,14 +121,15 @@ export default class Intro extends Component {
 		storage
 			.load({ key: "introScreen" })
 			.then(data => {
-				this.setState({ loading: false });
+				_this.setState({ loading: false });
 				if (data && data.seen) {
-					this.props.navigation.navigate("Home");
+					_this.props.navigation.navigate("Home");
 				}
 			})
 			.catch(e => {
 				// Not found
-				this.setState({ loading: false });
+				console.log("loaded data: error", e);
+				_this.setState({ loading: false });
 				console.log({ e });
 			});
 		
@@ -135,6 +138,7 @@ export default class Intro extends Component {
 	markAsSeen = () => {
 		storage.save({
 			key: "introScreen", // Note: Do not use underscore("_") in key!
+			expires: null,
 			data: {
 				seen: true
 			}
@@ -151,8 +155,10 @@ export default class Intro extends Component {
 		this.props.navigation.navigate("Home");
 	};
 	render() {
-		const { loading } = this.state;
-		if (loading) {
+		let { loading } = this.state;
+		console.log({loading});
+		if (loading && loading === true) {
+			console.log("Loading Intro");
 			return <SplashScreen />;
 		}
 		return (

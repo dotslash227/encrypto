@@ -20,9 +20,9 @@ import { Col, Row, Grid } from "react-native-easy-grid";
 export default class SplashScreen extends Component {
 
 	componentDidMount() {
-		setTimeout(()=>{
+		/* setTimeout(()=>{
 			console.log("I do not leak");
-		}, 2500);
+		}, 2500); */
 	}
 
 	render() {
