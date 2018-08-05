@@ -49,7 +49,7 @@ export default DrawerNavigator(
 		TestScreen: { screen: TestScreen },
 	},
 	{
-		initialRouteName: "Intro",
+		initialRouteName: "Home",
 		// initialRouteName: "MarketCap",
 		navigationOptions: {
 			header: null

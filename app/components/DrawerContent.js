@@ -200,7 +200,7 @@ const styles = StyleSheet.create({
 		color: "#3174b3"
 	},
 	profileArea: {
-		backgroundColor: "#3174b3",
+		backgroundColor: "#021B79",
 		height: 100
 	}
 });

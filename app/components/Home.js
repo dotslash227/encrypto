@@ -397,11 +397,11 @@ export class PickerTwoContainer extends Component {
 
 const styles = StyleSheet.create({
 	pickerOne: {
-		backgroundColor: "#3174b3",
+		backgroundColor: "#021B79",
 		height: 50
 	},
 	pickerTwoContainer: {
-		backgroundColor: "#3174b3"
+		backgroundColor: "#021B79"
 		/* alignItems: "center",
 		justifyContent: "center" */
 	},
@@ -411,7 +411,8 @@ const styles = StyleSheet.create({
 	},
 	pickerCol: {
 		alignItems: "center",
-		justifyContent: "center"
+		justifyContent: "center",
+		minWidth: 50
 	},
 	compareButton: {
 		backgroundColor: "#324d79"
