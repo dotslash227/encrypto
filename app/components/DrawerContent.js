@@ -43,7 +43,7 @@ export default class DrawerContent extends Component {
 							<Text style={styles.drawerText}>Home</Text>
 						</Body>
 					</ListItem>
-					<ListItem
+					{/* <ListItem
 						style={styles.listItem}
 						button
 						onPress={() => this.goToScreen("Portfolio")}
@@ -55,8 +55,8 @@ export default class DrawerContent extends Component {
 						<Body style={styles.removeBorder}>
 							<Text style={styles.drawerText}>Portfolio</Text>
 						</Body>
-					</ListItem>
-					<ListItem
+					</ListItem> */}
+					{/* <ListItem
 						style={styles.listItem}
 						button
 						onPress={() => this.goToScreen("Watchlist")}
@@ -68,7 +68,7 @@ export default class DrawerContent extends Component {
 						<Body style={styles.removeBorder}>
 							<Text style={styles.drawerText}>Watchlist</Text>
 						</Body>
-					</ListItem>
+					</ListItem> */}
 					<ListItem
 						style={styles.listItem}
 						button

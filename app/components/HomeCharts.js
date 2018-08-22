@@ -252,7 +252,7 @@ class Info extends Component {
 					</Col>
 					<Col style={styles.colBorder}>
 						<Text style={styles.smallText}>
-							Change 24 Hours
+							% Change
 						</Text>
 						{percentage}
 					</Col>
@@ -269,7 +269,7 @@ class Info extends Component {
 					</Col>
 					<Col>
 						<Text style={styles.smallText}>
-							Change 24 Hours
+							% Change
 						</Text>
 						{sellShow}
 					</Col>
