@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Image, StyleSheet } from "react-native";
+import { View, Image, StyleSheet, TouchableOpacity } from "react-native";
 import { List, ListItem, Text, Body, Right, Icon, Left } from "native-base";
 
 import config from "../config.json";
@@ -9,13 +9,33 @@ import { getLocalUser } from "../utils/common";
 export default class DrawerContent extends Component {
 	constructor(props) {
 		super(props);
+		this.state = {
+			loggedIn: false,
+			user: null
+		};
 	}
 
 	goToScreen(screenName) {
 		this.props.navigation.navigate(screenName);
 	}
 
-	componentDidMount() {}
+	componentDidMount() {
+		var _this = this;
+		getLocalUser((err, user) => {
+			if (user) {
+				console.log("User is logged in", user);
+				_this.setState({ loggedIn: true, user });
+			} else {
+				console.log("User is not logged in");
+			}
+		});
+	}
+
+	tapOnProfile() {
+		if(!this.state.loggedIn) {
+			this.props.navigation.navigate("Login");
+		}
+	}
 
 	render() {
 		return (
@@ -24,7 +44,9 @@ export default class DrawerContent extends Component {
 					<List>
 						<ListItem style={styles.removeBorder}>
 							<Left>
-								<Image source={require("../assets/User-Profile-New.png")} style={{width:70, height:70}} />
+								<TouchableOpacity onPress={() => this.tapOnProfile()}>
+									<Image source={require("../assets/User-Profile-New.png")} style={{width:70, height:70}} />
+								</TouchableOpacity>
 							</Left>
 						</ListItem>
 					</List>
