@@ -160,6 +160,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-custom-tabs')
     compile project(':react-native-charts-wrapper')
     compile project(':react-native-oauth')
     compile project(':react-native-vector-icons')

@@ -16,6 +16,7 @@
 		"react-native": "0.52.2",
 		"react-native-app-intro-slider": "^0.2.4",
 		"react-native-charts-wrapper": "^0.4.3",
+		"react-native-custom-tabs": "^0.1.7",
 		"react-native-facebook-account-kit": "^0.9.0",
 		"react-native-fbsdk": "^0.7.0",
 		"react-native-fcm": "^1.1.0",

@@ -99,6 +99,7 @@
 		F5139EEF789F5F8CA567D7F6 /* Pods_EncryptoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116FB7A52CE2ABA8AF1A70FA /* Pods_EncryptoApp.framework */; };
 		F99F3803CBD940FBA316872A /* Roboto_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 928A163B22A94AC2949CC289 /* Roboto_medium.ttf */; };
 		FFB9C21D17974F66AA536707 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73F3B44926974144B317556D /* MaterialCommunityIcons.ttf */; };
+		35700F1AD420445381E995DD /* libDBCustomTabs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF4F678428A4E539AC06704 /* libDBCustomTabs.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -517,6 +518,8 @@
 		F28F0DD9ABEB37D889E9466C /* Pods-EncryptoAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EncryptoAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EncryptoAppTests/Pods-EncryptoAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		F2FE09A6598344D4AF10C92E /* libRCTOneSignal.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTOneSignal.a; sourceTree = "<group>"; };
 		F48B95A84D624E14B9ACD9C7 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/native-base/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		E4CD6370A08844CEA124208E /* ReactNativeCustomTabs.xcodeproj */ = {isa = PBXFileReference; name = "ReactNativeCustomTabs.xcodeproj"; path = "../node_modules/react-native-custom-tabs/ios/ReactNativeCustomTabs.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		9FF4F678428A4E539AC06704 /* libDBCustomTabs.a */ = {isa = PBXFileReference; name = "libDBCustomTabs.a"; path = "libDBCustomTabs.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -557,6 +560,7 @@
 				85B7D94DEE274479978A8FB5 /* libRCTOneSignal.a in Frameworks */,
 				2FED486D507E4348B7F6E2EA /* libRNVectorIcons.a in Frameworks */,
 				F5139EEF789F5F8CA567D7F6 /* Pods_EncryptoApp.framework in Frameworks */,
+				35700F1AD420445381E995DD /* libDBCustomTabs.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -743,6 +747,7 @@
 				240B2FE9017545B68D23BF3D /* RCTOneSignal.xcodeproj */,
 				859C13432A5B467EAF833782 /* RNVectorIcons.xcodeproj */,
 				584206BDCD484FCFBDF35E98 /* OAuthManager.xcodeproj */,
+				E4CD6370A08844CEA124208E /* ReactNativeCustomTabs.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1715,12 +1720,14 @@
 					"$(SRCROOT)/../node_modules/react-native-onesignal/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-oauth/ios/OAuthManager/**",
+					"$(SRCROOT)/../node_modules/react-native-custom-tabs/ios/ReactNativeCustomTabs",
 				);
 				INFOPLIST_FILE = EncryptoAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1745,12 +1752,14 @@
 					"$(SRCROOT)/../node_modules/react-native-onesignal/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-oauth/ios/OAuthManager/**",
+					"$(SRCROOT)/../node_modules/react-native-custom-tabs/ios/ReactNativeCustomTabs",
 				);
 				INFOPLIST_FILE = EncryptoAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1784,6 +1793,7 @@
 					"$(SRCROOT)/../node_modules/react-native-oauth/ios/OAuthManager/**",
 					"$(SRCROOT)/../node_modules/react-native/Libraries/LinkingIOS",
 					"$(SRCROOT)/../node_modules/react-native-oauth/ios/OAuthManager",
+					"$(SRCROOT)/../node_modules/react-native-custom-tabs/ios/ReactNativeCustomTabs",
 				);
 				INFOPLIST_FILE = EncryptoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1823,6 +1833,7 @@
 					"$(SRCROOT)/../node_modules/react-native-oauth/ios/OAuthManager/**",
 					"$(SRCROOT)/../node_modules/react-native/Libraries/LinkingIOS",
 					"$(SRCROOT)/../node_modules/react-native-oauth/ios/OAuthManager",
+					"$(SRCROOT)/../node_modules/react-native-custom-tabs/ios/ReactNativeCustomTabs",
 				);
 				INFOPLIST_FILE = EncryptoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

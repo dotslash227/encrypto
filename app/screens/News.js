@@ -16,10 +16,34 @@ import {
 import Header from "../components/Header";
 import moment from "moment";
 
+import {
+	CustomTabs,
+	ANIMATIONS_SLIDE,
+	ANIMATIONS_FADE
+  } from "react-native-custom-tabs";
+
 class SinglePost extends Component {
+
+	openURL(url) {
+		CustomTabs.openURL(url, {
+			toolbarColor: "#021B79",
+			showPageTitle: true,
+			animations: {
+				startEnter: "slide_in_bottom",
+				startExit: "slide_out_bottom",
+				endEnter: "slide_in_bottom",
+				endExit: "slide_out_bottom"
+			  }
+		}).then((launched) => {
+			console.log(`Launched custom tabs: ${launched}`);
+		}).catch(err => {
+			console.error(err)
+		});
+	}
+
 	render() {
 		return (
-			<ListItem button onPress={() => Linking.openURL(this.props.url)}>
+			<ListItem button onPress={() => this.openURL(this.props.url)}>
 				<Thumbnail
 					square
 					size={80}

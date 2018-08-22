@@ -31,3 +31,10 @@ allprojects {
         }
     }
 }
+
+ext {
+  buildToolsVersion = "27.0.2"
+  compileSdkVersion = 27
+  targetSdkVersion = 27
+  supportLibVersion = "27.0.2"
+}
