@@ -102,6 +102,10 @@ export default class HomeCharts extends Component {
 					y: data.buy
 				};
 			});
+			console.log({chartTwoData});
+		}
+		if(selected.isComparing && !chartTwoData) {
+			return <Spinner />;
 		}
 		return (
 			<View style={{backgroundColor:"white"}}>

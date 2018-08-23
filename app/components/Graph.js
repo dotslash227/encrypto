@@ -25,9 +25,9 @@ class LineChartComp extends React.Component {
     this.state = {
       data: {},
       legend: {
-        enabled: false,
+        enabled: true,
         textColor: processColor('blue'),
-        textSize: 12,
+        textSize: 14,
         position: 'BELOW_CHART_RIGHT',
         form: 'SQUARE',
         formSize: 14,
