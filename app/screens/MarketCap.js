@@ -36,6 +36,7 @@ export default class MarketCap extends Component {
 		this._handleResults = this._handleResults.bind(this);
 		this.searchOnBack = this.searchOnBack.bind(this);
 		this.fetchMarketRates = this.fetchMarketRates.bind(this);
+		this.refreshButton = this.refreshButton.bind(this);
 	}
 
 	fetchMarketRates() {
@@ -88,6 +89,14 @@ export default class MarketCap extends Component {
 		this.setState({display: display + 50});
 	}
 
+	refreshButton() {
+		var _this = this;
+		_this.setState({loading: true, display: 25, ticker: []});
+		setTimeout(() => {
+			_this.fetchMarketRates();
+		}, 1000);
+	}
+
 	render() {
 		const { ticker, loading, error } = this.state;
 		let content;
@@ -104,7 +113,7 @@ export default class MarketCap extends Component {
 		}
 		return (
 			<Container>
-		  <Header {...this.props} title="Market Cap" hasSearch={false} showSearch={this.showSearchBar} />
+		  <Header {...this.props} title="Market Cap" hasSearch={true} showSearch={this.showSearchBar} refreshButton={this.refreshButton} />
 					<Content>
 					<SearchBar
 			ref={(ref) => this.searchBar = ref}

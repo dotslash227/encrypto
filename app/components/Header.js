@@ -49,11 +49,18 @@ export default class MainHeader extends Component {
 			rightSection = (
 				<Button
 						transparent
+						onPress={() => this.props.refreshButton()}
+					>
+						<Icon name="md-refresh" />
+					</Button>
+			)
+			/*
+			<Button
+						transparent
 						onPress={() => this.props.showSearch()}
 					>
 						<Icon name="md-search" />
-					</Button>
-			)
+			</Button> */
 		}
 
 		return (
