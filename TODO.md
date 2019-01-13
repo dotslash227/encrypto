@@ -14,7 +14,7 @@
 - News - Filtering by source
 - Remove ICO and Events Menu (Done)
 - Privacy Policy, Terms of Use, About Us, GDPR
-- Move settings items to Main Menu
+- Move settings items to Main Menu (Done)
 - Add social media links on Menu - Chat on Telegram
 - Add Icons to menu items
 - API Mapping with Django

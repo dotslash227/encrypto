@@ -35,6 +35,8 @@ import { getCacheUsingKey } from "./utils/common";
 
 import OneSignal from 'react-native-onesignal';
 
+import Instabug from 'instabug-reactnative';
+
 // Storage:
 // Global Storage
 var storage = new Storage({
@@ -96,6 +98,9 @@ export default class App extends Component {
 	  OneSignal.addEventListener('received', this.onReceived);
 	  OneSignal.addEventListener('opened', this.onOpened);
 	  OneSignal.addEventListener('ids', this.onIds);
+
+	  // Instabug:
+	  Instabug.startWithToken('04c9efb1be90c705fbaf774d5df01e8d', [Instabug.invocationEvent.shake]);
   }
 
   componentWillUnmount() {

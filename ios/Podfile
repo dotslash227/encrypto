@@ -7,6 +7,8 @@ target 'EncryptoApp' do
 
   # Pods for EncryptoApp
 
+  pod 'instabug-reactnative', :path => '../node_modules/instabug-reactnative'
+
   target 'EncryptoAppTests' do
     inherit! :search_paths
     # Pods for testing

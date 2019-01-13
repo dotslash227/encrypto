@@ -3,6 +3,7 @@ package com.encryptoapp;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.instabug.reactlibrary.RNInstabugReactnativePackage;
 import com.evollu.react.fcm.FIRMessagingPackage;
 import com.github.droibit.android.reactnative.customtabs.CustomTabsPackage;
 import com.github.wuxudong.rncharts.MPAndroidChartPackage;
@@ -42,6 +43,12 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            		new RNInstabugReactnativePackage.Builder("04c9efb1be90c705fbaf774d5df01e8d",MainApplication.this)
+							.setInvocationEvent("shake")
+							.setPrimaryColor("#1D82DC")
+							.setFloatingEdge("left")
+							.setFloatingButtonOffsetFromTop(250)
+							.build(),
             new FIRMessagingPackage(),
             new CustomTabsPackage(),
             new MPAndroidChartPackage(),

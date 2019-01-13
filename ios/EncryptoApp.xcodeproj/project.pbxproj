@@ -38,6 +38,7 @@
 		627075C04F12485B8C171374 /* libRNAccountKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E34B4A80E6BB4C3B9352FDA6 /* libRNAccountKit.a */; };
 		62CF550ACF484C08981A5229 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B350B7767CA44939DB16123 /* Feather.ttf */; };
 		630DB7A5ADBD4EC88D6D97B4 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C66FDD1712214E8F81CBC7B2 /* SimpleLineIcons.ttf */; };
+		74527CC20A2BA0A667134D8C /* Instabug.framework in Embed Instabug Framework */ = {isa = PBXBuildFile; fileRef = 4E15A2CB03DA5927E4ADEC11 /* Instabug.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		85842F2914974565A7E23D96 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C616B4CDC7504295982528DB /* Ionicons.ttf */; };
 		85B7D94DEE274479978A8FB5 /* libRCTOneSignal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2FE09A6598344D4AF10C92E /* libRCTOneSignal.a */; };
@@ -105,6 +106,7 @@
 		D0C4C40759CC4D3A97164CE9 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 132F5A56F35647DB93A3FAA7 /* AntDesign.ttf */; };
 		D98C62BA2ED040FD8A1D104F /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC188CC4A98541FA9BD3036D /* MaterialCommunityIcons.ttf */; };
 		F5139EEF789F5F8CA567D7F6 /* Pods_EncryptoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116FB7A52CE2ABA8AF1A70FA /* Pods_EncryptoApp.framework */; };
+		F62B92B7DC983507B11C9E19 /* Instabug.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E15A2CB03DA5927E4ADEC11 /* Instabug.framework */; };
 		F99F3803CBD940FBA316872A /* Roboto_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 928A163B22A94AC2949CC289 /* Roboto_medium.ttf */; };
 		FEB632AF2E544C098E315B4D /* libRNFIRMessaging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D5E537EA2BC4DA7A7E2F100 /* libRNFIRMessaging.a */; };
 		FFB9C21D17974F66AA536707 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73F3B44926974144B317556D /* MaterialCommunityIcons.ttf */; };
@@ -421,6 +423,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A89BBC82C33AC54C12B31E5B /* Embed Instabug Framework */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				74527CC20A2BA0A667134D8C /* Instabug.framework in Embed Instabug Framework */,
+			);
+			name = "Embed Instabug Framework";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTActionSheet.xcodeproj; path = "../node_modules/react-native/Libraries/ActionSheetIOS/RCTActionSheet.xcodeproj"; sourceTree = "<group>"; };
@@ -459,6 +475,7 @@
 		4400608255084E90A1744FC5 /* libRCTFBSDK.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTFBSDK.a; sourceTree = "<group>"; };
 		4AD2BF2ED8757BE9208A5F6B /* Pods-EncryptoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EncryptoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EncryptoApp/Pods-EncryptoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		4C0F784E84B347499FD6CB4F /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
+		4E15A2CB03DA5927E4ADEC11 /* Instabug.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Instabug.framework; path = "../node_modules/instabug-reactnative/ios/Instabug.framework"; sourceTree = "<group>"; };
 		584206BDCD484FCFBDF35E98 /* OAuthManager.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = OAuthManager.xcodeproj; path = "../node_modules/react-native-oauth/ios/OAuthManager.xcodeproj"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		73F3B44926974144B317556D /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
@@ -585,6 +602,7 @@
 				F5139EEF789F5F8CA567D7F6 /* Pods_EncryptoApp.framework in Frameworks */,
 				35700F1AD420445381E995DD /* libDBCustomTabs.a in Frameworks */,
 				FEB632AF2E544C098E315B4D /* libRNFIRMessaging.a in Frameworks */,
+				F62B92B7DC983507B11C9E19 /* Instabug.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,6 +736,7 @@
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 				116FB7A52CE2ABA8AF1A70FA /* Pods_EncryptoApp.framework */,
 				CFCB0940C0A48E8890FB855E /* Pods_EncryptoAppTests.framework */,
+				4E15A2CB03DA5927E4ADEC11 /* Instabug.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1082,6 +1101,8 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				5D5F0ACED0E56515CB846B5F /* [CP] Embed Pods Frameworks */,
+				A89BBC82C33AC54C12B31E5B /* Embed Instabug Framework */,
+				C3BCF96AD221029B70B9EFE7 /* Strip Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1608,6 +1629,25 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EncryptoApp/Pods-EncryptoApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C3BCF96AD221029B70B9EFE7 /* Strip Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Strip Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Instabug.framework/strip-frameworks.sh\"\n";
+			showEnvVarsInLog = 1;
+		};
 		CF30CB75F5B76C5B822A6A58 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1801,6 +1841,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"../node_modules/instabug-reactnative/ios",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1842,6 +1883,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"../node_modules/instabug-reactnative/ios",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
