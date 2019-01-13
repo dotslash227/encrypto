@@ -1,4 +1,4 @@
-framework module Pods_EncryptoApp {
+module Pods_EncryptoApp {
   umbrella header "Pods-EncryptoApp-umbrella.h"
 
   export *

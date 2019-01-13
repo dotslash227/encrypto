@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -32,6 +31,7 @@
 		430F63863B9D447799331493 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B207720CFCC42279620C15D /* FontAwesome.ttf */; };
 		4788E97BCB6D4F04B16BA6AF /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 326BB129222249BDB83DBD41 /* Roboto.ttf */; };
 		4C3E59683CEB492F9EAAA59D /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 369144E37D094EABB55F4FC6 /* FontAwesome5_Solid.ttf */; };
+		53AEEA6A8AD21C61C5EC4E1F /* libPods-EncryptoApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C052C07D87965E381789D9F4 /* libPods-EncryptoApp.a */; };
 		5AC9503B371F4B58B27FEA2E /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C0F784E84B347499FD6CB4F /* FontAwesome5_Brands.ttf */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		5F21EE8C047E4CA08E220F46 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F48B95A84D624E14B9ACD9C7 /* MaterialIcons.ttf */; };
@@ -44,7 +44,6 @@
 		85B7D94DEE274479978A8FB5 /* libRCTOneSignal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2FE09A6598344D4AF10C92E /* libRCTOneSignal.a */; };
 		93B30AB228D44ECD849DA7DD /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B32B4256D9F466DBABC4CB0 /* rubicon-icon-font.ttf */; };
 		965E9C714F454BEAB3DB15E0 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A46F305501694A5291769382 /* EvilIcons.ttf */; };
-		A0D9BC574CA12DC86B8BF80B /* Pods_EncryptoAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFCB0940C0A48E8890FB855E /* Pods_EncryptoAppTests.framework */; };
 		AB82ADAD98B14DB88D957B51 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0B812233EF94FD290E15795 /* Foundation.ttf */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		B11202E720D5F205003443EE /* libOAuthManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B14F2FA920D5EDAC00DFEBEF /* libOAuthManager.a */; };
@@ -105,10 +104,9 @@
 		C24F77AAF6624A14AA9BB4E5 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D4246B9163B4E91861C3431 /* Entypo.ttf */; };
 		D0C4C40759CC4D3A97164CE9 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 132F5A56F35647DB93A3FAA7 /* AntDesign.ttf */; };
 		D98C62BA2ED040FD8A1D104F /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC188CC4A98541FA9BD3036D /* MaterialCommunityIcons.ttf */; };
-		F5139EEF789F5F8CA567D7F6 /* Pods_EncryptoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116FB7A52CE2ABA8AF1A70FA /* Pods_EncryptoApp.framework */; };
+		F4F8383DFF5E9AC5285B8AFD /* libPods-EncryptoAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E936C69D21D563E5504A800 /* libPods-EncryptoAppTests.a */; };
 		F62B92B7DC983507B11C9E19 /* Instabug.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E15A2CB03DA5927E4ADEC11 /* Instabug.framework */; };
 		F99F3803CBD940FBA316872A /* Roboto_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 928A163B22A94AC2949CC289 /* Roboto_medium.ttf */; };
-		FEB632AF2E544C098E315B4D /* libRNFIRMessaging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D5E537EA2BC4DA7A7E2F100 /* libRNFIRMessaging.a */; };
 		FFB9C21D17974F66AA536707 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73F3B44926974144B317556D /* MaterialCommunityIcons.ttf */; };
 /* End PBXBuildFile section */
 
@@ -449,7 +447,6 @@
 		00E356F21AD99517003FC87E /* EncryptoAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EncryptoAppTests.m; sourceTree = "<group>"; };
 		07D5E56E7932DDCD1FF4C6BA /* Pods-EncryptoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EncryptoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-EncryptoApp/Pods-EncryptoApp.release.xcconfig"; sourceTree = "<group>"; };
 		0B32B4256D9F466DBABC4CB0 /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; };
-		116FB7A52CE2ABA8AF1A70FA /* Pods_EncryptoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EncryptoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		132F5A56F35647DB93A3FAA7 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/native-base/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
@@ -470,8 +467,7 @@
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		326BB129222249BDB83DBD41 /* Roboto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto.ttf; path = "../node_modules/native-base/Fonts/Roboto.ttf"; sourceTree = "<group>"; };
 		369144E37D094EABB55F4FC6 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
-		3700F97B0048402EB7F40583 /* RNFIRMessaging.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFIRMessaging.xcodeproj; path = "../node_modules/react-native-fcm/ios/RNFIRMessaging.xcodeproj"; sourceTree = "<group>"; };
-		3D5E537EA2BC4DA7A7E2F100 /* libRNFIRMessaging.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = archive.ar; name = libRNFIRMessaging.a; path = libRNFIRMessaging.a; sourceTree = "<group>"; };
+		3E936C69D21D563E5504A800 /* libPods-EncryptoAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EncryptoAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4400608255084E90A1744FC5 /* libRCTFBSDK.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTFBSDK.a; sourceTree = "<group>"; };
 		4AD2BF2ED8757BE9208A5F6B /* Pods-EncryptoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EncryptoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EncryptoApp/Pods-EncryptoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		4C0F784E84B347499FD6CB4F /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
@@ -549,10 +545,10 @@
 		B1D0A34420EBAF3400387176 /* DataExtract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataExtract.swift; sourceTree = "<group>"; };
 		B470253E6BA74341B994A511 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/native-base/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		BCFA755D62C5292AAEC3AF6C /* Pods-EncryptoAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EncryptoAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EncryptoAppTests/Pods-EncryptoAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C052C07D87965E381789D9F4 /* libPods-EncryptoApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EncryptoApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C616B4CDC7504295982528DB /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/native-base/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		C66FDD1712214E8F81CBC7B2 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		CC194C6B7FAB437582B67ED8 /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
-		CFCB0940C0A48E8890FB855E /* Pods_EncryptoAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EncryptoAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E34B4A80E6BB4C3B9352FDA6 /* libRNAccountKit.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNAccountKit.a; sourceTree = "<group>"; };
 		E4CD6370A08844CEA124208E /* ReactNativeCustomTabs.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeCustomTabs.xcodeproj; path = "../node_modules/react-native-custom-tabs/ios/ReactNativeCustomTabs.xcodeproj"; sourceTree = "<group>"; };
 		EC188CC4A98541FA9BD3036D /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/native-base/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
@@ -568,7 +564,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */,
-				A0D9BC574CA12DC86B8BF80B /* Pods_EncryptoAppTests.framework in Frameworks */,
+				F4F8383DFF5E9AC5285B8AFD /* libPods-EncryptoAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,10 +595,9 @@
 				627075C04F12485B8C171374 /* libRNAccountKit.a in Frameworks */,
 				85B7D94DEE274479978A8FB5 /* libRCTOneSignal.a in Frameworks */,
 				2FED486D507E4348B7F6E2EA /* libRNVectorIcons.a in Frameworks */,
-				F5139EEF789F5F8CA567D7F6 /* Pods_EncryptoApp.framework in Frameworks */,
 				35700F1AD420445381E995DD /* libDBCustomTabs.a in Frameworks */,
-				FEB632AF2E544C098E315B4D /* libRNFIRMessaging.a in Frameworks */,
 				F62B92B7DC983507B11C9E19 /* Instabug.framework in Frameworks */,
+				53AEEA6A8AD21C61C5EC4E1F /* libPods-EncryptoApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,9 +729,9 @@
 				B19D17482079434D009166B4 /* FBSDKLoginKit.framework */,
 				B19D174A2079434E009166B4 /* FBSDKShareKit.framework */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
-				116FB7A52CE2ABA8AF1A70FA /* Pods_EncryptoApp.framework */,
-				CFCB0940C0A48E8890FB855E /* Pods_EncryptoAppTests.framework */,
 				4E15A2CB03DA5927E4ADEC11 /* Instabug.framework */,
+				C052C07D87965E381789D9F4 /* libPods-EncryptoApp.a */,
+				3E936C69D21D563E5504A800 /* libPods-EncryptoAppTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -791,7 +786,6 @@
 				859C13432A5B467EAF833782 /* RNVectorIcons.xcodeproj */,
 				584206BDCD484FCFBDF35E98 /* OAuthManager.xcodeproj */,
 				E4CD6370A08844CEA124208E /* ReactNativeCustomTabs.xcodeproj */,
-				3700F97B0048402EB7F40583 /* RNFIRMessaging.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1614,15 +1608,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-EncryptoApp/Pods-EncryptoApp-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
-				"${BUILT_PRODUCTS_DIR}/DCTAuth/DCTAuth.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${PODS_ROOT}/../../node_modules/instabug-reactnative/ios/Instabug.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DCTAuth.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Instabug.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1775,16 +1765,11 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-oauth/ios/OAuthManager/**",
 					"$(SRCROOT)/../node_modules/react-native-custom-tabs/ios/ReactNativeCustomTabs",
-					"$(SRCROOT)/../node_modules/react-native-fcm/ios",
 				);
 				INFOPLIST_FILE = EncryptoAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1809,16 +1794,11 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-oauth/ios/OAuthManager/**",
 					"$(SRCROOT)/../node_modules/react-native-custom-tabs/ios/ReactNativeCustomTabs",
-					"$(SRCROOT)/../node_modules/react-native-fcm/ios",
 				);
 				INFOPLIST_FILE = EncryptoAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1853,7 +1833,6 @@
 					"$(SRCROOT)/../node_modules/react-native/Libraries/LinkingIOS",
 					"$(SRCROOT)/../node_modules/react-native-oauth/ios/OAuthManager",
 					"$(SRCROOT)/../node_modules/react-native-custom-tabs/ios/ReactNativeCustomTabs",
-					"$(SRCROOT)/../node_modules/react-native-fcm/ios",
 				);
 				INFOPLIST_FILE = EncryptoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1895,7 +1874,6 @@
 					"$(SRCROOT)/../node_modules/react-native/Libraries/LinkingIOS",
 					"$(SRCROOT)/../node_modules/react-native-oauth/ios/OAuthManager",
 					"$(SRCROOT)/../node_modules/react-native-custom-tabs/ios/ReactNativeCustomTabs",
-					"$(SRCROOT)/../node_modules/react-native-fcm/ios",
 				);
 				INFOPLIST_FILE = EncryptoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -16,6 +16,10 @@ export default class DrawerContent extends Component {
 		};
 	}
 
+	componentWillMount() {
+		Instabug.startWithToken('04c9efb1be90c705fbaf774d5df01e8d', [Instabug.invocationEvent.shake]);
+	}
+
 	goToScreen(screenName) {
 		this.props.navigation.navigate(screenName);
 	}
@@ -39,7 +43,7 @@ export default class DrawerContent extends Component {
 	}
 
 	tapSupport() {
-		Instabug.invoke();
+		//Instabug.invoke();
 	}
 
 	render() {

@@ -1,11 +1,14 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Charts" "${PODS_CONFIGURATION_BUILD_DIR}/DCTAuth" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/../../node_modules/instabug-reactnative/ios"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/DCTAuth" "${PODS_ROOT}/Headers/Public/React" "${PODS_ROOT}/Headers/Public/instabug-reactnative" "${PODS_ROOT}/Headers/Public/yoga"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/Charts/Charts.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/DCTAuth/DCTAuth.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON/SwiftyJSON.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "Charts" -framework "DCTAuth" -framework "SwiftyJSON"
-OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Charts" "${PODS_CONFIGURATION_BUILD_DIR}/DCTAuth" "${PODS_CONFIGURATION_BUILD_DIR}/React" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON" "${PODS_CONFIGURATION_BUILD_DIR}/instabug-reactnative" "${PODS_CONFIGURATION_BUILD_DIR}/yoga"
+OTHER_CFLAGS = $(inherited) -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Charts/Charts.modulemap" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON/SwiftyJSON.modulemap" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/DCTAuth" -isystem "${PODS_ROOT}/Headers/Public/React" -isystem "${PODS_ROOT}/Headers/Public/instabug-reactnative" -isystem "${PODS_ROOT}/Headers/Public/yoga"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"Charts" -l"DCTAuth" -l"React" -l"SwiftyJSON" -l"instabug-reactnative" -l"stdc++" -l"yoga" -framework "Instabug" -framework "JavaScriptCore"
+OTHER_SWIFT_FLAGS = $(inherited) -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Charts/Charts.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON/SwiftyJSON.modulemap" $(inherited) "-D" "COCOAPODS"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
 PODS_ROOT = ${SRCROOT}/Pods
+SWIFT_INCLUDE_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Charts" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON"

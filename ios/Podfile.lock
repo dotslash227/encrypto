@@ -3,12 +3,22 @@ PODS:
     - Charts/Core (= 3.1.1)
   - Charts/Core (3.1.1)
   - DCTAuth (3.0)
+  - instabug-reactnative (8.0.20):
+    - React
+  - React (0.52.2):
+    - React/Core (= 0.52.2)
+  - React/Core (0.52.2):
+    - yoga (= 0.52.2.React)
   - SwiftyJSON (4.0.0)
+  - yoga (0.52.2.React)
 
 DEPENDENCIES:
   - Charts (= 3.1.1)
   - DCTAuth (from `https://github.com/danielctull/DCTAuth.git`)
+  - instabug-reactnative (from `../node_modules/instabug-reactnative`)
+  - React (from `../node_modules/react-native`)
   - SwiftyJSON (= 4.0.0)
+  - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -18,6 +28,12 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   DCTAuth:
     :git: https://github.com/danielctull/DCTAuth.git
+  instabug-reactnative:
+    :path: "../node_modules/instabug-reactnative"
+  React:
+    :path: "../node_modules/react-native"
+  yoga:
+    :path: "../node_modules/react-native/ReactCommon/yoga"
 
 CHECKOUT OPTIONS:
   DCTAuth:
@@ -27,8 +43,11 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Charts: 90a4d61da0f6e06684c591e3bcab11940fe61736
   DCTAuth: 8add154decd00335d62917828896bba790ce47fd
+  instabug-reactnative: a61b54b62e8378b6416990b1c1fc688425dbf945
+  React: 43e97926f429d846050880666de1809e22dd5cc5
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  yoga: 55da126afc384965b96bff46652464373b330add
 
-PODFILE CHECKSUM: 05f0162255ce36e81c2f68a04ae0944dac43cf84
+PODFILE CHECKSUM: d39d1358ee2c6fd56eb79c285fa97a21b0de835b
 
 COCOAPODS: 1.5.3
