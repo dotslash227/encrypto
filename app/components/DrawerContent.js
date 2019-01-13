@@ -5,6 +5,7 @@ import { List, ListItem, Text, Body, Right, Icon, Left } from "native-base";
 import config from "../config.json";
 
 import { getLocalUser } from "../utils/common";
+import Instabug from 'instabug-reactnative';
 
 export default class DrawerContent extends Component {
 	constructor(props) {
@@ -35,6 +36,10 @@ export default class DrawerContent extends Component {
 		if(!this.state.loggedIn) {
 			this.props.navigation.navigate("Login");
 		}
+	}
+
+	tapSupport() {
+		Instabug.invoke();
 	}
 
 	render() {
@@ -167,7 +172,7 @@ export default class DrawerContent extends Component {
 					<ListItem
 						style={styles.listItem}
 						button
-						onPress={() => this.goToScreen("Support")}
+						onPress={() => this.tapSupport()}
 						icon
 					>
 					<Left>
