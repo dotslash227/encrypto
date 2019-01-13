@@ -23,12 +23,16 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		182AE11678794638AF505E31 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 966C2A2DF7BD4DAC9A1E145B /* FontAwesome5_Regular.ttf */; };
 		2FED486D507E4348B7F6E2EA /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC194C6B7FAB437582B67ED8 /* libRNVectorIcons.a */; };
 		35700F1AD420445381E995DD /* libDBCustomTabs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF4F678428A4E539AC06704 /* libDBCustomTabs.a */; };
 		3C6BADF285784BE88CF88593 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AD39DD7E1C448E9801CA4C1 /* Zocial.ttf */; };
+		3F4B6AD6984D49ABA08615BB /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2349B5A0E9A5477883919E3A /* Feather.ttf */; };
 		42E30812B5D8485CAF4A6B33 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B470253E6BA74341B994A511 /* Octicons.ttf */; };
 		430F63863B9D447799331493 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B207720CFCC42279620C15D /* FontAwesome.ttf */; };
 		4788E97BCB6D4F04B16BA6AF /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 326BB129222249BDB83DBD41 /* Roboto.ttf */; };
+		4C3E59683CEB492F9EAAA59D /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 369144E37D094EABB55F4FC6 /* FontAwesome5_Solid.ttf */; };
+		5AC9503B371F4B58B27FEA2E /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C0F784E84B347499FD6CB4F /* FontAwesome5_Brands.ttf */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		5F21EE8C047E4CA08E220F46 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F48B95A84D624E14B9ACD9C7 /* MaterialIcons.ttf */; };
 		627075C04F12485B8C171374 /* libRNAccountKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E34B4A80E6BB4C3B9352FDA6 /* libRNAccountKit.a */; };
@@ -98,8 +102,11 @@
 		B1D0A37220EBAF3500387176 /* RNChartViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D0A34320EBAF3400387176 /* RNChartViewBase.swift */; };
 		B1D0A37320EBAF3500387176 /* DataExtract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D0A34420EBAF3400387176 /* DataExtract.swift */; };
 		C24F77AAF6624A14AA9BB4E5 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D4246B9163B4E91861C3431 /* Entypo.ttf */; };
+		D0C4C40759CC4D3A97164CE9 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 132F5A56F35647DB93A3FAA7 /* AntDesign.ttf */; };
+		D98C62BA2ED040FD8A1D104F /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC188CC4A98541FA9BD3036D /* MaterialCommunityIcons.ttf */; };
 		F5139EEF789F5F8CA567D7F6 /* Pods_EncryptoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116FB7A52CE2ABA8AF1A70FA /* Pods_EncryptoApp.framework */; };
 		F99F3803CBD940FBA316872A /* Roboto_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 928A163B22A94AC2949CC289 /* Roboto_medium.ttf */; };
+		FEB632AF2E544C098E315B4D /* libRNFIRMessaging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D5E537EA2BC4DA7A7E2F100 /* libRNFIRMessaging.a */; };
 		FFB9C21D17974F66AA536707 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73F3B44926974144B317556D /* MaterialCommunityIcons.ttf */; };
 /* End PBXBuildFile section */
 
@@ -427,6 +434,7 @@
 		07D5E56E7932DDCD1FF4C6BA /* Pods-EncryptoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EncryptoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-EncryptoApp/Pods-EncryptoApp.release.xcconfig"; sourceTree = "<group>"; };
 		0B32B4256D9F466DBABC4CB0 /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; };
 		116FB7A52CE2ABA8AF1A70FA /* Pods_EncryptoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EncryptoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		132F5A56F35647DB93A3FAA7 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/native-base/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* EncryptoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EncryptoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -438,14 +446,19 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = EncryptoApp/main.m; sourceTree = "<group>"; };
 		13E13D8F8A864164BFCE0A8E /* RCTFBSDK.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTFBSDK.xcodeproj; path = "../node_modules/react-native-fbsdk/ios/RCTFBSDK.xcodeproj"; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		2349B5A0E9A5477883919E3A /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/native-base/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		23BA83D7A15A46178972CCA3 /* RNAccountKit.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNAccountKit.xcodeproj; path = "../node_modules/react-native-facebook-account-kit/ios/RNAccountKit.xcodeproj"; sourceTree = "<group>"; };
 		240B2FE9017545B68D23BF3D /* RCTOneSignal.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTOneSignal.xcodeproj; path = "../node_modules/react-native-onesignal/ios/RCTOneSignal.xcodeproj"; sourceTree = "<group>"; };
 		2AD39DD7E1C448E9801CA4C1 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		2B350B7767CA44939DB16123 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		326BB129222249BDB83DBD41 /* Roboto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto.ttf; path = "../node_modules/native-base/Fonts/Roboto.ttf"; sourceTree = "<group>"; };
+		369144E37D094EABB55F4FC6 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		3700F97B0048402EB7F40583 /* RNFIRMessaging.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFIRMessaging.xcodeproj; path = "../node_modules/react-native-fcm/ios/RNFIRMessaging.xcodeproj"; sourceTree = "<group>"; };
+		3D5E537EA2BC4DA7A7E2F100 /* libRNFIRMessaging.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = archive.ar; name = libRNFIRMessaging.a; path = libRNFIRMessaging.a; sourceTree = "<group>"; };
 		4400608255084E90A1744FC5 /* libRCTFBSDK.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTFBSDK.a; sourceTree = "<group>"; };
 		4AD2BF2ED8757BE9208A5F6B /* Pods-EncryptoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EncryptoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EncryptoApp/Pods-EncryptoApp.debug.xcconfig"; sourceTree = "<group>"; };
+		4C0F784E84B347499FD6CB4F /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		584206BDCD484FCFBDF35E98 /* OAuthManager.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = OAuthManager.xcodeproj; path = "../node_modules/react-native-oauth/ios/OAuthManager.xcodeproj"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		73F3B44926974144B317556D /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
@@ -454,6 +467,7 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		859C13432A5B467EAF833782 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
 		928A163B22A94AC2949CC289 /* Roboto_medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto_medium.ttf; path = "../node_modules/native-base/Fonts/Roboto_medium.ttf"; sourceTree = "<group>"; };
+		966C2A2DF7BD4DAC9A1E145B /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		9B207720CFCC42279620C15D /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/native-base/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		9FF4F678428A4E539AC06704 /* libDBCustomTabs.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libDBCustomTabs.a; sourceTree = "<group>"; };
 		A46F305501694A5291769382 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/native-base/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
@@ -524,6 +538,7 @@
 		CFCB0940C0A48E8890FB855E /* Pods_EncryptoAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EncryptoAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E34B4A80E6BB4C3B9352FDA6 /* libRNAccountKit.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNAccountKit.a; sourceTree = "<group>"; };
 		E4CD6370A08844CEA124208E /* ReactNativeCustomTabs.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeCustomTabs.xcodeproj; path = "../node_modules/react-native-custom-tabs/ios/ReactNativeCustomTabs.xcodeproj"; sourceTree = "<group>"; };
+		EC188CC4A98541FA9BD3036D /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/native-base/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		F0B812233EF94FD290E15795 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/native-base/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		F28F0DD9ABEB37D889E9466C /* Pods-EncryptoAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EncryptoAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EncryptoAppTests/Pods-EncryptoAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		F2FE09A6598344D4AF10C92E /* libRCTOneSignal.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTOneSignal.a; sourceTree = "<group>"; };
@@ -569,6 +584,7 @@
 				2FED486D507E4348B7F6E2EA /* libRNVectorIcons.a in Frameworks */,
 				F5139EEF789F5F8CA567D7F6 /* Pods_EncryptoApp.framework in Frameworks */,
 				35700F1AD420445381E995DD /* libDBCustomTabs.a in Frameworks */,
+				FEB632AF2E544C098E315B4D /* libRNFIRMessaging.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -756,6 +772,7 @@
 				859C13432A5B467EAF833782 /* RNVectorIcons.xcodeproj */,
 				584206BDCD484FCFBDF35E98 /* OAuthManager.xcodeproj */,
 				E4CD6370A08844CEA124208E /* ReactNativeCustomTabs.xcodeproj */,
+				3700F97B0048402EB7F40583 /* RNFIRMessaging.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1023,6 +1040,12 @@
 				2AD39DD7E1C448E9801CA4C1 /* Zocial.ttf */,
 				2B350B7767CA44939DB16123 /* Feather.ttf */,
 				73F3B44926974144B317556D /* MaterialCommunityIcons.ttf */,
+				132F5A56F35647DB93A3FAA7 /* AntDesign.ttf */,
+				2349B5A0E9A5477883919E3A /* Feather.ttf */,
+				4C0F784E84B347499FD6CB4F /* FontAwesome5_Brands.ttf */,
+				966C2A2DF7BD4DAC9A1E145B /* FontAwesome5_Regular.ttf */,
+				369144E37D094EABB55F4FC6 /* FontAwesome5_Solid.ttf */,
+				EC188CC4A98541FA9BD3036D /* MaterialCommunityIcons.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1038,8 +1061,6 @@
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				A53DFDCDD8DF76D4D8B891F7 /* [CP] Embed Pods Frameworks */,
-				333A3723DBF27EAF1EB9D9D5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1061,7 +1082,6 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				5D5F0ACED0E56515CB846B5F /* [CP] Embed Pods Frameworks */,
-				C188AFB7C5D4F699DC578D08 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1522,6 +1542,12 @@
 				3C6BADF285784BE88CF88593 /* Zocial.ttf in Resources */,
 				62CF550ACF484C08981A5229 /* Feather.ttf in Resources */,
 				FFB9C21D17974F66AA536707 /* MaterialCommunityIcons.ttf in Resources */,
+				D0C4C40759CC4D3A97164CE9 /* AntDesign.ttf in Resources */,
+				3F4B6AD6984D49ABA08615BB /* Feather.ttf in Resources */,
+				5AC9503B371F4B58B27FEA2E /* FontAwesome5_Brands.ttf in Resources */,
+				182AE11678794638AF505E31 /* FontAwesome5_Regular.ttf in Resources */,
+				4C3E59683CEB492F9EAAA59D /* FontAwesome5_Solid.ttf in Resources */,
+				D98C62BA2ED040FD8A1D104F /* MaterialCommunityIcons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1548,28 +1574,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EncryptoAppTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		333A3723DBF27EAF1EB9D9D5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EncryptoAppTests/Pods-EncryptoAppTests-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5D5F0ACED0E56515CB846B5F /* [CP] Embed Pods Frameworks */ = {
@@ -1578,43 +1592,20 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-EncryptoApp/Pods-EncryptoApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/DCTAuth/DCTAuth.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DCTAuth.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EncryptoApp/Pods-EncryptoApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A53DFDCDD8DF76D4D8B891F7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EncryptoAppTests/Pods-EncryptoAppTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C188AFB7C5D4F699DC578D08 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EncryptoApp/Pods-EncryptoApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CF30CB75F5B76C5B822A6A58 /* [CP] Check Pods Manifest.lock */ = {
@@ -1623,13 +1614,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EncryptoApp-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1741,12 +1735,14 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-oauth/ios/OAuthManager/**",
 					"$(SRCROOT)/../node_modules/react-native-custom-tabs/ios/ReactNativeCustomTabs",
+					"$(SRCROOT)/../node_modules/react-native-fcm/ios",
 				);
 				INFOPLIST_FILE = EncryptoAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -1773,12 +1769,14 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-oauth/ios/OAuthManager/**",
 					"$(SRCROOT)/../node_modules/react-native-custom-tabs/ios/ReactNativeCustomTabs",
+					"$(SRCROOT)/../node_modules/react-native-fcm/ios",
 				);
 				INFOPLIST_FILE = EncryptoAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -1814,6 +1812,7 @@
 					"$(SRCROOT)/../node_modules/react-native/Libraries/LinkingIOS",
 					"$(SRCROOT)/../node_modules/react-native-oauth/ios/OAuthManager",
 					"$(SRCROOT)/../node_modules/react-native-custom-tabs/ios/ReactNativeCustomTabs",
+					"$(SRCROOT)/../node_modules/react-native-fcm/ios",
 				);
 				INFOPLIST_FILE = EncryptoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1854,6 +1853,7 @@
 					"$(SRCROOT)/../node_modules/react-native/Libraries/LinkingIOS",
 					"$(SRCROOT)/../node_modules/react-native-oauth/ios/OAuthManager",
 					"$(SRCROOT)/../node_modules/react-native-custom-tabs/ios/ReactNativeCustomTabs",
+					"$(SRCROOT)/../node_modules/react-native-fcm/ios",
 				);
 				INFOPLIST_FILE = EncryptoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

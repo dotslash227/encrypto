@@ -3,6 +3,7 @@ package com.encryptoapp;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.evollu.react.fcm.FIRMessagingPackage;
 import com.github.droibit.android.reactnative.customtabs.CustomTabsPackage;
 import com.github.wuxudong.rncharts.MPAndroidChartPackage;
 import io.fullstack.oauth.OAuthManagerPackage;
@@ -41,6 +42,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new FIRMessagingPackage(),
             new CustomTabsPackage(),
             new MPAndroidChartPackage(),
             new OAuthManagerPackage(),
