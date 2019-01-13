@@ -98,7 +98,7 @@ export default class DrawerContent extends Component {
 						icon
 					>
 					<Left>
-						<Icon name="graph-bar" type="Foundation" style={styles.icon} />
+						<Icon name="bar-graph" type="Entypo" style={styles.icon} />
 					</Left>
 						<Body style={styles.removeBorder}>
 							<Text style={styles.drawerText}>
@@ -113,7 +113,7 @@ export default class DrawerContent extends Component {
 						icon
 					>
 					<Left>
-						<Icon  name="ios-home" style={styles.icon} />
+						<Icon name="news" type="Entypo" style={styles.icon} />
 					</Left>
 						<Body style={styles.removeBorder}>
 							<Text style={styles.drawerText}>News</Text>
@@ -156,7 +156,7 @@ export default class DrawerContent extends Component {
 						icon
 					>
 					<Left>
-						<Icon  name="ios-home" style={styles.icon} />
+						<Icon name="users" type="Entypo" style={styles.icon} />
 					</Left>
 						<Body style={styles.removeBorder}>
 							<Text style={styles.drawerText}>About</Text>
@@ -171,7 +171,7 @@ export default class DrawerContent extends Component {
 						icon
 					>
 					<Left>
-						<Icon  name="ios-home" style={styles.icon} />
+						<Icon name="help-with-circle" type="Entypo" style={styles.icon} />
 					</Left>
 						<Body style={styles.removeBorder}>
 							<Text style={styles.drawerText}>Support</Text>
@@ -186,7 +186,7 @@ export default class DrawerContent extends Component {
 						icon
 					>
 					<Left>
-						<Icon  name="ios-home" style={styles.icon} />
+						<Icon name="heart" type="Entypo" style={styles.icon} />
 					</Left>
 						<Body style={styles.removeBorder}>
 							<Text style={styles.drawerText}>Rate Us</Text>
