@@ -1,0 +1,20 @@
+- Make the chart full height, just above the timeline selector.
+- Remove Zeb (exchange name) in single view mode.
+- Label X. Zeb = Time
+- 24 Hours in 1D View in Home View
+- Single Compare - Change graph color to red. Double = Dark Blue + Light Blue
+- Align TabBar 1 to center
+- Remove % change and change the format of buy/sell difference to Rs.35(% change)
+- Change lines in home view (ref: Acrypto)
+- Broken charts in Comparison
+- Check and fix login functionality (Facebook, email, gmail guest)
+- MarketCap - Remove search bar and show on when clicked on search
+- Repeat search not working on market cap search
+- MarketCap - Left align currency name
+- News - Filtering by source
+- Remove ICO and Events Menu (Done)
+- Privacy Policy, Terms of Use, About Us, GDPR
+- Move settings items to Main Menu
+- Add social media links on Menu - Chat on Telegram
+- Add Icons to menu items
+- API Mapping with Django

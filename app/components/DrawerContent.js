@@ -59,7 +59,7 @@ export default class DrawerContent extends Component {
 						icon
 					>
 					<Left>
-						<Icon name="ios-home" style={styles.icon} />
+						<Icon name="home" type="Entypo" style={styles.icon} />
 					</Left>
 						<Body style={styles.removeBorder}>
 							<Text style={styles.drawerText}>Home</Text>
@@ -98,7 +98,7 @@ export default class DrawerContent extends Component {
 						icon
 					>
 					<Left>
-						<Icon name="ios-home" style={styles.icon} />
+						<Icon name="graph-bar" type="Foundation" style={styles.icon} />
 					</Left>
 						<Body style={styles.removeBorder}>
 							<Text style={styles.drawerText}>
@@ -119,7 +119,7 @@ export default class DrawerContent extends Component {
 							<Text style={styles.drawerText}>News</Text>
 						</Body>
 					</ListItem>
-					<ListItem
+					{/* <ListItem
 						style={styles.listItem}
 						button
 						onPress={() => this.goToScreen("Events")}
@@ -148,18 +148,48 @@ export default class DrawerContent extends Component {
 							<Text style={styles.drawerText}>ICO</Text>
 						</Body>
 
-					</ListItem>
+					</ListItem> */}
 					<ListItem
 						style={styles.listItem}
 						button
-						onPress={() => this.goToScreen("Settings")}
+						onPress={() => this.goToScreen("About")}
 						icon
 					>
 					<Left>
 						<Icon  name="ios-home" style={styles.icon} />
 					</Left>
 						<Body style={styles.removeBorder}>
-							<Text style={styles.drawerText}>Settings</Text>
+							<Text style={styles.drawerText}>About</Text>
+						</Body>
+
+					</ListItem>
+
+					<ListItem
+						style={styles.listItem}
+						button
+						onPress={() => this.goToScreen("Support")}
+						icon
+					>
+					<Left>
+						<Icon  name="ios-home" style={styles.icon} />
+					</Left>
+						<Body style={styles.removeBorder}>
+							<Text style={styles.drawerText}>Support</Text>
+						</Body>
+
+					</ListItem>
+
+					<ListItem
+						style={styles.listItem}
+						button
+						onPress={() => this.goToScreen("RateUs")}
+						icon
+					>
+					<Left>
+						<Icon  name="ios-home" style={styles.icon} />
+					</Left>
+						<Body style={styles.removeBorder}>
+							<Text style={styles.drawerText}>Rate Us</Text>
 						</Body>
 
 					</ListItem>
