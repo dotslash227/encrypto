@@ -1,11 +1,11 @@
-- Make the chart full height, just above the timeline selector.
-- Remove Zeb (exchange name) in single view mode.
-- Label X. Zeb = Time
+- Make the chart full height, just above the timeline selector. @Dhruv
+- Remove Zeb (exchange name) in single view mode. @Dhruv
+- Label X. Zeb = Time @Dhruv (Check and let me know if it's a problem)
 - 24 Hours in 1D View in Home View
-- Single Compare - Change graph color to red. Double = Dark Blue + Light Blue
+- Single Compare - Change graph color to red. Double = Dark Blue + Light Blue @Dhruv
 - Align TabBar 1 to center
-- Remove % change and change the format of buy/sell difference to Rs.35(% change)
-- Change lines in home view (ref: Acrypto)
+- Remove % change and change the format of buy/sell difference to Rs.35(% change) @Dhruv
+- Change lines in home view (ref: Acrypto) @Dhruv
 - Broken charts in Comparison
 - Check and fix login functionality (Facebook, email, gmail guest)
 - MarketCap - Remove search bar and show on when clicked on search
