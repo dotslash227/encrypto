@@ -8,7 +8,7 @@
 		"ios": "react-native run-ios"
 	},
 	"dependencies": {
-		"axios": "^0.18.0",
+		"axios": "^0.21.1",
 		"babel-preset-react-native": "^2.1.0",
 		"immutability-helper": "^2.7.1",
 		"instabug-reactnative": "^8.0.20",
