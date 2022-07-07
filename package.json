@@ -12,7 +12,7 @@
 		"babel-preset-react-native": "^2.1.0",
 		"immutability-helper": "^2.7.1",
 		"instabug-reactnative": "^8.0.20",
-		"moment": "^2.23.0",
+		"moment": "^2.29.4",
 		"native-base": "^2.10.0",
 		"react": "16.2.0",
 		"react-native": "0.52.2",
